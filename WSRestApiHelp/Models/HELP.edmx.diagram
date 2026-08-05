@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1a2336e6c96b45c891908acfe8f29a6a" Name="Diagram1">
+        <EntityTypeShape EntityType="helpModel.help_AjustadorAudiencia" Width="1.5" PointX="8.25" PointY="13.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="helpModel.help_Atenciones" Width="1.5" PointX="3" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="helpModel.help_Atenciones_Fotografias" Width="1.5" PointX="5.25" PointY="22.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="helpModel.help_Atenciones_Servicios" Width="1.5" PointX="11.25" PointY="16.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="helpModel.help_Automovil" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="helpModel.help_Danio_Vehiculo_Ficohsa" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="helpModel.help_EntidadComunicativa" Width="1.5" PointX="6" PointY="19.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="helpModel.help_Genero" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="helpModel.help_Log_GPS" Width="1.5" PointX="5.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="helpModel.help_OtrosDanio_Ficohsa" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="helpModel.help_Proveedor" Width="1.5" PointX="1.5" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="helpModel.help_ProveedorAgentes" Width="1.5" PointX="0.75" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="helpModel.help_Servicios" Width="1.5" PointX="0.75" PointY="21.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="helpModel.help_TallerMecanico" Width="1.5" PointX="7.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="helpModel.help_Tipo_Acuerdo_Ficohsa" Width="1.5" PointX="5.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="helpModel.help_Tipo_ArchivoDeCarga" Width="1.5" PointX="7.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="helpModel.help_TipoAudiencia" Width="1.5" PointX="6" PointY="27.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="helpModel.help_TipoCombustible" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="helpModel.help_TipoConductor" Width="1.5" PointX="9.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="helpModel.help_TipoFotografia" Width="1.5" PointX="9.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="helpModel.help_TipoLicencia" Width="1.5" PointX="9.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="helpModel.help_TipoPersonaSiniestro" Width="1.5" PointX="11.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="helpModel.help_TipoSolicitanteInformeAjuste" Width="1.5" PointX="2.75" PointY="11.75" IsExpanded="true" />
+        <AssociationConnector Association="helpModel.FK_help_AjustadorAudiencia_help_Atenciones" ManuallyRouted="false" />
+        <AssociationConnector Association="helpModel.FK_help_AjustadorAudiencia_help_EntidadComunicativa" ManuallyRouted="false" />
+        <AssociationConnector Association="helpModel.FK_help_AjustadorAudiencia_help_TipoAudiencia" ManuallyRouted="false" />
+        <AssociationConnector Association="helpModel.FK_help_Atenciones_help_ProveedorDetalle" ManuallyRouted="false" />
+        <AssociationConnector Association="helpModel.FK_help_Atenciones_help_ServiciosTipos" ManuallyRouted="false" />
+        <AssociationConnector Association="helpModel.FK_help_Atenciones_Servicios_help_Atenciones" ManuallyRouted="false" />
+        <AssociationConnector Association="helpModel.FK_help_AtencionesFotografias_help_Atenciones" ManuallyRouted="false" />
+        <AssociationConnector Association="helpModel.FK_help_Atenciones_Servicios_help_ServiciosTipos" ManuallyRouted="false" />
+        <AssociationConnector Association="helpModel.FK_help_ProveedorDetalle_help_Proveedor" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

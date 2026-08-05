@@ -1,0 +1,30 @@
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.vspscc
+*.vssscc
+
+# Build output
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+
+# NuGet packages are restored from packages.config
+packages/
+*.nupkg
+
+# Logs and local artifacts
+*.log
+*.tmp
+*.cache
+TestResults/
+
+# OS metadata
+.DS_Store
+Thumbs.db
