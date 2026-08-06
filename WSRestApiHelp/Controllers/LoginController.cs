@@ -386,7 +386,7 @@ namespace WSRestApiHelp.Controllers
                 AtencionFoto.TipoFoto = File.ContentType;
                 AtencionFoto.RefUsuarioId = 1;
                 AtencionFoto.FechaRegistro = DateTime.Now;
-                AtencionFoto.RefAtencionId = IdAtencion;
+                AtencionFoto.help_Atenciones = db.help_Atenciones.Find(IdAtencion);
                 AtencionFoto.RefTipoId = 73;
                 AtencionFoto.help_Atenciones = atencion;
                 db.help_Atenciones_Fotografias.Add(AtencionFoto);

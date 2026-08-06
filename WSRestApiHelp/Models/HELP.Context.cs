@@ -50,6 +50,7 @@ namespace WSRestApiHelp.Models
         public virtual DbSet<help_TipoLicencia> help_TipoLicencia { get; set; }
         public virtual DbSet<help_TipoPersonaSiniestro> help_TipoPersonaSiniestro { get; set; }
         public virtual DbSet<help_TipoSolicitanteInformeAjuste> help_TipoSolicitanteInformeAjuste { get; set; }
+        public virtual DbSet<help_NotificacionesPush> help_NotificacionesPush { get; set; }
     
         [DbFunction("helpEntities", "help_F_Api_Catalogo_ServiciosXProveedor")]
         public virtual IQueryable<help_F_Api_Catalogo_ServiciosXProveedor_Result> help_F_Api_Catalogo_ServiciosXProveedor(Nullable<int> idProveedor, Nullable<int> idServicios, Nullable<int> idCategoria)

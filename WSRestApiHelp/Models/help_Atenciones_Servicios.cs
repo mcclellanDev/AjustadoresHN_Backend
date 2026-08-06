@@ -15,8 +15,6 @@ namespace WSRestApiHelp.Models
     public partial class help_Atenciones_Servicios
     {
         public int Id { get; set; }
-        public int RefAtencionId { get; set; }
-
         public System.DateTime FechaRegistro { get; set; }
         public int RefAgenteId { get; set; }
         public int Cantidad { get; set; }

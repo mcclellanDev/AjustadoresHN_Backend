@@ -15,7 +15,6 @@ namespace WSRestApiHelp.Models
     public partial class help_AjustadorAudiencia
     {
         public int Id { get; set; }
-        public int RefAtencionId { get; set; }
         public Nullable<int> RefProveedorAgenteId { get; set; }
         public Nullable<int> RefProveedorAgenteAbogadoId { get; set; }
         public Nullable<int> AgendarAudiencia { get; set; }

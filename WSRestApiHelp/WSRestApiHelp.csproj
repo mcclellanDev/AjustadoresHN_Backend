@@ -325,6 +325,7 @@
     <Compile Include="App_Start\SwaggerConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Clases\ApiData.cs" />
+    <Compile Include="Clases\OneSignalPushService.cs" />
     <Compile Include="Clases\SendToMail.cs" />
     <Compile Include="Clases\TokenGenerator.cs" />
     <Compile Include="Clases\TokenValidator.cs" />
@@ -488,6 +489,9 @@
       <DependentUpon>HELP.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\help_Log_GPS.cs">
+      <DependentUpon>HELP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\help_NotificacionesPush.cs">
       <DependentUpon>HELP.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\help_OtrosDanio_Ficohsa.cs">

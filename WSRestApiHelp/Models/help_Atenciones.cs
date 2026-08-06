@@ -110,6 +110,8 @@ namespace WSRestApiHelp.Models
         public Nullable<bool> CreaVehiculoSimilar { get; set; }
         public Nullable<int> RefAgenteAsignadoId { get; set; }
         public Nullable<int> Reembolso { get; set; }
+        public Nullable<int> esAppMovil { get; set; }
+        public string OrigenAtencion { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<help_AjustadorAudiencia> help_AjustadorAudiencia { get; set; }

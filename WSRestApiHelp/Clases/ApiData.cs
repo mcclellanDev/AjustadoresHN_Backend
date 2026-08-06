@@ -255,6 +255,18 @@ namespace WSRestApiHelp.Clases
             public Nullable<short> ProveedorAgenteId {  get; set; }
         }
 
+        public class PushOneSignalRequest
+        {
+            public Nullable<int> IdProveedorAgente { get; set; }
+            public string TokenPush { get; set; }
+            public string Titulo { get; set; }
+            public string Mensaje { get; set; }
+            public Nullable<int> IdAtencion { get; set; }
+            public string Type { get; set; }
+            public string Direction { get; set; }
+            public string DirectionData { get; set; }
+        }
+
         public class help_AjustadorAudienciaRequest
         {
             public int RefAtencionId { get; set; }

@@ -54,6 +54,7 @@ namespace WSRestApiHelp.Models
         public Nullable<bool> Activo { get; set; }
         public Nullable<int> Prioridad { get; set; }
         public Nullable<int> MaximoAtencionesDiarias { get; set; }
+        public Nullable<bool> CoberturaNacional { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<help_Atenciones> help_Atenciones { get; set; }

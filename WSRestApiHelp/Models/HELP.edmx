@@ -210,6 +210,8 @@
           <Property Name="CreaVehiculoSimilar" Type="bit" />
           <Property Name="RefAgenteAsignadoId" Type="int" />
           <Property Name="Reembolso" Type="int" />
+          <Property Name="esAppMovil" Type="int" />
+          <Property Name="OrigenAtencion" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="help_Atenciones_Fotografias">
           <Key>
@@ -390,6 +392,21 @@
           <Property Name="Tipo" Type="varchar" MaxLength="50" />
           <Property Name="Contador" Type="int" />
         </EntityType>
+        <EntityType Name="help_NotificacionesPush">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdProveedorAgente" Type="int" Nullable="false" />
+          <Property Name="IdAtencion" Type="int" Nullable="false" />
+          <Property Name="Evento" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Estado" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Intentos" Type="int" Nullable="false" />
+          <Property Name="FechaCreacion" Type="datetime2" Precision="0" Nullable="false" />
+          <Property Name="FechaUltimoIntento" Type="datetime2" Precision="0" />
+          <Property Name="FechaEnvio" Type="datetime2" Precision="0" />
+          <Property Name="UltimoError" Type="nvarchar" MaxLength="1000" />
+        </EntityType>
         <EntityType Name="help_OtrosDanio_Ficohsa">
           <Key>
             <PropertyRef Name="Id" />
@@ -478,6 +495,7 @@
           <Property Name="Activo" Type="bit" />
           <Property Name="Prioridad" Type="int" />
           <Property Name="MaximoAtencionesDiarias" Type="int" />
+          <Property Name="CoberturaNacional" Type="bit" />
         </EntityType>
         <EntityType Name="help_Servicios">
           <Key>
@@ -2658,6 +2676,7 @@
           <EntitySet Name="help_EntidadComunicativa" EntityType="Self.help_EntidadComunicativa" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="help_Genero" EntityType="Self.help_Genero" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="help_Log_GPS" EntityType="Self.help_Log_GPS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="help_NotificacionesPush" EntityType="Self.help_NotificacionesPush" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="help_OtrosDanio_Ficohsa" EntityType="Self.help_OtrosDanio_Ficohsa" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="help_Proveedor" EntityType="Self.help_Proveedor" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="help_ProveedorAgentes" EntityType="Self.help_ProveedorAgentes" Schema="dbo" store:Type="Tables" />
@@ -3869,6 +3888,8 @@
           <NavigationProperty Name="help_Servicios" Relationship="Self.FK_help_Atenciones_help_ServiciosTipos" FromRole="help_Atenciones" ToRole="help_Servicios" />
           <NavigationProperty Name="help_Atenciones_Servicios" Relationship="Self.FK_help_Atenciones_Servicios_help_Atenciones" FromRole="help_Atenciones" ToRole="help_Atenciones_Servicios" />
           <NavigationProperty Name="help_Atenciones_Fotografias" Relationship="Self.FK_help_AtencionesFotografias_help_Atenciones" FromRole="help_Atenciones" ToRole="help_Atenciones_Fotografias" />
+          <Property Name="esAppMovil" Type="Int32" />
+          <Property Name="OrigenAtencion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="help_Atenciones_Fotografias">
           <Key>
@@ -4140,6 +4161,7 @@
           <Property Name="MaximoAtencionesDiarias" Type="Int32" />
           <NavigationProperty Name="help_Atenciones" Relationship="Self.FK_help_Atenciones_help_ProveedorDetalle" FromRole="help_ProveedorAgentes" ToRole="help_Atenciones" />
           <NavigationProperty Name="help_Proveedor" Relationship="Self.FK_help_ProveedorDetalle_help_Proveedor" FromRole="help_ProveedorAgentes" ToRole="help_Proveedor" />
+          <Property Name="CoberturaNacional" Type="Boolean" />
         </EntityType>
         <EntityType Name="help_Servicios">
           <Key>
@@ -5078,13 +5100,13 @@
             <Parameter Name="IdCliente" Mode="InOut" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="help_F_Api_Listar_Mis_Atenciones_Activas_Cliente" IsComposable="true" ReturnType="Collection(helpModel.help_F_Api_Listar_Mis_Atenciones_Activas_Cliente_Result)">
-            <Parameter Name="Identificacion" Mode="In" Type="String" />
+          <Parameter Name="Identificacion" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="help_F_ObtenerRazonesAsignacion" IsComposable="true" ReturnType="Collection(helpModel.help_F_ObtenerRazonesAsignacion_Result)">
-            <Parameter Name="Count" Mode="In" Type="Int32" />
+          <Parameter Name="Count" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="help_GetInformacion_Cliente" IsComposable="true" ReturnType="Collection(helpModel.help_GetInformacion_Cliente_Result)">
-            <Parameter Name="IdCliente" Mode="In" Type="Int32" />
+          <Parameter Name="IdCliente" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="help_P_API_Valida_Danio_Por_Atencion">
             <Parameter Name="idAtencion" Mode="In" Type="Int32" />
@@ -5100,6 +5122,7 @@
             <Parameter Name="Token" Mode="InOut" Type="String" />
             <Parameter Name="Key" Mode="InOut" Type="String" />
           </FunctionImport>
+          <EntitySet Name="help_NotificacionesPush" EntityType="helpModel.help_NotificacionesPush" />
         </EntityContainer>
         <ComplexType Name="help_SP_GetInformacion_Correo_AperturaSiniestro_Result">
           <Property Type="Int32" Name="IdExpediente" Nullable="false" />
@@ -5436,6 +5459,21 @@
           <Property Type="String" Name="FotografiaVehiculo" Nullable="true" />
           <Property Type="Int32" Name="IdAtencionActual" Nullable="false" />
         </ComplexType>
+        <EntityType Name="help_NotificacionesPush">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdProveedorAgente" Type="Int32" Nullable="false" />
+          <Property Name="IdAtencion" Type="Int32" Nullable="false" />
+          <Property Name="Evento" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Estado" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Intentos" Type="Int32" Nullable="false" />
+          <Property Name="FechaCreacion" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="FechaUltimoIntento" Type="DateTime" Precision="0" />
+          <Property Name="FechaEnvio" Type="DateTime" Precision="0" />
+          <Property Name="UltimoError" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -5554,6 +5592,8 @@
           <EntitySetMapping Name="help_Atenciones">
             <EntityTypeMapping TypeName="helpModel.help_Atenciones">
               <MappingFragment StoreEntitySet="help_Atenciones">
+                <ScalarProperty Name="OrigenAtencion" ColumnName="OrigenAtencion" />
+                <ScalarProperty Name="esAppMovil" ColumnName="esAppMovil" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Poliza" ColumnName="Poliza" />
                 <ScalarProperty Name="Certificado" ColumnName="Certificado" />
@@ -5882,6 +5922,7 @@
           <EntitySetMapping Name="help_ProveedorAgentes">
             <EntityTypeMapping TypeName="helpModel.help_ProveedorAgentes">
               <MappingFragment StoreEntitySet="help_ProveedorAgentes">
+                <ScalarProperty Name="CoberturaNacional" ColumnName="CoberturaNacional" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="NombreAgente" ColumnName="NombreAgente" />
                 <ScalarProperty Name="MovilServicio" ColumnName="MovilServicio" />
@@ -7585,6 +7626,22 @@
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="help_P_API_Valida_Danio_Por_Atencion" FunctionName="helpModel.Store.help_P_API_Valida_Danio_Por_Atencion" />
           <FunctionImportMapping FunctionImportName="help_SP_Crear_Sesion_Cliente" FunctionName="helpModel.Store.help_SP_Crear_Sesion_Cliente" />
+          <EntitySetMapping Name="help_NotificacionesPush">
+            <EntityTypeMapping TypeName="helpModel.help_NotificacionesPush">
+              <MappingFragment StoreEntitySet="help_NotificacionesPush">
+                <ScalarProperty Name="UltimoError" ColumnName="UltimoError" />
+                <ScalarProperty Name="FechaEnvio" ColumnName="FechaEnvio" />
+                <ScalarProperty Name="FechaUltimoIntento" ColumnName="FechaUltimoIntento" />
+                <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+                <ScalarProperty Name="Intentos" ColumnName="Intentos" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="Evento" ColumnName="Evento" />
+                <ScalarProperty Name="IdAtencion" ColumnName="IdAtencion" />
+                <ScalarProperty Name="IdProveedorAgente" ColumnName="IdProveedorAgente" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

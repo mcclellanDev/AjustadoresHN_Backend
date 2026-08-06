@@ -15,7 +15,6 @@ namespace WSRestApiHelp.Models
     public partial class help_Atenciones_Fotografias
     {
         public int Id { get; set; }
-        public int RefAtencionId { get; set; }
         public byte[] Fotografia { get; set; }
         public int RefUsuarioId { get; set; }
         public System.DateTime FechaRegistro { get; set; }

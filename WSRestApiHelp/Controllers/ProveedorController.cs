@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data.Entity;
 using System.Data.Entity.Core.Objects;
+using System.Data.Entity.Infrastructure;
 using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Globalization;
@@ -277,6 +278,7 @@ namespace WSRestApiHelp.Controllers
 
                 if (misAtenciones.Count() > 0)
                 {
+                    EnviarNotificacionesAtencionesNuevas(IdProveedorAgente, misAtenciones);
 
                     misAtenciones.ForEach(item => {
                         Data.Add(new
@@ -326,6 +328,168 @@ namespace WSRestApiHelp.Controllers
                 }
             }
 
+        }
+
+        private void EnviarNotificacionesAtencionesNuevas(
+            int idProveedorAgente,
+            IEnumerable<help_F_Api_Listar_Mis_Atenciones_Activas_Result> atenciones)
+        {
+            try
+            {
+                foreach (var atencion in atenciones.Where(x => x.LogEstado == 1))
+                {
+                    var mensaje = String.Format(
+                        "Le ha sido asignada la atención {0} para {1} a nombre de {2}",
+                        atencion.Id,
+                        atencion.LbTipoServicio,
+                        atencion.Cliente);
+
+                    EnviarNotificacionUnaVez(
+                        atencion.Id,
+                        idProveedorAgente,
+                        "nueva_atencion",
+                        "Nueva atención asignada",
+                        mensaje,
+                        new Dictionary<string, object>
+                        {
+                            { "event", "nueva_atencion" },
+                            { "idAtencion", atencion.Id },
+                            { "servicio", atencion.LbTipoServicio },
+                            { "cliente", atencion.Cliente }
+                        });
+                }
+            }
+            catch (Exception ex)
+            {
+                Trace.TraceWarning("Error al preparar pushes de atenciones nuevas: {0}", ex.Message);
+            }
+        }
+
+        private void EnviarNotificacionUnaVez(
+            int idAtencion,
+            int idProveedorAgente,
+            string evento,
+            string titulo,
+            string mensaje,
+            Dictionary<string, object> data)
+        {
+            try
+            {
+                using (var notificationDb = new helpEntities())
+                {
+                    var agente = notificationDb.help_ProveedorAgentes.Find(idProveedorAgente);
+                    if (agente == null || String.IsNullOrWhiteSpace(agente.TokenPush))
+                    {
+                        return;
+                    }
+
+                    var registro = new help_NotificacionesPush
+                    {
+                        IdProveedorAgente = idProveedorAgente,
+                        IdAtencion = idAtencion,
+                        Evento = evento,
+                        Estado = "Pending",
+                        Intentos = 1,
+                        FechaCreacion = DateTime.Now,
+                        FechaUltimoIntento = DateTime.Now
+                    };
+
+                    notificationDb.help_NotificacionesPush.Add(registro);
+
+                    try
+                    {
+                        notificationDb.SaveChanges();
+                    }
+                    catch (DbUpdateException ex)
+                    {
+                        if (EsRegistroNotificacionDuplicado(ex))
+                        {
+                            return;
+                        }
+
+                        Trace.TraceWarning(
+                            "No se pudo registrar la notificación {0} de la atención {1}: {2}",
+                            evento,
+                            idAtencion,
+                            ex.GetBaseException().Message);
+                        return;
+                    }
+
+                    try
+                    {
+                        var pushService = new OneSignalPushService();
+                        var resultado = pushService.SendToPlayer(
+                            agente.TokenPush,
+                            titulo,
+                            mensaje,
+                            data);
+
+                        if (resultado.Success)
+                        {
+                            registro.Estado = "Sent";
+                            registro.FechaEnvio = DateTime.Now;
+                            registro.UltimoError = null;
+                        }
+                        else
+                        {
+                            registro.Estado = "Failed";
+                            registro.UltimoError = LimitarTexto(resultado.Body, 1000);
+                            Trace.TraceWarning(
+                                "OneSignal {0} de la atención {1} no enviada. StatusCode: {2}",
+                                evento,
+                                idAtencion,
+                                resultado.StatusCode);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        registro.Estado = "Failed";
+                        registro.UltimoError = LimitarTexto(ex.Message, 1000);
+                        Trace.TraceWarning(
+                            "Error al enviar push {0} de la atención {1}: {2}",
+                            evento,
+                            idAtencion,
+                            ex.Message);
+                    }
+
+                    try
+                    {
+                        notificationDb.SaveChanges();
+                    }
+                    catch (Exception ex)
+                    {
+                        Trace.TraceWarning(
+                            "No se pudo actualizar el estado de la notificación {0}: {1}",
+                            registro.Id,
+                            ex.GetBaseException().Message);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Trace.TraceWarning(
+                    "Error al preparar push {0} de la atención {1}: {2}",
+                    evento,
+                    idAtencion,
+                    ex.Message);
+            }
+        }
+
+        private static bool EsRegistroNotificacionDuplicado(DbUpdateException ex)
+        {
+            var sqlException = ex.GetBaseException() as SqlException;
+            return sqlException != null &&
+                   (sqlException.Number == 2601 || sqlException.Number == 2627);
+        }
+
+        private static string LimitarTexto(string texto, int longitudMaxima)
+        {
+            if (String.IsNullOrEmpty(texto) || texto.Length <= longitudMaxima)
+            {
+                return texto;
+            }
+
+            return texto.Substring(0, longitudMaxima);
         }
 
         [HttpPost]
@@ -401,6 +565,55 @@ namespace WSRestApiHelp.Controllers
                 SendToMail sendToMail = new SendToMail();
 
                 sendToMail.Email_NotificacionAccidenteConAudiencia(IdAtencion, idAgente, Fecha, Hora);
+
+                if (AgendarAudiencia == 1)
+                {
+                    if (idAgente > 0)
+                    {
+                        var abogadoNombre = db.help_ProveedorAgentes
+                            .Where(x => x.Id == RefProveedorAgenteAbogadoId)
+                            .Select(x => x.NombreAgente)
+                            .FirstOrDefault();
+
+                        if (String.IsNullOrWhiteSpace(abogadoNombre))
+                        {
+                            abogadoNombre = "el abogado asignado";
+                        }
+
+                        var fechaFormateada = dateTime.ToString(
+                            "dddd, d 'de' MMMM 'de' yyyy 'a las' h:mm tt",
+                            new CultureInfo("es-HN"));
+
+                        var mensajePush = String.Format(
+                            "La audiencia de la atención {0} fue agendada para {1}, con fecha {2}",
+                            IdAtencion,
+                            abogadoNombre,
+                            fechaFormateada);
+
+                        EnviarNotificacionUnaVez(
+                            IdAtencion,
+                            idAgente,
+                            "audiencia_agendada",
+                            "Audiencia agendada",
+                            mensajePush,
+                            new Dictionary<string, object>
+                            {
+                                { "event", "audiencia_agendada" },
+                                { "idAtencion", IdAtencion },
+                                { "fecha", Fecha },
+                                { "hora", Hora },
+                                { "lugar", Lugar },
+                                { "abogadoNombre", abogadoNombre }
+                            });
+                    }
+                    else
+                    {
+                        Trace.TraceWarning(
+                            "No se recibió agente válido para notificar la audiencia {0} de la atención {1}.",
+                            IdAjustadorAudiencia,
+                            IdAtencion);
+                    }
+                }
                 // this.db.help_P_Api_ActualizarIndexFront(new int?(Id), new int?(indexFront));
                 this.Data.Add((object)new
                 {
@@ -1487,7 +1700,7 @@ namespace WSRestApiHelp.Controllers
                     AtencionFoto.TipoFoto = "image/png";
                     AtencionFoto.RefUsuarioId = 1;
                     AtencionFoto.FechaRegistro = DateTime.Now;
-                    AtencionFoto.RefAtencionId = item.IdAtencion;
+                    AtencionFoto.help_Atenciones = db.help_Atenciones.Find(item.IdAtencion);
                     AtencionFoto.RefTipoId = item.RefTipoFotoId;
                     AtencionFoto.Decripcion = item.Descripcion;
                     AtencionFoto.help_Atenciones = atencion;
@@ -1542,7 +1755,7 @@ namespace WSRestApiHelp.Controllers
                     AtencionFoto.TipoFoto = "image/png";
                     AtencionFoto.RefUsuarioId = 1;
                     AtencionFoto.FechaRegistro = DateTime.Now;
-                    AtencionFoto.RefAtencionId = item.IdAtencion;
+                    AtencionFoto.help_Atenciones = db.help_Atenciones.Find(item.IdAtencion);
                     AtencionFoto.RefTipoId = item.RefTipoFotoId;
                     AtencionFoto.NombreFirmante = item.NombreFirmante;
                     AtencionFoto.FechaFirma = item.FechaFirma;
@@ -1788,7 +2001,7 @@ namespace WSRestApiHelp.Controllers
                         AtencionFoto.TipoFoto = ".MP4";
                         AtencionFoto.RefUsuarioId = 1;
                         AtencionFoto.FechaRegistro = DateTime.Now;
-                        AtencionFoto.RefAtencionId = IdAtencion;
+                        AtencionFoto.help_Atenciones = db.help_Atenciones.Find(IdAtencion);
                         AtencionFoto.RefTipoId = 73;
                         db.help_Atenciones_Fotografias.Add(AtencionFoto);
                         db.SaveChanges();
@@ -1823,7 +2036,7 @@ namespace WSRestApiHelp.Controllers
                 if (IdAtencion == 0)
                     throw new HttpResponseException(HttpStatusCode.BadRequest);
 
-                var datavideo = db.help_Atenciones_Fotografias.Where(x => x.RefAtencionId == IdAtencion && x.RefTipoId == 73).ToList();
+                var datavideo = db.help_Atenciones_Fotografias.Where(x => x.help_Atenciones.Id == IdAtencion && x.RefTipoId == 73).ToList();
 
                 if (datavideo.Count() > 0)
                 {

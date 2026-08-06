@@ -37,6 +37,7 @@
         <AssociationConnector Association="helpModel.FK_help_AtencionesFotografias_help_Atenciones" ManuallyRouted="false" />
         <AssociationConnector Association="helpModel.FK_help_Atenciones_Servicios_help_ServiciosTipos" ManuallyRouted="false" />
         <AssociationConnector Association="helpModel.FK_help_ProveedorDetalle_help_Proveedor" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="helpModel.help_NotificacionesPush" Width="1.5" PointX="12.375" PointY="3.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
