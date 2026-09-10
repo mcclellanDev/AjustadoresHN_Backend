@@ -17,7 +17,6 @@ using System.Text.Json;
 
 namespace WSRestApiHelp.Controllers
 {
-    [EnableCors(origins: "*", headers: "*", methods: "*")]
     [Authorize]
     [RoutePrefix("api/FicohsaHN")]
     public class FicohsaHNController : ApiController

@@ -30,7 +30,6 @@ using static WSRestApiHelp.Clases.ApiData;
 
 namespace WSRestApiHelp.Controllers
 {
-    [EnableCors(origins: "*", headers: "*", methods: "*")]
     [Authorize]
     [RoutePrefix("api/Proveedor")]
     public class ProveedorController : ApiController

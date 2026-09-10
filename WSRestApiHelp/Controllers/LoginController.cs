@@ -20,8 +20,7 @@ using static WSRestApiHelp.Clases.ApiData;
 
 namespace WSRestApiHelp.Controllers
 {
-    [EnableCors(origins: "*", headers: "*", methods: "*")]
-    [AllowAnonymous]
+    [Authorize]
     [RoutePrefix("api/Login")]
     
     public class LoginController : ApiController
@@ -31,6 +30,7 @@ namespace WSRestApiHelp.Controllers
 
         public List<object> Data = new List<object>();
 
+        [AllowAnonymous]
         [HttpPost]
         [Route("Autenticacion")] // /api/Login/Autenticacion/
         public IHttpActionResult Autenticacion(ApiData.LoginDataRequest loginData)
@@ -132,6 +132,7 @@ namespace WSRestApiHelp.Controllers
             }
         }
 
+        [AllowAnonymous]
         [HttpPost]
         [Route("GetAppVersion")] // /api/Login/RecuperarPassword/
         public IHttpActionResult ObtenerVersionApp(string plataforma)
@@ -176,6 +177,7 @@ namespace WSRestApiHelp.Controllers
         }
 
 
+        [AllowAnonymous]
             [HttpPost]
         [Route("RecuperarPassword")] // /api/Login/RecuperarPassword/
         public IHttpActionResult RecuperarPassword(string user) {
@@ -230,6 +232,7 @@ namespace WSRestApiHelp.Controllers
             }
         }
 
+        [AllowAnonymous]
         [HttpPost]
         [Route("ValidarClave")]
         public IHttpActionResult ValidarClave(string clave,string user) {
@@ -270,6 +273,7 @@ namespace WSRestApiHelp.Controllers
            
         }
 
+        [AllowAnonymous]
         [HttpPost]
         [Route("ActualizarPassword")]
         public IHttpActionResult ActualizarPassword(string user,string password) {

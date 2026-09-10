@@ -8,7 +8,6 @@ using System.Web.Http.Cors;
 
 namespace WSRestApiHelp.Controllers
 {
-    [EnableCors(origins: "*", headers: "*", methods: "*")]
     [Authorize]
     [RoutePrefix("api/FicohsaGT")]
     public class FicohsaGTController : ApiController

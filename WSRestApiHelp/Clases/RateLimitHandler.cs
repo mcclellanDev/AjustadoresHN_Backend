@@ -11,28 +11,55 @@ using System.Threading.Tasks;
 namespace WSRestApiHelp.Clases
 {
     /// <summary>
-    /// Rate limiting en memoria (ventana fija por minuto) para login y GETs sensibles del inventario ApiProtection.
+    /// Rate limiting en memoria (ventana fija por minuto) para abuso de auth y endpoints sensibles ApiProtection.
+    /// Defensa por nodo IIS; complementar con gateway/WAF para límite global.
     /// </summary>
     public class RateLimitHandler : DelegatingHandler
     {
         private static readonly ConcurrentDictionary<string, WindowCounter> Counters =
             new ConcurrentDictionary<string, WindowCounter>(StringComparer.OrdinalIgnoreCase);
 
-        private static readonly string[] LoginPaths =
+        /// <summary>Login y recuperación de clave (cualquier método).</summary>
+        private static readonly string[] AuthAbusePaths =
         {
-            "/api/login/autenticacion"
+            "/api/login/autenticacion",
+            "/api/login/recuperarpassword",
+            "/api/login/validarclave",
+            "/api/login/actualizarpassword",
+            "/api/cliente/autenticacion",
+            "/api/cliente/actualizarpasswordcliente"
         };
 
-        private static readonly string[] SensitiveGetPaths =
+        /// <summary>Lectura / enumeración de PII o listados (GET o POST).</summary>
+        private static readonly string[] SensitivePaths =
         {
             "/api/proveedor/obtenermisatenciones",
             "/api/proveedor/obtenermisatencionesactivas",
+            "/api/proveedor/buscarmisatenciones",
             "/api/proveedor/obtenerdatosexpedientes",
             "/api/proveedor/obtenerdatosdeatencion",
             "/api/proveedor/obtenercachecliente",
             "/api/proveedor/vectorgpsatencion",
             "/api/proveedor/listadoajustadores",
-            "/api/proveedor/buscarmisatenciones"
+            "/api/proveedor/listadoabogados",
+            "/api/cliente/obtenermisatencionesactivas",
+            "/api/cliente/obtenermisatencionesactivascliente",
+            "/api/ficohsahn/consultar_asegurado_hn",
+            "/api/ficohsahn/validardatosreclamobpm",
+            "/api/ficohsahn/consultar_siniestro_requisitos_hn",
+            "/api/ficohsahn/consultar_estado_sinietro",
+            "/api/ficohsahn/consulta_causas_hn",
+            "/api/ficohsagt/consultar_estado_sinietro"
+        };
+
+        /// <summary>Escrituras costosas / carga BPM (límite aparte, más bajo).</summary>
+        private static readonly string[] HeavyWritePaths =
+        {
+            "/api/ficohsahn/carga_reclamo_sinau_bpm_fico",
+            "/api/ficohsahn/carga_reclamo_sinau_bpm_ficoqa",
+            "/api/ficohsahn/subir_archivos_wsfh",
+            "/api/login/enviarnotificacionaccidente",
+            "/api/login/subirvideo"
         };
 
         protected override Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
@@ -51,15 +78,20 @@ namespace WSRestApiHelp.Clases
             int limit;
             string bucket;
 
-            if (MatchesAny(path, LoginPaths))
+            if (MatchesAny(path, AuthAbusePaths))
             {
                 limit = ReadInt("RateLimit_Login_PerMinute", 20);
-                bucket = "login";
+                bucket = "auth";
             }
-            else if (request.Method == HttpMethod.Get && MatchesAny(path, SensitiveGetPaths))
+            else if (MatchesAny(path, HeavyWritePaths))
+            {
+                limit = ReadInt("RateLimit_HeavyWrite_PerMinute", 15);
+                bucket = "heavy-write";
+            }
+            else if (MatchesAny(path, SensitivePaths))
             {
                 limit = ReadInt("RateLimit_SensitiveGet_PerMinute", 60);
-                bucket = "sensitive-get";
+                bucket = "sensitive";
             }
             else
             {
@@ -80,7 +112,9 @@ namespace WSRestApiHelp.Clases
                 response.ReasonPhrase = "Too Many Requests";
                 response.Headers.TryAddWithoutValidation("Retry-After", "60");
                 response.Content = new StringContent(
-                    "{\"Message\":\"Demasiadas solicitudes. Intente nuevamente en un minuto.\"}");
+                    "{\"Message\":\"Demasiadas solicitudes. Intente nuevamente en un minuto.\"}",
+                    System.Text.Encoding.UTF8,
+                    "application/json");
                 return Task.FromResult(response);
             }
 

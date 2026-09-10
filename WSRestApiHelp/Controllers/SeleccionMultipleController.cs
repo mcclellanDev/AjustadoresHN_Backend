@@ -10,7 +10,6 @@ using WSRestApiHelp.Models;
 namespace WSRestApiHelp.Controllers
 {
 
-    [EnableCors(origins: "*", headers: "*", methods: "*")]
     [Authorize]
     [RoutePrefix("api/SeleccionMultiple")]
     public class SeleccionMultipleController : ApiController

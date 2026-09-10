@@ -15,8 +15,7 @@ using WSRestApiHelp.Models;
 
 namespace WSRestApiHelp.Controllers
 {
-    [EnableCors(origins: "*", headers: "*", methods: "*")]
-    [AllowAnonymous]
+    [Authorize]
     [RoutePrefix("api/Cliente")]
     public class ClienteController : ApiController
     {
@@ -24,6 +23,7 @@ namespace WSRestApiHelp.Controllers
 
         public List<object> Data = new List<object>();
 
+        [AllowAnonymous]
         [HttpPost]
         [Route("Autenticacion")] // /api/Cliente/Autenticacion/
         public IHttpActionResult Autenticacion(ApiData.LoginClienteDataRequest loginData)
@@ -68,7 +68,6 @@ namespace WSRestApiHelp.Controllers
                             NumeroMovil = clienteInfo.NumeroMovil,
                             Fotografia = clienteInfo.Fotografia,
                             Usuario = clienteInfo.Usuario,
-                            Contrasena = clienteInfo.Contrasena,
                             FechaRegistro = clienteInfo.FechaRegistro,
                             Estado = clienteInfo.Estado,
                             Poliza = clienteInfo.Poliza,

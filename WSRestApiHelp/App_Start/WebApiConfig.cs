@@ -1,6 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+using System.Configuration;
 using System.Web.Http;
 using System.Web.Http.Cors;
 using WSRestApiHelp.Clases;
@@ -11,15 +10,19 @@ namespace WSRestApiHelp
     {
         public static void Register(HttpConfiguration config)
         {
-            // Configuración y servicios de API web
-            //var corsAttr = new EnableCorsAttribute("*", "*", "*");
-            EnableCorsAttribute corsAttr = new EnableCorsAttribute(
-                origins: "*",     // Reemplaza con los orígenes permitidos
-                headers: "*",     // Reemplaza con los encabezados permitidos
-                methods: "*"      // Reemplaza con los métodos permitidos
-            );
+            // Orígenes desde Web.config (Cors_AllowedOrigins). Evitar "*" en producción.
+            string origins = ConfigurationManager.AppSettings["Cors_AllowedOrigins"];
+            if (string.IsNullOrWhiteSpace(origins))
+            {
+                origins = "https://testportal.porsalud.net,https://portal.porsalud.net";
+            }
+
+            var corsAttr = new EnableCorsAttribute(
+                origins: origins.Trim(),
+                headers: "*",
+                methods: "*");
             config.EnableCors(corsAttr);
-            // Rutas de API web
+
             config.MapHttpAttributeRoutes();
 
             // Orden: rate limit primero, luego JWT.
