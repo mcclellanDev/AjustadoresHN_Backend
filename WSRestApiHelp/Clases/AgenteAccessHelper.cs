@@ -106,17 +106,27 @@ namespace WSRestApiHelp.Clases
                 return new BadRequestErrorMessageResult("IdAtencion invalido.", controller);
             }
 
-            var atencion = db.help_Atenciones
-                .Where(a => a.Id == idAtencion)
-                .Select(a => new { a.Id, a.RefProveedorId })
-                .FirstOrDefault();
+            // Columna real en BD: RefProveedorId (mapeo EF del modelo generado no siempre la expone).
+            int? ownerAgenteId = db.Database.SqlQuery<int?>(
+                "SELECT RefProveedorId FROM dbo.help_Atenciones WITH (NOLOCK) WHERE Id = @p0",
+                idAtencion).FirstOrDefault();
 
-            if (atencion == null)
+            if (!ownerAgenteId.HasValue)
             {
-                return new BadRequestErrorMessageResult("Atencion no encontrada.", controller);
+                // Distinguir "no existe" vs "sin agente asignado"
+                bool existe = db.help_Atenciones.Any(a => a.Id == idAtencion);
+                if (!existe)
+                {
+                    return new BadRequestErrorMessageResult("Atencion no encontrada.", controller);
+                }
+
+                return new NegotiatedContentResult<object>(
+                    HttpStatusCode.Forbidden,
+                    new { Message = "No autorizado para acceder a esta atencion." },
+                    controller);
             }
 
-            if (!atencion.RefProveedorId.HasValue || atencion.RefProveedorId.Value != authenticatedProveedorAgenteId)
+            if (ownerAgenteId.Value != authenticatedProveedorAgenteId)
             {
                 return new NegotiatedContentResult<object>(
                     HttpStatusCode.Forbidden,
