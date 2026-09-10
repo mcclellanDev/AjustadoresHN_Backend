@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>Auditoría ApiProtection — WSRestApiHelp</title>
+  <style>
+    @page { margin: 1.8cm 1.6cm; size: A4; }
+    * { box-sizing: border-box; }
+    body {
+      font-family: "Segoe UI", Calibri, Arial, sans-serif;
+      color: #1a1a1a;
+      font-size: 10.5pt;
+      line-height: 1.45;
+      margin: 0;
+      padding: 0;
+    }
+    h1 { font-size: 18pt; margin: 0 0 6px 0; color: #0f172a; }
+    h2 { font-size: 13pt; margin: 22px 0 8px 0; color: #0f172a; border-bottom: 1px solid #cbd5e1; padding-bottom: 4px; }
+    h3 { font-size: 11pt; margin: 14px 0 6px 0; color: #1e293b; }
+    .meta { color: #475569; font-size: 9.5pt; margin-bottom: 16px; }
+    .meta div { margin: 2px 0; }
+    .kpis { display: flex; gap: 10px; margin: 14px 0 18px 0; }
+    .kpi {
+      flex: 1;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      padding: 10px 12px;
+      background: #f8fafc;
+    }
+    .kpi .v { font-size: 16pt; font-weight: 700; color: #0f172a; }
+    .kpi .l { font-size: 8.5pt; color: #64748b; text-transform: uppercase; letter-spacing: .03em; }
+    .kpi.danger .v { color: #b91c1c; }
+    .kpi.warning .v { color: #b45309; }
+    .callout {
+      border-left: 4px solid #b91c1c;
+      background: #fef2f2;
+      padding: 10px 12px;
+      margin: 12px 0 18px 0;
+      border-radius: 0 4px 4px 0;
+    }
+    .callout.info {
+      border-left-color: #0369a1;
+      background: #f0f9ff;
+    }
+    .callout strong { display: block; margin-bottom: 4px; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 8.5pt;
+      margin: 8px 0 14px 0;
+    }
+    th, td {
+      border: 1px solid #cbd5e1;
+      padding: 5px 6px;
+      vertical-align: top;
+      text-align: left;
+    }
+    th { background: #e2e8f0; font-weight: 600; color: #0f172a; }
+    tr.critical td { background: #fef2f2; }
+    tr.high td { background: #fffbeb; }
+    .badge {
+      display: inline-block;
+      padding: 1px 6px;
+      border-radius: 3px;
+      font-size: 8pt;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    .badge.critical { background: #fecaca; color: #7f1d1d; }
+    .badge.high { background: #fde68a; color: #78350f; }
+    .badge.medium { background: #bae6fd; color: #0c4a6e; }
+    .badge.low { background: #e2e8f0; color: #334155; }
+    ul { margin: 6px 0 10px 18px; padding: 0; }
+    li { margin: 3px 0; }
+    .footer {
+      margin-top: 28px;
+      padding-top: 10px;
+      border-top: 1px solid #cbd5e1;
+      font-size: 8.5pt;
+      color: #64748b;
+    }
+    .section-note { color: #475569; font-size: 9.5pt; margin-bottom: 8px; }
+    .grid2 { display: flex; gap: 12px; }
+    .box {
+      flex: 1;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      padding: 10px 12px;
+      background: #fff;
+    }
+    .box h3 { margin-top: 0; }
+    code { font-family: Consolas, "Courier New", monospace; font-size: 8.5pt; background: #f1f5f9; padding: 0 3px; }
+  </style>
+</head>
+<body>
+
+  <h1>Auditoría ApiProtection — WSRestApiHelp</h1>
+  <div class="meta">
+    <div><strong>Documento de respuesta formal a auditoría de conectividad y seguridad de accesos</strong></div>
+    <div>API en alcance: <code>/outer/wsrestapihelp</code> (WSRestApiHelp / Ajustadores HN Backend)</div>
+    <div>Fuente de inventario: <code>ApiProtection_Endpoints.csv</code> · Origin: API Discovery · Status: PASSIVE</div>
+    <div>Cruce técnico: repositorio <code>AjustadoresHN_Backend</code> (controllers .NET Framework 4.8)</div>
+    <div>Fecha de análisis: 10 de septiembre de 2026</div>
+    <div>Alcance: se excluyen deliberadamente WebRestApi360, VTS LeadLanding, CAM ValidaDocumentos y patrones wildcard genéricos</div>
+  </div>
+
+  <div class="kpis">
+    <div class="kpi"><div class="v">19</div><div class="l">Endpoints HELP en CSV</div></div>
+    <div class="kpi danger"><div class="v">5</div><div class="l">Riesgo crítico</div></div>
+    <div class="kpi warning"><div class="v">7</div><div class="l">Riesgo alto</div></div>
+    <div class="kpi"><div class="v">58</div><div class="l">Filas totales CSV (todas las APIs)</div></div>
+  </div>
+
+  <div class="callout">
+    <strong>Hallazgo principal (código de aplicación)</strong>
+    En <code>ProveedorController</code> el atributo <code>[Authorize]</code> está comentado (<code>//[Authorize]</code>).
+    Los endpoints GET descubiertos como <em>UNLIMITED</em> (listados de atenciones, expediente, GPS, cache de cliente, etc.)
+    concentran el mayor riesgo del inventario: superficie descubierta sin rate limit observado en perímetro,
+    más datos sensibles, más ausencia de autenticación a nivel de controlador.
+  </div>
+
+  <h2>1. Interpretación del inventario ApiProtection</h2>
+  <p>
+    Las filas del CSV aparecen con estado <strong>PASSIVE</strong> y métodos marcados como
+    <strong>* (UNLIMITED)</strong>. En el contexto de discovery/protección de API, esto indica que
+    sobre esos paths no se observaron controles activos de protección (rate limiting, bot management
+    o reglas equivalentes) en el perímetro evaluado.
+  </p>
+  <p>
+    <strong>Importante:</strong> “PASSIVE / UNLIMITED” no significa por sí solo que el endpoint esté
+    diseñado de forma insegura, pero sí que la superficie fue descubierta y no presenta límites
+    visibles en la capa de protección externa. El riesgo real se confirma al cruzar ese inventario
+    con la autenticación y autorización implementadas en el código.
+  </p>
+
+  <h2>2. APIs descartadas en este análisis</h2>
+  <p class="section-note">El documento mezcló varias APIs. Para esta respuesta formal solo aplica WSRestApiHelp.</p>
+  <table>
+    <thead>
+      <tr>
+        <th>API mezclada en el CSV</th>
+        <th>Endpoints (aprox.)</th>
+        <th>Motivo de exclusión</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>WebRestApi360</td><td>35</td><td>Citas, clínicas, sesión, pagos — fuera de alcance HELP</td></tr>
+      <tr><td>VTS LeadLanding</td><td>2</td><td>Landing / leads — otra aplicación</td></tr>
+      <tr><td>CAM ValidaDocumentos</td><td>1</td><td>Validación de documentos — otro dominio</td></tr>
+      <tr><td>Wildcard <code>/outer/{_1}/api/{_3}/{_4}</code></td><td>1</td><td>Patrón genérico de discovery, no endpoint HELP específico</td></tr>
+    </tbody>
+  </table>
+
+  <h2>3. Inventario HELP: CSV × código</h2>
+  <p class="section-note">
+    Sensibilidad y riesgo asignados por cruce con controllers actuales. Distribución:
+    crítico 5 · alto 7 · medio 4 · bajo 3.
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Endpoint</th>
+        <th>Methods (CSV)</th>
+        <th>Auth en código</th>
+        <th>Datos</th>
+        <th>Riesgo</th>
+        <th>Nota</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>/api/login/autenticacion</td>
+        <td>OPTIONS (scan) · POST real</td>
+        <td>AllowAnonymous (esperado)</td>
+        <td>Credenciales</td>
+        <td><span class="badge medium">medium</span></td>
+        <td>Login público; requiere rate limit / lockout (scan: UNLIMITED).</td>
+      </tr>
+      <tr>
+        <td>/api/login/getappversion</td>
+        <td>OPTIONS (scan) · GET real</td>
+        <td>AllowAnonymous</td>
+        <td>Baja</td>
+        <td><span class="badge low">low</span></td>
+        <td>Metadato de versión; OPTIONS sin límite observado.</td>
+      </tr>
+      <tr class="critical">
+        <td>/api/proveedor/obtenermisatenciones</td>
+        <td>GET, OPTIONS UNLIMITED</td>
+        <td>[Authorize] COMENTADO en ProveedorController</td>
+        <td>Expedientes / PII</td>
+        <td><span class="badge critical">critical</span></td>
+        <td>Lista atenciones por IdProveedorAgente; sin auth de controlador = IDOR potencial.</td>
+      </tr>
+      <tr class="critical">
+        <td>/api/proveedor/obtenermisatencionesactivas</td>
+        <td>GET, OPTIONS UNLIMITED</td>
+        <td>[Authorize] COMENTADO</td>
+        <td>Expedientes / PII</td>
+        <td><span class="badge critical">critical</span></td>
+        <td>Misma exposición que listado historial.</td>
+      </tr>
+      <tr class="critical">
+        <td>/api/proveedor/obtenerdatosexpedientes</td>
+        <td>GET, OPTIONS UNLIMITED</td>
+        <td>[Authorize] COMENTADO</td>
+        <td>Expediente completo / PII / vehículo</td>
+        <td><span class="badge critical">critical</span></td>
+        <td>Datos ricos por IdAtencion; alto impacto si se enumera.</td>
+      </tr>
+      <tr class="critical">
+        <td>/api/proveedor/obtenerdatosdeatencion</td>
+        <td>GET, OPTIONS UNLIMITED</td>
+        <td>[Authorize] COMENTADO</td>
+        <td>Atención / PII</td>
+        <td><span class="badge critical">critical</span></td>
+        <td>Lectura de atención sin auth a nivel controlador.</td>
+      </tr>
+      <tr class="high">
+        <td>/api/proveedor/obtenercachecliente</td>
+        <td>GET, OPTIONS UNLIMITED</td>
+        <td>[Authorize] COMENTADO</td>
+        <td>Cache cliente</td>
+        <td><span class="badge high">high</span></td>
+        <td>Datos de cliente en caché expuestos en discovery.</td>
+      </tr>
+      <tr class="high">
+        <td>/api/proveedor/listadoajustadores</td>
+        <td>GET, OPTIONS UNLIMITED</td>
+        <td>[Authorize] COMENTADO</td>
+        <td>Directorio interno</td>
+        <td><span class="badge high">high</span></td>
+        <td>Enumeración de ajustadores.</td>
+      </tr>
+      <tr class="high">
+        <td>/api/proveedor/vectorgpsatencion</td>
+        <td>GET, OPTIONS UNLIMITED</td>
+        <td>[Authorize] COMENTADO</td>
+        <td>Ubicación GPS</td>
+        <td><span class="badge high">high</span></td>
+        <td>Trayectoria/ubicación de atención.</td>
+      </tr>
+      <tr class="high">
+        <td>/api/proveedor/actualizarcordenadasajustador</td>
+        <td>OPTIONS (scan)</td>
+        <td>[Authorize] COMENTADO</td>
+        <td>GPS / tracking</td>
+        <td><span class="badge high">high</span></td>
+        <td>Escritura de coordenadas; método real no rate-limited en scan.</td>
+      </tr>
+      <tr class="high">
+        <td>/api/proveedor/insertarcoordenadasatencionagenteproveedor</td>
+        <td>OPTIONS (scan)</td>
+        <td>[Authorize] COMENTADO</td>
+        <td>GPS</td>
+        <td><span class="badge high">high</span></td>
+        <td>Inserción de coordenadas de atención.</td>
+      </tr>
+      <tr>
+        <td>/api/proveedor/actualizalogatencion</td>
+        <td>OPTIONS (scan)</td>
+        <td>[Authorize] COMENTADO</td>
+        <td>Estado atención</td>
+        <td><span class="badge medium">medium</span></td>
+        <td>Mutación de log de atención.</td>
+      </tr>
+      <tr class="high">
+        <td>/api/proveedor/listafotografiasfirmasatencion</td>
+        <td>OPTIONS (scan)</td>
+        <td>[Authorize] COMENTADO</td>
+        <td>Imágenes / firmas</td>
+        <td><span class="badge high">high</span></td>
+        <td>Metadatos/URLs de evidencias del siniestro.</td>
+      </tr>
+      <tr class="high">
+        <td>/api/proveedor/subirfirmas</td>
+        <td>OPTIONS (scan)</td>
+        <td>[Authorize] COMENTADO</td>
+        <td>Firmas documentales</td>
+        <td><span class="badge high">high</span></td>
+        <td>Upload de firmas; sin límite en discovery.</td>
+      </tr>
+      <tr>
+        <td>/api/proveedor/tokenpushonesignal</td>
+        <td>OPTIONS (scan)</td>
+        <td>[Authorize] COMENTADO</td>
+        <td>Tokens push</td>
+        <td><span class="badge medium">medium</span></td>
+        <td>Registro de device tokens.</td>
+      </tr>
+      <tr>
+        <td>/api/proveedor/obtenerfiniquito</td>
+        <td>OPTIONS (scan)</td>
+        <td>No hallado como Route exacta en código actual</td>
+        <td>Financiero / finiquito</td>
+        <td><span class="badge medium">medium</span></td>
+        <td>Aparece en discovery; validar si es alias legacy o endpoint removido.</td>
+      </tr>
+      <tr>
+        <td>/api/seleccionmultiple/tipodefotografia</td>
+        <td>GET, OPTIONS UNLIMITED</td>
+        <td>[Authorize] activo</td>
+        <td>Catálogo</td>
+        <td><span class="badge low">low</span></td>
+        <td>Catálogo; OPTIONS puede ser preflight CORS sin auth.</td>
+      </tr>
+      <tr>
+        <td>/api/seleccionmultiple/tipodelicencia</td>
+        <td>GET, OPTIONS UNLIMITED</td>
+        <td>[Authorize] activo</td>
+        <td>Catálogo</td>
+        <td><span class="badge low">low</span></td>
+        <td>Catálogo; GET debería exigir JWT si el filtro aplica.</td>
+      </tr>
+      <tr>
+        <td>/api/ficohsahn/valida_lista_coberturas</td>
+        <td>OPTIONS (scan)</td>
+        <td>[Authorize] activo (FicohsaHN)</td>
+        <td>Coberturas / póliza</td>
+        <td><span class="badge medium">medium</span></td>
+        <td>Puente a Interamericana; sensible si se llama sin JWT efectivo.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>4. Conclusiones de auditoría</h2>
+  <ol>
+    <li>
+      El inventario ApiProtection confirma <strong>superficie descubierta sin límites de tasa observados</strong>
+      sobre paths de HELP, incluyendo login y operaciones de lectura de expediente.
+    </li>
+    <li>
+      El cruce con código identifica una <strong>brecha de control de acceso a nivel aplicación</strong>
+      en el controlador de Proveedor (<code>[Authorize]</code> deshabilitado), que eleva a crítico varios GETs
+      con datos personales, de póliza/vehículo y telemetría GPS.
+    </li>
+    <li>
+      Controllers como <code>FicohsaHN</code> y <code>SeleccionMultiple</code> sí mantienen <code>[Authorize]</code>;
+      el riesgo no es uniforme en toda la API, sino concentrado en Proveedor (y superficies anónimas esperadas como Login).
+    </li>
+    <li>
+      El CSV <strong>no cubre endpoints recientes</strong> (p. ej. búsqueda de atenciones, validación BPM, carga de reclamo).
+      Se recomienda re-escaneo tras publicación para cerrar el gap discovery vs superficie real.
+    </li>
+  </ol>
+
+  <h2>5. Plan de remediación recomendado (prioridad)</h2>
+  <div class="grid2">
+    <div class="box">
+      <h3>1. Acceso</h3>
+      <ul>
+        <li>Reactivar <code>[Authorize]</code> en <code>ProveedorController</code>.</li>
+        <li>Auditar <code>AllowAnonymous</code> (Login, Cliente, DescargarAudienciaIcs).</li>
+        <li>Validar JWT en gateway + API (doble capa).</li>
+        <li>Autorización por recurso (agente dueño de la atención) para mitigar IDOR.</li>
+      </ul>
+    </div>
+    <div class="box">
+      <h3>2. Conectividad / perímetro</h3>
+      <ul>
+        <li>Rate limit en login y GETs de expediente/listados.</li>
+        <li>Restringir OPTIONS/CORS al origen de la app móvil/portal.</li>
+        <li>Activar reglas ApiProtection (dejar de operar solo en PASSIVE).</li>
+      </ul>
+    </div>
+  </div>
+  <div class="grid2" style="margin-top:12px;">
+    <div class="box">
+      <h3>3. Datos</h3>
+      <ul>
+        <li>Minimizar campos PII en listados.</li>
+        <li>Extender auditoría/logging a lecturas sensibles (además de logs BPM existentes).</li>
+        <li>Revisar uploads (firmas/fotos) y tokens push.</li>
+      </ul>
+    </div>
+    <div class="box">
+      <h3>4. Cobertura del inventario</h3>
+      <ul>
+        <li>Re-escanear solo <code>/outer/wsrestapihelp</code>.</li>
+        <li>Incluir endpoints nuevos no presentes en el CSV actual.</li>
+        <li>Validar el path <code>obtenerfiniquito</code> (legacy vs removido).</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="callout info">
+    <strong>Posición técnica respecto a modernización (.NET 10)</strong>
+    Migrar a .NET 10 / ASP.NET Core es recomendable como modernización de mediano plazo
+    (mejor piso de seguridad nativa, rate limiting, secrets, middleware).
+    <strong>No sustituye</strong> la remediación inmediata en .NET Framework 4.8:
+    el hallazgo crítico de acceso se corrige reactivando y endureciendo autorización ahora.
+    Estimación orientativa de migración completa: del orden de 3–5 meses para una entrega sólida
+    (EF/EDMX, clientes SOAP Ficohsa, pruebas y despliegue); remediación de seguridad en Framework:
+    del orden de 1–3 semanas.
+  </div>
+
+  <h2>6. Próximo paso propuesto</h2>
+  <p>
+    Priorizar: (1) reactivar <code>[Authorize]</code> en Proveedor, (2) rate limit de los GETs críticos
+    del CSV, (3) re-ejecutar ApiProtection únicamente sobre <code>/outer/wsrestapihelp</code>,
+    y (4) documentar evidencias de cierre para auditoría.
+  </p>
+
+  <div class="footer">
+    Documento generado a partir del análisis técnico ApiProtection × código WSRestApiHelp.<br />
+    Clasificación sugerida: uso interno / respuesta a auditoría de seguridad.<br />
+    No incluye secretos ni credenciales. Branch de referencia de trabajo reciente:
+    <code>feature/bpm-validacion-y-listados</code> en
+    <code>https://github.com/mcclellanDev/AjustadoresHN_Backend</code>.
+  </div>
+
+</body>
+</html>

@@ -330,6 +330,7 @@
     <Compile Include="Clases\BpmCargaReclamoLogService.cs" />
     <Compile Include="Clases\BpmValidacionReclamoService.cs" />
     <Compile Include="Clases\OneSignalPushService.cs" />
+    <Compile Include="Clases\RateLimitHandler.cs" />
     <Compile Include="Clases\SendToMail.cs" />
     <Compile Include="Clases\TokenGenerator.cs" />
     <Compile Include="Clases\TokenValidator.cs" />

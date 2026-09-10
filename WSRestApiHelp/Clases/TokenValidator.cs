@@ -3,10 +3,10 @@ using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
-using System.Net.Http;
 using System.Net;
-using System.Threading.Tasks;
+using System.Net.Http;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Web;
 
 namespace WSRestApiHelp.Clases
@@ -28,13 +28,16 @@ namespace WSRestApiHelp.Clases
 
         protected override Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
         {
-            HttpStatusCode statusCode;
-            string token;
+            // Preflight CORS no lleva JWT.
+            if (request.Method == HttpMethod.Options)
+            {
+                return base.SendAsync(request, cancellationToken);
+            }
 
-            // determinar si un jwt existe o no
+            string token;
             if (!TryRetrieveToken(request, out token))
             {
-                statusCode = HttpStatusCode.Unauthorized;
+                // Sin token: continuar. [Authorize] / [AllowAnonymous] deciden en el controller.
                 return base.SendAsync(request, cancellationToken);
             }
 
@@ -57,22 +60,23 @@ namespace WSRestApiHelp.Clases
                     IssuerSigningKey = securityKey
                 };
 
-                // Extraer y asignar Principal y usuario actual
-                Thread.CurrentPrincipal = tokenHandler.ValidateToken(token, validationParameters, out securityToken);
-                HttpContext.Current.User = tokenHandler.ValidateToken(token, validationParameters, out securityToken);
+                var principal = tokenHandler.ValidateToken(token, validationParameters, out securityToken);
+                Thread.CurrentPrincipal = principal;
+                if (HttpContext.Current != null)
+                {
+                    HttpContext.Current.User = principal;
+                }
 
                 return base.SendAsync(request, cancellationToken);
             }
             catch (SecurityTokenValidationException)
             {
-                statusCode = HttpStatusCode.Unauthorized;
+                return Task.FromResult(request.CreateResponse(HttpStatusCode.Unauthorized));
             }
             catch (Exception)
             {
-                statusCode = HttpStatusCode.InternalServerError;
+                return Task.FromResult(request.CreateResponse(HttpStatusCode.InternalServerError));
             }
-
-            return Task<HttpResponseMessage>.Factory.StartNew(() => new HttpResponseMessage(statusCode) { });
         }
 
         public bool LifetimeValidator(DateTime? notBefore, DateTime? expires, SecurityToken securityToken, TokenValidationParameters validationParameters)

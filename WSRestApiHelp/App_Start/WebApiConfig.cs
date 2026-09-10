@@ -22,6 +22,8 @@ namespace WSRestApiHelp
             // Rutas de API web
             config.MapHttpAttributeRoutes();
 
+            // Orden: rate limit primero, luego JWT.
+            config.MessageHandlers.Add(new RateLimitHandler());
             config.MessageHandlers.Add(new TokenValidationHandler());
 
             config.Routes.MapHttpRoute(
