@@ -324,6 +324,7 @@
   <ItemGroup>
     <Compile Include="App_Start\SwaggerConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Clases\AgenteAccessHelper.cs" />
     <Compile Include="Clases\ApiData.cs" />
     <Compile Include="Clases\AsignacionAudienciaAbogadoLogService.cs" />
     <Compile Include="Clases\AudienciaCalendarioHelper.cs" />

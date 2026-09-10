@@ -264,6 +264,11 @@ namespace WSRestApiHelp.Controllers
                 if (IdProveedorAgente == 0)
                     throw new HttpResponseException(HttpStatusCode.BadRequest);
 
+                int agenteAutenticado;
+                var acceso = AgenteAccessHelper.RequireMatchingAgente(this, db, IdProveedorAgente, out agenteAutenticado);
+                if (acceso != null)
+                    return acceso;
+
                 List<object> Data = new List<object>();
 
                 var misAtenciones = db.help_F_Api_Listar_Mis_Atenciones(IdProveedorAgente).OrderBy(x => x.FechaInicio).ToList();
@@ -331,6 +336,11 @@ namespace WSRestApiHelp.Controllers
             {
                 if (request == null || request.IdProveedorAgente == 0)
                     return BadRequest("Debe enviar IdProveedorAgente.");
+
+                int agenteAutenticado;
+                var acceso = AgenteAccessHelper.RequireMatchingAgente(this, db, request.IdProveedorAgente, out agenteAutenticado);
+                if (acceso != null)
+                    return acceso;
 
                 bool tieneNombre = !string.IsNullOrWhiteSpace(request.NombreAsegurado);
                 bool tieneFecha = request.FechaDesde.HasValue || request.FechaHasta.HasValue;
@@ -409,6 +419,11 @@ namespace WSRestApiHelp.Controllers
             {
                 if (IdProveedorAgente == 0)
                     throw new HttpResponseException(HttpStatusCode.BadRequest);
+
+                int agenteAutenticado;
+                var acceso = AgenteAccessHelper.RequireMatchingAgente(this, db, IdProveedorAgente, out agenteAutenticado);
+                if (acceso != null)
+                    return acceso;
 
                 List<object> Data = new List<object>();
 
@@ -1007,6 +1022,11 @@ namespace WSRestApiHelp.Controllers
                 if (IdAtencion == 0)
                     throw new HttpResponseException(HttpStatusCode.BadRequest);
 
+                int agenteAutenticado;
+                var acceso = AgenteAccessHelper.RequireAtencionOwnedByAgente(this, db, IdAtencion, out agenteAutenticado);
+                if (acceso != null)
+                    return acceso;
+
                 List<object> Data = new List<object>();
                 ObjectParameter Respuesta = new ObjectParameter("Respuesta", typeof(int));
                 ObjectParameter Mensaje = new ObjectParameter("Mensaje", typeof(int));
@@ -1135,6 +1155,11 @@ namespace WSRestApiHelp.Controllers
                 if (IdAtencion == 0)
                     throw new HttpResponseException(HttpStatusCode.BadRequest);
 
+                int agenteAutenticado;
+                var acceso = AgenteAccessHelper.RequireAtencionOwnedByAgente(this, db, IdAtencion, out agenteAutenticado);
+                if (acceso != null)
+                    return acceso;
+
                 //var Variable = db.help_AjustadorAudiencia.Where(x => x.RefAtencionId == IdAtencion).ToList().FirstOrDefault();
 
                 //if (Variable == null)
@@ -1192,6 +1217,11 @@ namespace WSRestApiHelp.Controllers
             {
                 if (IdAtencion == 0)
                     throw new HttpResponseException(HttpStatusCode.BadRequest);
+
+                int agenteAutenticado;
+                var acceso = AgenteAccessHelper.RequireAtencionOwnedByAgente(this, db, IdAtencion, out agenteAutenticado);
+                if (acceso != null)
+                    return acceso;
 
                 List<object> Data = new List<object>();
 
@@ -1930,6 +1960,11 @@ namespace WSRestApiHelp.Controllers
                 if (Longitud == null || Latitud == null || IdProveedorAgente == 0)
                     throw new HttpResponseException(HttpStatusCode.BadRequest);
 
+                int agenteAutenticado;
+                var acceso = AgenteAccessHelper.RequireMatchingAgente(this, db, IdProveedorAgente, out agenteAutenticado);
+                if (acceso != null)
+                    return acceso;
+
 
                 ObjectParameter Respuesta = new ObjectParameter("Respuesta", typeof(int));
                 ObjectParameter Mensaje = new ObjectParameter("mensaje", typeof(string));
@@ -2441,6 +2476,11 @@ namespace WSRestApiHelp.Controllers
                 if (IdProveedorAgente == 0 || TokenPush == null)
                     throw new HttpResponseException(HttpStatusCode.BadRequest);
 
+                int agenteAutenticado;
+                var acceso = AgenteAccessHelper.RequireMatchingAgente(this, db, IdProveedorAgente, out agenteAutenticado);
+                if (acceso != null)
+                    return acceso;
+
                 db.help_P_Api_Actualizar_Token_Agente_Proveedor(IdProveedorAgente,"",TokenPush,2);
 
                 return Ok("Token Actualizado con exito.");
@@ -2922,6 +2962,11 @@ namespace WSRestApiHelp.Controllers
         {
             try
             {
+                int agenteAutenticado;
+                var acceso = AgenteAccessHelper.RequireAtencionOwnedByAgente(this, db, IdAtencion, out agenteAutenticado);
+                if (acceso != null)
+                    return acceso;
+
                 var listaAjustadores = db.help_Log_GPS.Where(x => x.RefAtencionId == IdAtencion && x.Tipo == Tipo).ToList();
                 listaAjustadores.ForEach(item => {
                     Data.Add(new

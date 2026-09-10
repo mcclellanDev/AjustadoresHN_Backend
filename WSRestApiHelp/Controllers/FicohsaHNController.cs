@@ -179,6 +179,11 @@ namespace WSRestApiHelp.Controllers
                     return BadRequest("Debe enviar IdAtencion.");
                 }
 
+                int agenteAutenticado;
+                var acceso = AgenteAccessHelper.RequireAtencionOwnedByAgente(this, db, request.IdAtencion, out agenteAutenticado);
+                if (acceso != null)
+                    return acceso;
+
                 var expediente = db.help_F_Api_Datos_Expediente_Siniestro(request.IdAtencion).FirstOrDefault();
                 if (expediente == null)
                 {

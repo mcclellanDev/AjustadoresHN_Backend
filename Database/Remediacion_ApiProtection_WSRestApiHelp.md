@@ -43,10 +43,17 @@
 
 ## Pendiente (siguiente iteración)
 
-- Autorización por recurso (el JWT debe corresponder al agente dueño de la atención) — mitiga IDOR aunque haya token robado/compartido.
+- ~~Autorización por recurso (el JWT debe corresponder al agente dueño de la atención)~~ **Hecho:** `AgenteAccessHelper` + claim `ProveedorAgenteId` en JWT.
 - Revisar `ClienteController` (`[AllowAnonymous]` a nivel controller completo).
 - Restringir CORS `origins: "*"` a orígenes conocidos de app/portal.
 - Rate limit también en gateway/WAF (defensa en profundidad; el handler en memoria es por nodo IIS).
+
+## Autorización por recurso (detalle)
+
+- Login emite claim `ProveedorAgenteId`.
+- Endpoints con `IdProveedorAgente`: solo permiten el id del token (403 si no coincide).
+- Endpoints con `IdAtencion`: verifican `help_Atenciones.RefProveedorId` = agente autenticado.
+- Tokens antiguos sin claim: fallback por `Usuario` en `help_ProveedorAgentes` (hasta re-login).
 
 ## Nota operativa
 

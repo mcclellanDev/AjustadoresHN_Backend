@@ -67,7 +67,7 @@ namespace WSRestApiHelp.Controllers
                             {
                                 if (user.UsuarioBPM != null)
                                 {
-                                    var token = TokenGenerator.GenerateTokenJwt(loginData.User);
+                                    var token = TokenGenerator.GenerateTokenJwt(loginData.User, user.Id);
 
                                     db.help_P_Api_Actualizar_Token_Agente_Proveedor(user.Id, token.ToString(), null, 1);
 

@@ -11,7 +11,7 @@ namespace WSRestApiHelp.Clases
 
     internal static class TokenGenerator
     {
-        public static string GenerateTokenJwt(string username)
+        public static string GenerateTokenJwt(string username, int? proveedorAgenteId = null)
         {
             // appsetting for Token JWT
             var secretKey = ConfigurationManager.AppSettings["JWT_SECRET_KEY"];
@@ -22,8 +22,16 @@ namespace WSRestApiHelp.Clases
             var securityKey = new SymmetricSecurityKey(System.Text.Encoding.Default.GetBytes(secretKey));
             var signingCredentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256Signature);
 
-            // create a claimsIdentity
-            ClaimsIdentity claimsIdentity = new ClaimsIdentity(new[] { new Claim(ClaimTypes.Name, username) });
+            var claims = new System.Collections.Generic.List<Claim>
+            {
+                new Claim(ClaimTypes.Name, username)
+            };
+            if (proveedorAgenteId.HasValue && proveedorAgenteId.Value > 0)
+            {
+                claims.Add(new Claim(AgenteAccessHelper.ProveedorAgenteIdClaimType, proveedorAgenteId.Value.ToString()));
+            }
+
+            ClaimsIdentity claimsIdentity = new ClaimsIdentity(claims);
 
             // create token to the user
             var tokenHandler = new System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler();
