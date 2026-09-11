@@ -356,6 +356,8 @@ namespace WSRestApiHelp.WSFICOHSAHELP_HN {
         
         private string mensajeField;
         
+        private string cod_BPMField;
+        
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string cod_error {
@@ -377,6 +379,18 @@ namespace WSRestApiHelp.WSFICOHSAHELP_HN {
             set {
                 this.mensajeField = value;
                 this.RaisePropertyChanged("mensaje");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string cod_BPM {
+            get {
+                return this.cod_BPMField;
+            }
+            set {
+                this.cod_BPMField = value;
+                this.RaisePropertyChanged("cod_BPM");
             }
         }
         
@@ -782,175 +796,271 @@ namespace WSRestApiHelp.WSFICOHSAHELP_HN {
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
     public partial class clDetValSeg : object, System.ComponentModel.INotifyPropertyChanged {
         
-        private string iDVALIDACIONField;
+        private string nIdValidacionField;
         
-        private string nIDEASEGField;
+        private string nIdeAsegField;
         
-        private string nNUMCERTField;
+        private string nIdepolField;
         
-        private string cNOMASEGField;
+        private string cClaseField;
         
-        private string cPARENTESCOField;
+        private string nPolizaField;
         
-        private string cSEXOField;
+        private string cSucursalField;
         
-        private System.DateTime cFECNACField;
+        private string nNumCertField;
         
-        private string cEDADField;
+        private string cNomAsegField;
         
-        private System.DateTime cFECALTAField;
+        private string cParentescoField;
         
-        private double vCoaseguroField;
+        private string cSexoField;
         
-        private double vDeducibleField;
+        private string cFecNacField;
+        
+        private string cEdadField;
+        
+        private string cFecAltaField;
+        
+        private string cFechaIniField;
+        
+        private string cFechaFinalField;
+        
+        private string vDeducibleField;
+        
+        private string cSaldoDeducibleField;
         
         private string vHabitacionField;
         
-        private string vPorSaludField;
-        
-        private string vCoasAmbulatorioField;
+        private string vReqAdminField;
         
         private string vMaternidadField;
         
-        private string vReqAdminField;
+        private string vPorSaludField;
         
-        private string vFarmaciaField;
+        private string vCodCoaFarmaciaField;
         
-        private string vRedMedicoField;
+        private string nCoaFarmaciaField;
         
-        private string vRedLaboratorioField;
+        private string vCodCoaLaboratorioField;
         
-        private string vRadioImagenField;
+        private string nCoaLaboratorioField;
         
-        private string sALDO_DEDUCIBLEField;
+        private string vCodCoaRadioImagenesField;
         
-        private string vAccidentesPerField;
+        private string nCoaRadioImagenesField;
         
-        private string cOASEGURO_FARMACIAField;
+        private string vCodCoaRedMedicoField;
+        
+        private string nCoaRedMedicoField;
+        
+        private string vCodCoaRedOpticaField;
+        
+        private string nCoaRedOpticaField;
+        
+        private string vCodDentalFaseIField;
+        
+        private string vDentalFaseIField;
+        
+        private string vCodDentalFaseIIField;
+        
+        private string vDentalFaseIIField;
+        
+        private string vCodDentalFaseIIIField;
+        
+        private string vDentalFaseIIIField;
+        
+        private string vCodDentalFaseIVField;
+        
+        private string vDentalFaseIVField;
+        
+        private string vCodGastoDentalField;
+        
+        private string vGastoDentalField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string IDVALIDACION {
+        public string nIdValidacion {
             get {
-                return this.iDVALIDACIONField;
+                return this.nIdValidacionField;
             }
             set {
-                this.iDVALIDACIONField = value;
-                this.RaisePropertyChanged("IDVALIDACION");
+                this.nIdValidacionField = value;
+                this.RaisePropertyChanged("nIdValidacion");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public string NIDEASEG {
+        public string nIdeAseg {
             get {
-                return this.nIDEASEGField;
+                return this.nIdeAsegField;
             }
             set {
-                this.nIDEASEGField = value;
-                this.RaisePropertyChanged("NIDEASEG");
+                this.nIdeAsegField = value;
+                this.RaisePropertyChanged("nIdeAseg");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public string NNUMCERT {
+        public string nIdepol {
             get {
-                return this.nNUMCERTField;
+                return this.nIdepolField;
             }
             set {
-                this.nNUMCERTField = value;
-                this.RaisePropertyChanged("NNUMCERT");
+                this.nIdepolField = value;
+                this.RaisePropertyChanged("nIdepol");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=3)]
-        public string CNOMASEG {
+        public string cClase {
             get {
-                return this.cNOMASEGField;
+                return this.cClaseField;
             }
             set {
-                this.cNOMASEGField = value;
-                this.RaisePropertyChanged("CNOMASEG");
+                this.cClaseField = value;
+                this.RaisePropertyChanged("cClase");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=4)]
-        public string CPARENTESCO {
+        public string nPoliza {
             get {
-                return this.cPARENTESCOField;
+                return this.nPolizaField;
             }
             set {
-                this.cPARENTESCOField = value;
-                this.RaisePropertyChanged("CPARENTESCO");
+                this.nPolizaField = value;
+                this.RaisePropertyChanged("nPoliza");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=5)]
-        public string CSEXO {
+        public string cSucursal {
             get {
-                return this.cSEXOField;
+                return this.cSucursalField;
             }
             set {
-                this.cSEXOField = value;
-                this.RaisePropertyChanged("CSEXO");
+                this.cSucursalField = value;
+                this.RaisePropertyChanged("cSucursal");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=6)]
-        public System.DateTime CFECNAC {
+        public string nNumCert {
             get {
-                return this.cFECNACField;
+                return this.nNumCertField;
             }
             set {
-                this.cFECNACField = value;
-                this.RaisePropertyChanged("CFECNAC");
+                this.nNumCertField = value;
+                this.RaisePropertyChanged("nNumCert");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=7)]
-        public string CEDAD {
+        public string cNomAseg {
             get {
-                return this.cEDADField;
+                return this.cNomAsegField;
             }
             set {
-                this.cEDADField = value;
-                this.RaisePropertyChanged("CEDAD");
+                this.cNomAsegField = value;
+                this.RaisePropertyChanged("cNomAseg");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=8)]
-        public System.DateTime CFECALTA {
+        public string cParentesco {
             get {
-                return this.cFECALTAField;
+                return this.cParentescoField;
             }
             set {
-                this.cFECALTAField = value;
-                this.RaisePropertyChanged("CFECALTA");
+                this.cParentescoField = value;
+                this.RaisePropertyChanged("cParentesco");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=9)]
-        public double vCoaseguro {
+        public string cSexo {
             get {
-                return this.vCoaseguroField;
+                return this.cSexoField;
             }
             set {
-                this.vCoaseguroField = value;
-                this.RaisePropertyChanged("vCoaseguro");
+                this.cSexoField = value;
+                this.RaisePropertyChanged("cSexo");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=10)]
-        public double vDeducible {
+        public string cFecNac {
+            get {
+                return this.cFecNacField;
+            }
+            set {
+                this.cFecNacField = value;
+                this.RaisePropertyChanged("cFecNac");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=11)]
+        public string cEdad {
+            get {
+                return this.cEdadField;
+            }
+            set {
+                this.cEdadField = value;
+                this.RaisePropertyChanged("cEdad");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=12)]
+        public string cFecAlta {
+            get {
+                return this.cFecAltaField;
+            }
+            set {
+                this.cFecAltaField = value;
+                this.RaisePropertyChanged("cFecAlta");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=13)]
+        public string cFechaIni {
+            get {
+                return this.cFechaIniField;
+            }
+            set {
+                this.cFechaIniField = value;
+                this.RaisePropertyChanged("cFechaIni");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=14)]
+        public string cFechaFinal {
+            get {
+                return this.cFechaFinalField;
+            }
+            set {
+                this.cFechaFinalField = value;
+                this.RaisePropertyChanged("cFechaFinal");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=15)]
+        public string vDeducible {
             get {
                 return this.vDeducibleField;
             }
@@ -961,7 +1071,19 @@ namespace WSRestApiHelp.WSFICOHSAHELP_HN {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=11)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=16)]
+        public string cSaldoDeducible {
+            get {
+                return this.cSaldoDeducibleField;
+            }
+            set {
+                this.cSaldoDeducibleField = value;
+                this.RaisePropertyChanged("cSaldoDeducible");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=17)]
         public string vHabitacion {
             get {
                 return this.vHabitacionField;
@@ -973,43 +1095,7 @@ namespace WSRestApiHelp.WSFICOHSAHELP_HN {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=12)]
-        public string vPorSalud {
-            get {
-                return this.vPorSaludField;
-            }
-            set {
-                this.vPorSaludField = value;
-                this.RaisePropertyChanged("vPorSalud");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=13)]
-        public string vCoasAmbulatorio {
-            get {
-                return this.vCoasAmbulatorioField;
-            }
-            set {
-                this.vCoasAmbulatorioField = value;
-                this.RaisePropertyChanged("vCoasAmbulatorio");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=14)]
-        public string vMaternidad {
-            get {
-                return this.vMaternidadField;
-            }
-            set {
-                this.vMaternidadField = value;
-                this.RaisePropertyChanged("vMaternidad");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=15)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=18)]
         public string vReqAdmin {
             get {
                 return this.vReqAdminField;
@@ -1021,86 +1107,266 @@ namespace WSRestApiHelp.WSFICOHSAHELP_HN {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=16)]
-        public string vFarmacia {
-            get {
-                return this.vFarmaciaField;
-            }
-            set {
-                this.vFarmaciaField = value;
-                this.RaisePropertyChanged("vFarmacia");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=17)]
-        public string vRedMedico {
-            get {
-                return this.vRedMedicoField;
-            }
-            set {
-                this.vRedMedicoField = value;
-                this.RaisePropertyChanged("vRedMedico");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=18)]
-        public string vRedLaboratorio {
-            get {
-                return this.vRedLaboratorioField;
-            }
-            set {
-                this.vRedLaboratorioField = value;
-                this.RaisePropertyChanged("vRedLaboratorio");
-            }
-        }
-        
-        /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=19)]
-        public string vRadioImagen {
+        public string vMaternidad {
             get {
-                return this.vRadioImagenField;
+                return this.vMaternidadField;
             }
             set {
-                this.vRadioImagenField = value;
-                this.RaisePropertyChanged("vRadioImagen");
+                this.vMaternidadField = value;
+                this.RaisePropertyChanged("vMaternidad");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=20)]
-        public string SALDO_DEDUCIBLE {
+        public string vPorSalud {
             get {
-                return this.sALDO_DEDUCIBLEField;
+                return this.vPorSaludField;
             }
             set {
-                this.sALDO_DEDUCIBLEField = value;
-                this.RaisePropertyChanged("SALDO_DEDUCIBLE");
+                this.vPorSaludField = value;
+                this.RaisePropertyChanged("vPorSalud");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=21)]
-        public string vAccidentesPer {
+        public string vCodCoaFarmacia {
             get {
-                return this.vAccidentesPerField;
+                return this.vCodCoaFarmaciaField;
             }
             set {
-                this.vAccidentesPerField = value;
-                this.RaisePropertyChanged("vAccidentesPer");
+                this.vCodCoaFarmaciaField = value;
+                this.RaisePropertyChanged("vCodCoaFarmacia");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=22)]
-        public string COASEGURO_FARMACIA {
+        public string nCoaFarmacia {
             get {
-                return this.cOASEGURO_FARMACIAField;
+                return this.nCoaFarmaciaField;
             }
             set {
-                this.cOASEGURO_FARMACIAField = value;
-                this.RaisePropertyChanged("COASEGURO_FARMACIA");
+                this.nCoaFarmaciaField = value;
+                this.RaisePropertyChanged("nCoaFarmacia");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=23)]
+        public string vCodCoaLaboratorio {
+            get {
+                return this.vCodCoaLaboratorioField;
+            }
+            set {
+                this.vCodCoaLaboratorioField = value;
+                this.RaisePropertyChanged("vCodCoaLaboratorio");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=24)]
+        public string nCoaLaboratorio {
+            get {
+                return this.nCoaLaboratorioField;
+            }
+            set {
+                this.nCoaLaboratorioField = value;
+                this.RaisePropertyChanged("nCoaLaboratorio");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=25)]
+        public string vCodCoaRadioImagenes {
+            get {
+                return this.vCodCoaRadioImagenesField;
+            }
+            set {
+                this.vCodCoaRadioImagenesField = value;
+                this.RaisePropertyChanged("vCodCoaRadioImagenes");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=26)]
+        public string nCoaRadioImagenes {
+            get {
+                return this.nCoaRadioImagenesField;
+            }
+            set {
+                this.nCoaRadioImagenesField = value;
+                this.RaisePropertyChanged("nCoaRadioImagenes");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=27)]
+        public string vCodCoaRedMedico {
+            get {
+                return this.vCodCoaRedMedicoField;
+            }
+            set {
+                this.vCodCoaRedMedicoField = value;
+                this.RaisePropertyChanged("vCodCoaRedMedico");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=28)]
+        public string nCoaRedMedico {
+            get {
+                return this.nCoaRedMedicoField;
+            }
+            set {
+                this.nCoaRedMedicoField = value;
+                this.RaisePropertyChanged("nCoaRedMedico");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=29)]
+        public string vCodCoaRedOptica {
+            get {
+                return this.vCodCoaRedOpticaField;
+            }
+            set {
+                this.vCodCoaRedOpticaField = value;
+                this.RaisePropertyChanged("vCodCoaRedOptica");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=30)]
+        public string nCoaRedOptica {
+            get {
+                return this.nCoaRedOpticaField;
+            }
+            set {
+                this.nCoaRedOpticaField = value;
+                this.RaisePropertyChanged("nCoaRedOptica");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=31)]
+        public string vCodDentalFaseI {
+            get {
+                return this.vCodDentalFaseIField;
+            }
+            set {
+                this.vCodDentalFaseIField = value;
+                this.RaisePropertyChanged("vCodDentalFaseI");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=32)]
+        public string vDentalFaseI {
+            get {
+                return this.vDentalFaseIField;
+            }
+            set {
+                this.vDentalFaseIField = value;
+                this.RaisePropertyChanged("vDentalFaseI");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=33)]
+        public string vCodDentalFaseII {
+            get {
+                return this.vCodDentalFaseIIField;
+            }
+            set {
+                this.vCodDentalFaseIIField = value;
+                this.RaisePropertyChanged("vCodDentalFaseII");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=34)]
+        public string vDentalFaseII {
+            get {
+                return this.vDentalFaseIIField;
+            }
+            set {
+                this.vDentalFaseIIField = value;
+                this.RaisePropertyChanged("vDentalFaseII");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=35)]
+        public string vCodDentalFaseIII {
+            get {
+                return this.vCodDentalFaseIIIField;
+            }
+            set {
+                this.vCodDentalFaseIIIField = value;
+                this.RaisePropertyChanged("vCodDentalFaseIII");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=36)]
+        public string vDentalFaseIII {
+            get {
+                return this.vDentalFaseIIIField;
+            }
+            set {
+                this.vDentalFaseIIIField = value;
+                this.RaisePropertyChanged("vDentalFaseIII");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=37)]
+        public string vCodDentalFaseIV {
+            get {
+                return this.vCodDentalFaseIVField;
+            }
+            set {
+                this.vCodDentalFaseIVField = value;
+                this.RaisePropertyChanged("vCodDentalFaseIV");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=38)]
+        public string vDentalFaseIV {
+            get {
+                return this.vDentalFaseIVField;
+            }
+            set {
+                this.vDentalFaseIVField = value;
+                this.RaisePropertyChanged("vDentalFaseIV");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=39)]
+        public string vCodGastoDental {
+            get {
+                return this.vCodGastoDentalField;
+            }
+            set {
+                this.vCodGastoDentalField = value;
+                this.RaisePropertyChanged("vCodGastoDental");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=40)]
+        public string vGastoDental {
+            get {
+                return this.vGastoDentalField;
+            }
+            set {
+                this.vGastoDentalField = value;
+                this.RaisePropertyChanged("vGastoDental");
             }
         }
         
@@ -7564,7 +7830,7 @@ namespace WSRestApiHelp.WSFICOHSAHELP_HN {
         public string pProveedor;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=2)]
-        public string pFactCai;
+        public string pFactNum;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=3)]
         public string pFecFact;
@@ -7578,11 +7844,11 @@ namespace WSRestApiHelp.WSFICOHSAHELP_HN {
         public agregar_factura_liquidacionRequest() {
         }
         
-        public agregar_factura_liquidacionRequest(WSRestApiHelp.WSFICOHSAHELP_HN.credenciales credenciales, string pIdePreAdmin, string pProveedor, string pFactCai, string pFecFact, string pMonto, string pFactFinal) {
+        public agregar_factura_liquidacionRequest(WSRestApiHelp.WSFICOHSAHELP_HN.credenciales credenciales, string pIdePreAdmin, string pProveedor, string pFactNum, string pFecFact, string pMonto, string pFactFinal) {
             this.credenciales = credenciales;
             this.pIdePreAdmin = pIdePreAdmin;
             this.pProveedor = pProveedor;
-            this.pFactCai = pFactCai;
+            this.pFactNum = pFactNum;
             this.pFecFact = pFecFact;
             this.pMonto = pMonto;
             this.pFactFinal = pFactFinal;
@@ -7622,20 +7888,16 @@ namespace WSRestApiHelp.WSFICOHSAHELP_HN {
         public string pProveedor;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=2)]
-        public string pFactCai;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=3)]
-        public string pFactFinal;
+        public string pFactNum;
         
         public anular_factura_liquidacionRequest() {
         }
         
-        public anular_factura_liquidacionRequest(WSRestApiHelp.WSFICOHSAHELP_HN.credenciales credenciales, string pIdePreAdmin, string pProveedor, string pFactCai, string pFactFinal) {
+        public anular_factura_liquidacionRequest(WSRestApiHelp.WSFICOHSAHELP_HN.credenciales credenciales, string pIdePreAdmin, string pProveedor, string pFactNum) {
             this.credenciales = credenciales;
             this.pIdePreAdmin = pIdePreAdmin;
             this.pProveedor = pProveedor;
-            this.pFactCai = pFactCai;
-            this.pFactFinal = pFactFinal;
+            this.pFactNum = pFactNum;
         }
     }
     
@@ -8582,12 +8844,12 @@ namespace WSRestApiHelp.WSFICOHSAHELP_HN {
             return base.Channel.agregar_factura_liquidacion(request);
         }
         
-        public WSRestApiHelp.WSFICOHSAHELP_HN.clAgregarFacturaLiq agregar_factura_liquidacion(WSRestApiHelp.WSFICOHSAHELP_HN.credenciales credenciales, string pIdePreAdmin, string pProveedor, string pFactCai, string pFecFact, string pMonto, string pFactFinal) {
+        public WSRestApiHelp.WSFICOHSAHELP_HN.clAgregarFacturaLiq agregar_factura_liquidacion(WSRestApiHelp.WSFICOHSAHELP_HN.credenciales credenciales, string pIdePreAdmin, string pProveedor, string pFactNum, string pFecFact, string pMonto, string pFactFinal) {
             WSRestApiHelp.WSFICOHSAHELP_HN.agregar_factura_liquidacionRequest inValue = new WSRestApiHelp.WSFICOHSAHELP_HN.agregar_factura_liquidacionRequest();
             inValue.credenciales = credenciales;
             inValue.pIdePreAdmin = pIdePreAdmin;
             inValue.pProveedor = pProveedor;
-            inValue.pFactCai = pFactCai;
+            inValue.pFactNum = pFactNum;
             inValue.pFecFact = pFecFact;
             inValue.pMonto = pMonto;
             inValue.pFactFinal = pFactFinal;
@@ -8600,12 +8862,12 @@ namespace WSRestApiHelp.WSFICOHSAHELP_HN {
             return base.Channel.agregar_factura_liquidacionAsync(request);
         }
         
-        public System.Threading.Tasks.Task<WSRestApiHelp.WSFICOHSAHELP_HN.agregar_factura_liquidacionResponse> agregar_factura_liquidacionAsync(WSRestApiHelp.WSFICOHSAHELP_HN.credenciales credenciales, string pIdePreAdmin, string pProveedor, string pFactCai, string pFecFact, string pMonto, string pFactFinal) {
+        public System.Threading.Tasks.Task<WSRestApiHelp.WSFICOHSAHELP_HN.agregar_factura_liquidacionResponse> agregar_factura_liquidacionAsync(WSRestApiHelp.WSFICOHSAHELP_HN.credenciales credenciales, string pIdePreAdmin, string pProveedor, string pFactNum, string pFecFact, string pMonto, string pFactFinal) {
             WSRestApiHelp.WSFICOHSAHELP_HN.agregar_factura_liquidacionRequest inValue = new WSRestApiHelp.WSFICOHSAHELP_HN.agregar_factura_liquidacionRequest();
             inValue.credenciales = credenciales;
             inValue.pIdePreAdmin = pIdePreAdmin;
             inValue.pProveedor = pProveedor;
-            inValue.pFactCai = pFactCai;
+            inValue.pFactNum = pFactNum;
             inValue.pFecFact = pFecFact;
             inValue.pMonto = pMonto;
             inValue.pFactFinal = pFactFinal;
@@ -8617,13 +8879,12 @@ namespace WSRestApiHelp.WSFICOHSAHELP_HN {
             return base.Channel.anular_factura_liquidacion(request);
         }
         
-        public WSRestApiHelp.WSFICOHSAHELP_HN.clAnularFacturaLiq anular_factura_liquidacion(WSRestApiHelp.WSFICOHSAHELP_HN.credenciales credenciales, string pIdePreAdmin, string pProveedor, string pFactCai, string pFactFinal) {
+        public WSRestApiHelp.WSFICOHSAHELP_HN.clAnularFacturaLiq anular_factura_liquidacion(WSRestApiHelp.WSFICOHSAHELP_HN.credenciales credenciales, string pIdePreAdmin, string pProveedor, string pFactNum) {
             WSRestApiHelp.WSFICOHSAHELP_HN.anular_factura_liquidacionRequest inValue = new WSRestApiHelp.WSFICOHSAHELP_HN.anular_factura_liquidacionRequest();
             inValue.credenciales = credenciales;
             inValue.pIdePreAdmin = pIdePreAdmin;
             inValue.pProveedor = pProveedor;
-            inValue.pFactCai = pFactCai;
-            inValue.pFactFinal = pFactFinal;
+            inValue.pFactNum = pFactNum;
             WSRestApiHelp.WSFICOHSAHELP_HN.anular_factura_liquidacionResponse retVal = ((WSRestApiHelp.WSFICOHSAHELP_HN.WSPorSaludSoap)(this)).anular_factura_liquidacion(inValue);
             return retVal.anular_factura_liquidacionResult;
         }
@@ -8633,13 +8894,12 @@ namespace WSRestApiHelp.WSFICOHSAHELP_HN {
             return base.Channel.anular_factura_liquidacionAsync(request);
         }
         
-        public System.Threading.Tasks.Task<WSRestApiHelp.WSFICOHSAHELP_HN.anular_factura_liquidacionResponse> anular_factura_liquidacionAsync(WSRestApiHelp.WSFICOHSAHELP_HN.credenciales credenciales, string pIdePreAdmin, string pProveedor, string pFactCai, string pFactFinal) {
+        public System.Threading.Tasks.Task<WSRestApiHelp.WSFICOHSAHELP_HN.anular_factura_liquidacionResponse> anular_factura_liquidacionAsync(WSRestApiHelp.WSFICOHSAHELP_HN.credenciales credenciales, string pIdePreAdmin, string pProveedor, string pFactNum) {
             WSRestApiHelp.WSFICOHSAHELP_HN.anular_factura_liquidacionRequest inValue = new WSRestApiHelp.WSFICOHSAHELP_HN.anular_factura_liquidacionRequest();
             inValue.credenciales = credenciales;
             inValue.pIdePreAdmin = pIdePreAdmin;
             inValue.pProveedor = pProveedor;
-            inValue.pFactCai = pFactCai;
-            inValue.pFactFinal = pFactFinal;
+            inValue.pFactNum = pFactNum;
             return ((WSRestApiHelp.WSFICOHSAHELP_HN.WSPorSaludSoap)(this)).anular_factura_liquidacionAsync(inValue);
         }
     }

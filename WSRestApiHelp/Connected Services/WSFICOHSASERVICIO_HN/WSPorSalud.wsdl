@@ -136,6 +136,11 @@
             <s:element minOccurs="0" maxOccurs="1" name="pMonTotal" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="pDescuen" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="pObserva" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="f" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="fileName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pCodEspec" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pCodSubesp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pCodEspta" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -151,6 +156,7 @@
           <s:element minOccurs="0" maxOccurs="1" name="cod_error" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="mensaje" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="idepreadmin" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="codsolicitud" type="s:string" />
         </s:sequence>
       </s:complexType>
       <s:element name="Anular_reclamo">
@@ -609,6 +615,489 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="Ingresar_Solicitudes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CodSuc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NroPol" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NroAseg" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Nro_pariente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Cod_diagnostico" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Cod_medico" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Emisor" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Txt_celular" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Txt_email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Listado_medicamento" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Ingresar_SolicitudesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Ingresar_SolicitudesResult" type="tns:ArrayOfClsolicitud" />
+            <s:element minOccurs="0" maxOccurs="1" name="Nro_pariente" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfClsolicitud">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="clsolicitud" nillable="true" type="tns:clsolicitud" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="clsolicitud">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="cod_error" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mensaje" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_estado" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_solicitud" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_usuario" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="creaReclamo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pCodSuc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pNroPol" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pNroASeg" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pNroPariente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pCodDiagnostico" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pMonto" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pNroComprobante" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Listado_medicamento" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="creaReclamoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="creaReclamoResult" type="tns:ArrayOfClReclamos" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfClReclamos">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="clReclamos" nillable="true" type="tns:clReclamos" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="clReclamos">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="cod_error" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mensaje" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="pLimDeducible" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="pDedCubierto" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="pDedCobrado" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="pNoElegibles" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="pReembolso" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="pDescuento" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="pPagoPres" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="pNroStro" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="pParticipacion_aseg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="pCoasReembolso" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="consultar_detalle_medicamentos_pendiente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pnro_poliza" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pcod_suc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pnro_certificado" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pnro_pariente" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="consultar_detalle_medicamentos_pendienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="consultar_detalle_medicamentos_pendienteResult" type="tns:ArrayOfClDetMecamentos" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfClDetMecamentos">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="clDetMecamentos" nillable="true" type="tns:clDetMecamentos" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="clDetMecamentos">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="cod_solicitud" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_medicamento" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="txt_medicamento" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nro_cuota" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_estado" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="estado" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="observacion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="fec_inicio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="fec_tope" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cantidad_recetada" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cantidad_mes" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cantidad_aprobada" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_diagnostico" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="txt_diagnostico" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="consultar_detalle_solicitudes_pendiente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pnro_poliza" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pcod_suc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pnro_certificado" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pnro_pariente" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="consultar_detalle_solicitudes_pendienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="consultar_detalle_solicitudes_pendienteResult" type="tns:ArrayOfClSolicitudDet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfClSolicitudDet">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="clSolicitudDet" nillable="true" type="tns:clSolicitudDet" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="clSolicitudDet">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="cod_error" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mensaje" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="detsolicitud" type="tns:ArrayOfCldetsolicitudes" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfCldetsolicitudes">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="cldetsolicitudes" nillable="true" type="tns:cldetsolicitudes" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="cldetsolicitudes">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="nro_solicitud" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nro_pol" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nro_aseg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nro_pariente" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="diagnostico" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="fec_ingreso" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="fec_autorizacion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="usuario_autorizo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="estado" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="observaciones" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Anular_solicitud">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cod_solicitud" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="descripcion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Anular_solicitudResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Anular_solicitudResult" type="tns:ArrayOfClanulacion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="consultar_solicitudes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pCod_solicitud" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="consultar_solicitudesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="consultar_solicitudesResult" type="tns:ArrayOfClConsultaSolicitud" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfClConsultaSolicitud">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="clConsultaSolicitud" nillable="true" type="tns:clConsultaSolicitud" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="clConsultaSolicitud">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="cod_error" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mensaje" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_estado" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="txt_desc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="fec_autorizacion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_usuario" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="detmedicamento" type="tns:ArrayOfClDetMecamentos" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Detalle_Pago_Prov">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fecha" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Detalle_Pago_ProvResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Detalle_Pago_ProvResult" type="tns:ArrayOfClPagosProvDet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfClPagosProvDet">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="clPagosProvDet" nillable="true" type="tns:clPagosProvDet" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="clPagosProvDet">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="cod_error" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mensaje" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="detpagos" type="tns:ArrayOfClPagosProv" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfClPagosProv">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="clPagosProv" nillable="true" type="tns:clPagosProv" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="clPagosProv">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="lote" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="fecPago" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="numRelEgre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sucursal" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="trans" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="referencia" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="codProv" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="proveedor" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="docFiscal" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="poliza" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="certificado" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="reclamante" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="reclamo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="complemento" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="fecProceso" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="moneda" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="valorFactura" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="deducible" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="coaseguro" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="descuento" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="gastosNoCubiertos" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="retencion1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="retencion12_5" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="valorPagado" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cheque" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cuenta" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="observacion" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="valida_tu_seguro">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pNumpol" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pNumCert" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pTelefono" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="valida_tu_seguroResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="valida_tu_seguroResult" type="tns:ArrayOfClValidatuSeguro" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfClValidatuSeguro">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="clValidatuSeguro" nillable="true" type="tns:clValidatuSeguro" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="clValidatuSeguro">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="cod_error" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mensaje" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="pNumpol" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="pNumCert" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="pTelefono" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DetValSeg" type="tns:ArrayOfClDetValSeg" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfClDetValSeg">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="clDetValSeg" nillable="true" type="tns:clDetValSeg" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="clDetValSeg">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="nIdValidacion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nIdeAseg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nIdepol" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cClase" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nPoliza" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cSucursal" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nNumCert" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cNomAseg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cParentesco" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cSexo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cFecNac" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cEdad" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cFecAlta" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cFechaIni" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cFechaFinal" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="vDeducible" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cSaldoDeducible" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="vHabitacion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="vReqAdmin" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="vMaternidad" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="vPorSalud" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="vCodCoaFarmacia" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nCoaFarmacia" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="vCodCoaLaboratorio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nCoaLaboratorio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="vCodCoaRadioImagenes" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nCoaRadioImagenes" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="vCodCoaRedMedico" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nCoaRedMedico" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="vCodCoaRedOptica" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nCoaRedOptica" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="vCodDentalFaseI" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="vDentalFaseI" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="vCodDentalFaseII" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="vDentalFaseII" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="vCodDentalFaseIII" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="vDentalFaseIII" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="vCodDentalFaseIV" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="vDentalFaseIV" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="vCodGastoDental" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="vGastoDental" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="valida_lista_coberturas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nIdepol" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nNumOper" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nNumcer" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="nIdeBien" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nIdeAseg" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nNumpol" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="pCodProd" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="valida_lista_coberturasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="valida_lista_coberturasResult" type="tns:ArrayOfClValidaListaCoberturas" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfClValidaListaCoberturas">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="clValidaListaCoberturas" nillable="true" type="tns:clValidaListaCoberturas" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="clValidaListaCoberturas">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="cod_error" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mensaje" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="clDetListaCobert" type="tns:ArrayOfClDetListaCobert" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfClDetListaCobert">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="clDetListaCobert" nillable="true" type="tns:clDetListaCobert" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="clDetListaCobert">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CODIGO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DESCRIPCION" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="COBERTURA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SUMA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DEDUCIBLE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MONEDA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CERTIFICADO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ESTADO" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FECHA_INICIO" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="FECHA_FIN" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Servicios_Adicionales_WS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pNroExpediente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pNroServicio" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pCliente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pNumPol" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pNumCert" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pServicio" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pChasis" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pMotor" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pPlaca" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pAnio" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pTipoVeh" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pFecServic" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pLocalForaneo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pCiudad" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pValorServic" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pExcedente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pObserv" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pAutorizador" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Servicios_Adicionales_WSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Servicios_Adicionales_WSResult" type="tns:clServiciosAd" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="clServiciosAd">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="cod_error" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mensaje" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="idepreadmin" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="consultaCausas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pCodProd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cCodCobert" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="consultaCausasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="consultaCausasResult" type="tns:ArrayOfClConsultaCausas" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfClConsultaCausas">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="clConsultaCausas" nillable="true" type="tns:clConsultaCausas" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="clConsultaCausas">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="cod_error" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mensaje" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="clDetConsultaCausas" type="tns:ArrayOfClDetConsultaCausas" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfClDetConsultaCausas">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="clDetConsultaCausas" nillable="true" type="tns:clDetConsultaCausas" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="clDetConsultaCausas">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CODCAUSA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DESCRCAUSA" type="s:string" />
+        </s:sequence>
+      </s:complexType>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="consultar_AseguradoPSSoapIn">
@@ -728,6 +1217,105 @@
   <wsdl:message name="UploadFilecredenciales">
     <wsdl:part name="credenciales" element="tns:credenciales" />
   </wsdl:message>
+  <wsdl:message name="Ingresar_SolicitudesSoapIn">
+    <wsdl:part name="parameters" element="tns:Ingresar_Solicitudes" />
+  </wsdl:message>
+  <wsdl:message name="Ingresar_SolicitudesSoapOut">
+    <wsdl:part name="parameters" element="tns:Ingresar_SolicitudesResponse" />
+  </wsdl:message>
+  <wsdl:message name="Ingresar_Solicitudescredenciales">
+    <wsdl:part name="credenciales" element="tns:credenciales" />
+  </wsdl:message>
+  <wsdl:message name="creaReclamoSoapIn">
+    <wsdl:part name="parameters" element="tns:creaReclamo" />
+  </wsdl:message>
+  <wsdl:message name="creaReclamoSoapOut">
+    <wsdl:part name="parameters" element="tns:creaReclamoResponse" />
+  </wsdl:message>
+  <wsdl:message name="creaReclamocredenciales">
+    <wsdl:part name="credenciales" element="tns:credenciales" />
+  </wsdl:message>
+  <wsdl:message name="consultar_detalle_medicamentos_pendienteSoapIn">
+    <wsdl:part name="parameters" element="tns:consultar_detalle_medicamentos_pendiente" />
+  </wsdl:message>
+  <wsdl:message name="consultar_detalle_medicamentos_pendienteSoapOut">
+    <wsdl:part name="parameters" element="tns:consultar_detalle_medicamentos_pendienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="consultar_detalle_medicamentos_pendientecredenciales">
+    <wsdl:part name="credenciales" element="tns:credenciales" />
+  </wsdl:message>
+  <wsdl:message name="consultar_detalle_solicitudes_pendienteSoapIn">
+    <wsdl:part name="parameters" element="tns:consultar_detalle_solicitudes_pendiente" />
+  </wsdl:message>
+  <wsdl:message name="consultar_detalle_solicitudes_pendienteSoapOut">
+    <wsdl:part name="parameters" element="tns:consultar_detalle_solicitudes_pendienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="consultar_detalle_solicitudes_pendientecredenciales">
+    <wsdl:part name="credenciales" element="tns:credenciales" />
+  </wsdl:message>
+  <wsdl:message name="Anular_solicitudSoapIn">
+    <wsdl:part name="parameters" element="tns:Anular_solicitud" />
+  </wsdl:message>
+  <wsdl:message name="Anular_solicitudSoapOut">
+    <wsdl:part name="parameters" element="tns:Anular_solicitudResponse" />
+  </wsdl:message>
+  <wsdl:message name="Anular_solicitudcredenciales">
+    <wsdl:part name="credenciales" element="tns:credenciales" />
+  </wsdl:message>
+  <wsdl:message name="consultar_solicitudesSoapIn">
+    <wsdl:part name="parameters" element="tns:consultar_solicitudes" />
+  </wsdl:message>
+  <wsdl:message name="consultar_solicitudesSoapOut">
+    <wsdl:part name="parameters" element="tns:consultar_solicitudesResponse" />
+  </wsdl:message>
+  <wsdl:message name="consultar_solicitudescredenciales">
+    <wsdl:part name="credenciales" element="tns:credenciales" />
+  </wsdl:message>
+  <wsdl:message name="Detalle_Pago_ProvSoapIn">
+    <wsdl:part name="parameters" element="tns:Detalle_Pago_Prov" />
+  </wsdl:message>
+  <wsdl:message name="Detalle_Pago_ProvSoapOut">
+    <wsdl:part name="parameters" element="tns:Detalle_Pago_ProvResponse" />
+  </wsdl:message>
+  <wsdl:message name="Detalle_Pago_Provcredenciales">
+    <wsdl:part name="credenciales" element="tns:credenciales" />
+  </wsdl:message>
+  <wsdl:message name="valida_tu_seguroSoapIn">
+    <wsdl:part name="parameters" element="tns:valida_tu_seguro" />
+  </wsdl:message>
+  <wsdl:message name="valida_tu_seguroSoapOut">
+    <wsdl:part name="parameters" element="tns:valida_tu_seguroResponse" />
+  </wsdl:message>
+  <wsdl:message name="valida_tu_segurocredenciales">
+    <wsdl:part name="credenciales" element="tns:credenciales" />
+  </wsdl:message>
+  <wsdl:message name="valida_lista_coberturasSoapIn">
+    <wsdl:part name="parameters" element="tns:valida_lista_coberturas" />
+  </wsdl:message>
+  <wsdl:message name="valida_lista_coberturasSoapOut">
+    <wsdl:part name="parameters" element="tns:valida_lista_coberturasResponse" />
+  </wsdl:message>
+  <wsdl:message name="valida_lista_coberturascredenciales">
+    <wsdl:part name="credenciales" element="tns:credenciales" />
+  </wsdl:message>
+  <wsdl:message name="Servicios_Adicionales_WSSoapIn">
+    <wsdl:part name="parameters" element="tns:Servicios_Adicionales_WS" />
+  </wsdl:message>
+  <wsdl:message name="Servicios_Adicionales_WSSoapOut">
+    <wsdl:part name="parameters" element="tns:Servicios_Adicionales_WSResponse" />
+  </wsdl:message>
+  <wsdl:message name="Servicios_Adicionales_WScredenciales">
+    <wsdl:part name="credenciales" element="tns:credenciales" />
+  </wsdl:message>
+  <wsdl:message name="consultaCausasSoapIn">
+    <wsdl:part name="parameters" element="tns:consultaCausas" />
+  </wsdl:message>
+  <wsdl:message name="consultaCausasSoapOut">
+    <wsdl:part name="parameters" element="tns:consultaCausasResponse" />
+  </wsdl:message>
+  <wsdl:message name="consultaCausascredenciales">
+    <wsdl:part name="credenciales" element="tns:credenciales" />
+  </wsdl:message>
   <wsdl:portType name="WSPorSaludSoap">
     <wsdl:operation name="consultar_AseguradoPS">
       <wsdl:input message="tns:consultar_AseguradoPSSoapIn" />
@@ -780,6 +1368,50 @@
     <wsdl:operation name="UploadFile">
       <wsdl:input message="tns:UploadFileSoapIn" />
       <wsdl:output message="tns:UploadFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Ingresar_Solicitudes">
+      <wsdl:input message="tns:Ingresar_SolicitudesSoapIn" />
+      <wsdl:output message="tns:Ingresar_SolicitudesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="creaReclamo">
+      <wsdl:input message="tns:creaReclamoSoapIn" />
+      <wsdl:output message="tns:creaReclamoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultar_detalle_medicamentos_pendiente">
+      <wsdl:input message="tns:consultar_detalle_medicamentos_pendienteSoapIn" />
+      <wsdl:output message="tns:consultar_detalle_medicamentos_pendienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultar_detalle_solicitudes_pendiente">
+      <wsdl:input message="tns:consultar_detalle_solicitudes_pendienteSoapIn" />
+      <wsdl:output message="tns:consultar_detalle_solicitudes_pendienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Anular_solicitud">
+      <wsdl:input message="tns:Anular_solicitudSoapIn" />
+      <wsdl:output message="tns:Anular_solicitudSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultar_solicitudes">
+      <wsdl:input message="tns:consultar_solicitudesSoapIn" />
+      <wsdl:output message="tns:consultar_solicitudesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Detalle_Pago_Prov">
+      <wsdl:input message="tns:Detalle_Pago_ProvSoapIn" />
+      <wsdl:output message="tns:Detalle_Pago_ProvSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="valida_tu_seguro">
+      <wsdl:input message="tns:valida_tu_seguroSoapIn" />
+      <wsdl:output message="tns:valida_tu_seguroSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="valida_lista_coberturas">
+      <wsdl:input message="tns:valida_lista_coberturasSoapIn" />
+      <wsdl:output message="tns:valida_lista_coberturasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Servicios_Adicionales_WS">
+      <wsdl:input message="tns:Servicios_Adicionales_WSSoapIn" />
+      <wsdl:output message="tns:Servicios_Adicionales_WSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="consultaCausas">
+      <wsdl:input message="tns:consultaCausasSoapIn" />
+      <wsdl:output message="tns:consultaCausasSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WSPorSaludSoap" type="tns:WSPorSaludSoap">
@@ -914,6 +1546,116 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="Ingresar_Solicitudes">
+      <soap:operation soapAction="http://tempuri.org/Ingresar_Solicitudes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:Ingresar_Solicitudescredenciales" part="credenciales" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="creaReclamo">
+      <soap:operation soapAction="http://tempuri.org/creaReclamo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:creaReclamocredenciales" part="credenciales" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultar_detalle_medicamentos_pendiente">
+      <soap:operation soapAction="http://tempuri.org/consultar_detalle_medicamentos_pendiente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:consultar_detalle_medicamentos_pendientecredenciales" part="credenciales" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultar_detalle_solicitudes_pendiente">
+      <soap:operation soapAction="http://tempuri.org/consultar_detalle_solicitudes_pendiente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:consultar_detalle_solicitudes_pendientecredenciales" part="credenciales" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Anular_solicitud">
+      <soap:operation soapAction="http://tempuri.org/Anular_solicitud" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:Anular_solicitudcredenciales" part="credenciales" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultar_solicitudes">
+      <soap:operation soapAction="http://tempuri.org/consultar_solicitudes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:consultar_solicitudescredenciales" part="credenciales" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Detalle_Pago_Prov">
+      <soap:operation soapAction="http://tempuri.org/Detalle_Pago_Prov" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:Detalle_Pago_Provcredenciales" part="credenciales" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="valida_tu_seguro">
+      <soap:operation soapAction="http://tempuri.org/valida_tu_seguro" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:valida_tu_segurocredenciales" part="credenciales" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="valida_lista_coberturas">
+      <soap:operation soapAction="http://tempuri.org/valida_lista_coberturas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:valida_lista_coberturascredenciales" part="credenciales" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Servicios_Adicionales_WS">
+      <soap:operation soapAction="http://tempuri.org/Servicios_Adicionales_WS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:Servicios_Adicionales_WScredenciales" part="credenciales" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultaCausas">
+      <soap:operation soapAction="http://tempuri.org/consultaCausas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:consultaCausascredenciales" part="credenciales" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="WSPorSaludSoap12" type="tns:WSPorSaludSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -1042,6 +1784,116 @@
       <wsdl:input>
         <soap12:body use="literal" />
         <soap12:header message="tns:UploadFilecredenciales" part="credenciales" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Ingresar_Solicitudes">
+      <soap12:operation soapAction="http://tempuri.org/Ingresar_Solicitudes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:Ingresar_Solicitudescredenciales" part="credenciales" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="creaReclamo">
+      <soap12:operation soapAction="http://tempuri.org/creaReclamo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:creaReclamocredenciales" part="credenciales" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultar_detalle_medicamentos_pendiente">
+      <soap12:operation soapAction="http://tempuri.org/consultar_detalle_medicamentos_pendiente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:consultar_detalle_medicamentos_pendientecredenciales" part="credenciales" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultar_detalle_solicitudes_pendiente">
+      <soap12:operation soapAction="http://tempuri.org/consultar_detalle_solicitudes_pendiente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:consultar_detalle_solicitudes_pendientecredenciales" part="credenciales" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Anular_solicitud">
+      <soap12:operation soapAction="http://tempuri.org/Anular_solicitud" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:Anular_solicitudcredenciales" part="credenciales" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultar_solicitudes">
+      <soap12:operation soapAction="http://tempuri.org/consultar_solicitudes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:consultar_solicitudescredenciales" part="credenciales" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Detalle_Pago_Prov">
+      <soap12:operation soapAction="http://tempuri.org/Detalle_Pago_Prov" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:Detalle_Pago_Provcredenciales" part="credenciales" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="valida_tu_seguro">
+      <soap12:operation soapAction="http://tempuri.org/valida_tu_seguro" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:valida_tu_segurocredenciales" part="credenciales" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="valida_lista_coberturas">
+      <soap12:operation soapAction="http://tempuri.org/valida_lista_coberturas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:valida_lista_coberturascredenciales" part="credenciales" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Servicios_Adicionales_WS">
+      <soap12:operation soapAction="http://tempuri.org/Servicios_Adicionales_WS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:Servicios_Adicionales_WScredenciales" part="credenciales" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultaCausas">
+      <soap12:operation soapAction="http://tempuri.org/consultaCausas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:consultaCausascredenciales" part="credenciales" use="literal" />
       </wsdl:input>
       <wsdl:output>
         <soap12:body use="literal" />

@@ -790,12 +790,13 @@ namespace WSRestApiHelp.Controllers
                 return BadRequest("Debe enviar el codigo de cobertura.");
             }
 
-            var resultado = WSFH_QA.consultaCausas(
-                new WSFICOHSAHELP_HN.credenciales()
+            // PROD: WSFH (HN_PRO) + Public_HN=3. Antes: WSFH_QA + Public_HNQA=4.
+            var resultado = WSFH.consultaCausas(
+                new WSFICOHSAHELP_HN_PRO.credenciales()
                 {
                     usuario = "userBanfarma",
                     clave = "2014BANf@rm@8@nc@",
-                    publicacion = Public_HNQA
+                    publicacion = Public_HN
                 },
                 string.IsNullOrWhiteSpace(request.pCodProd) ? "AU01" : request.pCodProd,
                 request.cCodCobert
@@ -811,7 +812,7 @@ namespace WSRestApiHelp.Controllers
             {
                 foreach (var item in resultado.First().clDetConsultaCausas)
                 {
-                    data.Add(new WSFICOHSAHELP_HN.clDetConsultaCausas
+                    data.Add(new WSFICOHSAHELP_HN_PRO.clDetConsultaCausas
                     {
                         CODCAUSA = item.CODCAUSA,
                         DESCRCAUSA = item.DESCRCAUSA

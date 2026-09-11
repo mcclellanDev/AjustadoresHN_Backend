@@ -928,29 +928,47 @@
       </s:complexType>
       <s:complexType name="clDetValSeg">
         <s:sequence>
-          <s:element minOccurs="0" maxOccurs="1" name="IDVALIDACION" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="NIDEASEG" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="NNUMCERT" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="CNOMASEG" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="CPARENTESCO" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="CSEXO" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="CFECNAC" type="s:dateTime" />
-          <s:element minOccurs="0" maxOccurs="1" name="CEDAD" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="CFECALTA" type="s:dateTime" />
-          <s:element minOccurs="1" maxOccurs="1" name="vCoaseguro" type="s:double" />
-          <s:element minOccurs="1" maxOccurs="1" name="vDeducible" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="nIdValidacion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nIdeAseg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nIdepol" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cClase" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nPoliza" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cSucursal" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nNumCert" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cNomAseg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cParentesco" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cSexo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cFecNac" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cEdad" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cFecAlta" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cFechaIni" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cFechaFinal" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="vDeducible" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cSaldoDeducible" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="vHabitacion" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="vPorSalud" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="vCoasAmbulatorio" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="vMaternidad" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="vReqAdmin" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="vFarmacia" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="vRedMedico" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="vRedLaboratorio" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="vRadioImagen" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="SALDO_DEDUCIBLE" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="vAccidentesPer" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="COASEGURO_FARMACIA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="vMaternidad" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="vPorSalud" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="vCodCoaFarmacia" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nCoaFarmacia" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="vCodCoaLaboratorio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nCoaLaboratorio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="vCodCoaRadioImagenes" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nCoaRadioImagenes" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="vCodCoaRedMedico" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nCoaRedMedico" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="vCodCoaRedOptica" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nCoaRedOptica" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="vCodDentalFaseI" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="vDentalFaseI" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="vCodDentalFaseII" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="vDentalFaseII" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="vCodDentalFaseIII" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="vDentalFaseIII" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="vCodDentalFaseIV" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="vDentalFaseIV" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="vCodGastoDental" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="vGastoDental" type="s:string" />
         </s:sequence>
       </s:complexType>
       <s:element name="valida_lista_coberturas">
@@ -1085,7 +1103,7 @@
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="pIdePreAdmin" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="pProveedor" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="pFactCai" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pFactNum" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="pFecFact" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="pMonto" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="pFactFinal" type="s:string" />
@@ -1103,6 +1121,7 @@
         <s:sequence>
           <s:element minOccurs="0" maxOccurs="1" name="cod_error" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="mensaje" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_BPM" type="s:string" />
         </s:sequence>
       </s:complexType>
       <s:element name="anular_factura_liquidacion">
@@ -1110,8 +1129,7 @@
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="pIdePreAdmin" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="pProveedor" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="pFactCai" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="pFactFinal" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pFactNum" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>

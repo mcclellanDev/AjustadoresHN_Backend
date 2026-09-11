@@ -190,10 +190,26 @@ namespace WSRestApiHelp.WSFICOHSAHELP {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/valida_lista_coberturas", ReplyAction="*")]
         System.Threading.Tasks.Task<WSRestApiHelp.WSFICOHSAHELP.valida_lista_coberturasResponse> valida_lista_coberturasAsync(WSRestApiHelp.WSFICOHSAHELP.valida_lista_coberturasRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el mensaje Servicios_Adicionales_WSRequest tiene encabezados.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Servicios_Adicionales_WS", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        WSRestApiHelp.WSFICOHSAHELP.Servicios_Adicionales_WSResponse Servicios_Adicionales_WS(WSRestApiHelp.WSFICOHSAHELP.Servicios_Adicionales_WSRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Servicios_Adicionales_WS", ReplyAction="*")]
+        System.Threading.Tasks.Task<WSRestApiHelp.WSFICOHSAHELP.Servicios_Adicionales_WSResponse> Servicios_Adicionales_WSAsync(WSRestApiHelp.WSFICOHSAHELP.Servicios_Adicionales_WSRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el mensaje consultaCausasRequest tiene encabezados.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/consultaCausas", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        WSRestApiHelp.WSFICOHSAHELP.consultaCausasResponse consultaCausas(WSRestApiHelp.WSFICOHSAHELP.consultaCausasRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/consultaCausas", ReplyAction="*")]
+        System.Threading.Tasks.Task<WSRestApiHelp.WSFICOHSAHELP.consultaCausasResponse> consultaCausasAsync(WSRestApiHelp.WSFICOHSAHELP.consultaCausasRequest request);
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9221.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9340.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -267,7 +283,173 @@ namespace WSRestApiHelp.WSFICOHSAHELP {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9221.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9340.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
+    public partial class clDetConsultaCausas : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string cODCAUSAField;
+        
+        private string dESCRCAUSAField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string CODCAUSA {
+            get {
+                return this.cODCAUSAField;
+            }
+            set {
+                this.cODCAUSAField = value;
+                this.RaisePropertyChanged("CODCAUSA");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string DESCRCAUSA {
+            get {
+                return this.dESCRCAUSAField;
+            }
+            set {
+                this.dESCRCAUSAField = value;
+                this.RaisePropertyChanged("DESCRCAUSA");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9340.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
+    public partial class clConsultaCausas : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string cod_errorField;
+        
+        private string mensajeField;
+        
+        private clDetConsultaCausas[] clDetConsultaCausasField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string cod_error {
+            get {
+                return this.cod_errorField;
+            }
+            set {
+                this.cod_errorField = value;
+                this.RaisePropertyChanged("cod_error");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string mensaje {
+            get {
+                return this.mensajeField;
+            }
+            set {
+                this.mensajeField = value;
+                this.RaisePropertyChanged("mensaje");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=2)]
+        public clDetConsultaCausas[] clDetConsultaCausas {
+            get {
+                return this.clDetConsultaCausasField;
+            }
+            set {
+                this.clDetConsultaCausasField = value;
+                this.RaisePropertyChanged("clDetConsultaCausas");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9340.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
+    public partial class clServiciosAd : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string cod_errorField;
+        
+        private string mensajeField;
+        
+        private string idepreadminField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string cod_error {
+            get {
+                return this.cod_errorField;
+            }
+            set {
+                this.cod_errorField = value;
+                this.RaisePropertyChanged("cod_error");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string mensaje {
+            get {
+                return this.mensajeField;
+            }
+            set {
+                this.mensajeField = value;
+                this.RaisePropertyChanged("mensaje");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string idepreadmin {
+            get {
+                return this.idepreadminField;
+            }
+            set {
+                this.idepreadminField = value;
+                this.RaisePropertyChanged("idepreadmin");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9340.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -425,7 +607,7 @@ namespace WSRestApiHelp.WSFICOHSAHELP {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9221.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9340.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -485,182 +667,278 @@ namespace WSRestApiHelp.WSFICOHSAHELP {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9221.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9340.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
     public partial class clDetValSeg : object, System.ComponentModel.INotifyPropertyChanged {
         
-        private string iDVALIDACIONField;
+        private string nIdValidacionField;
         
-        private string nIDEASEGField;
+        private string nIdeAsegField;
         
-        private string nNUMCERTField;
+        private string nIdepolField;
         
-        private string cNOMASEGField;
+        private string cClaseField;
         
-        private string cPARENTESCOField;
+        private string nPolizaField;
         
-        private string cSEXOField;
+        private string cSucursalField;
         
-        private System.DateTime cFECNACField;
+        private string nNumCertField;
         
-        private string cEDADField;
+        private string cNomAsegField;
         
-        private System.DateTime cFECALTAField;
+        private string cParentescoField;
         
-        private double vCoaseguroField;
+        private string cSexoField;
         
-        private double vDeducibleField;
+        private string cFecNacField;
+        
+        private string cEdadField;
+        
+        private string cFecAltaField;
+        
+        private string cFechaIniField;
+        
+        private string cFechaFinalField;
+        
+        private string vDeducibleField;
+        
+        private string cSaldoDeducibleField;
         
         private string vHabitacionField;
         
-        private string vPorSaludField;
-        
-        private string vCoasAmbulatorioField;
+        private string vReqAdminField;
         
         private string vMaternidadField;
         
-        private string vReqAdminField;
+        private string vPorSaludField;
         
-        private string vFarmaciaField;
+        private string vCodCoaFarmaciaField;
         
-        private string vRedMedicoField;
+        private string nCoaFarmaciaField;
         
-        private string vRedLaboratorioField;
+        private string vCodCoaLaboratorioField;
         
-        private string vRadioImagenField;
+        private string nCoaLaboratorioField;
         
-        private string sALDO_DEDUCIBLEField;
+        private string vCodCoaRadioImagenesField;
         
-        private string vAccidentesPerField;
+        private string nCoaRadioImagenesField;
         
-        private string cOASEGURO_FARMACIAField;
+        private string vCodCoaRedMedicoField;
+        
+        private string nCoaRedMedicoField;
+        
+        private string vCodCoaRedOpticaField;
+        
+        private string nCoaRedOpticaField;
+        
+        private string vCodDentalFaseIField;
+        
+        private string vDentalFaseIField;
+        
+        private string vCodDentalFaseIIField;
+        
+        private string vDentalFaseIIField;
+        
+        private string vCodDentalFaseIIIField;
+        
+        private string vDentalFaseIIIField;
+        
+        private string vCodDentalFaseIVField;
+        
+        private string vDentalFaseIVField;
+        
+        private string vCodGastoDentalField;
+        
+        private string vGastoDentalField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string IDVALIDACION {
+        public string nIdValidacion {
             get {
-                return this.iDVALIDACIONField;
+                return this.nIdValidacionField;
             }
             set {
-                this.iDVALIDACIONField = value;
-                this.RaisePropertyChanged("IDVALIDACION");
+                this.nIdValidacionField = value;
+                this.RaisePropertyChanged("nIdValidacion");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public string NIDEASEG {
+        public string nIdeAseg {
             get {
-                return this.nIDEASEGField;
+                return this.nIdeAsegField;
             }
             set {
-                this.nIDEASEGField = value;
-                this.RaisePropertyChanged("NIDEASEG");
+                this.nIdeAsegField = value;
+                this.RaisePropertyChanged("nIdeAseg");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public string NNUMCERT {
+        public string nIdepol {
             get {
-                return this.nNUMCERTField;
+                return this.nIdepolField;
             }
             set {
-                this.nNUMCERTField = value;
-                this.RaisePropertyChanged("NNUMCERT");
+                this.nIdepolField = value;
+                this.RaisePropertyChanged("nIdepol");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=3)]
-        public string CNOMASEG {
+        public string cClase {
             get {
-                return this.cNOMASEGField;
+                return this.cClaseField;
             }
             set {
-                this.cNOMASEGField = value;
-                this.RaisePropertyChanged("CNOMASEG");
+                this.cClaseField = value;
+                this.RaisePropertyChanged("cClase");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=4)]
-        public string CPARENTESCO {
+        public string nPoliza {
             get {
-                return this.cPARENTESCOField;
+                return this.nPolizaField;
             }
             set {
-                this.cPARENTESCOField = value;
-                this.RaisePropertyChanged("CPARENTESCO");
+                this.nPolizaField = value;
+                this.RaisePropertyChanged("nPoliza");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=5)]
-        public string CSEXO {
+        public string cSucursal {
             get {
-                return this.cSEXOField;
+                return this.cSucursalField;
             }
             set {
-                this.cSEXOField = value;
-                this.RaisePropertyChanged("CSEXO");
+                this.cSucursalField = value;
+                this.RaisePropertyChanged("cSucursal");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=6)]
-        public System.DateTime CFECNAC {
+        public string nNumCert {
             get {
-                return this.cFECNACField;
+                return this.nNumCertField;
             }
             set {
-                this.cFECNACField = value;
-                this.RaisePropertyChanged("CFECNAC");
+                this.nNumCertField = value;
+                this.RaisePropertyChanged("nNumCert");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=7)]
-        public string CEDAD {
+        public string cNomAseg {
             get {
-                return this.cEDADField;
+                return this.cNomAsegField;
             }
             set {
-                this.cEDADField = value;
-                this.RaisePropertyChanged("CEDAD");
+                this.cNomAsegField = value;
+                this.RaisePropertyChanged("cNomAseg");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=8)]
-        public System.DateTime CFECALTA {
+        public string cParentesco {
             get {
-                return this.cFECALTAField;
+                return this.cParentescoField;
             }
             set {
-                this.cFECALTAField = value;
-                this.RaisePropertyChanged("CFECALTA");
+                this.cParentescoField = value;
+                this.RaisePropertyChanged("cParentesco");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=9)]
-        public double vCoaseguro {
+        public string cSexo {
             get {
-                return this.vCoaseguroField;
+                return this.cSexoField;
             }
             set {
-                this.vCoaseguroField = value;
-                this.RaisePropertyChanged("vCoaseguro");
+                this.cSexoField = value;
+                this.RaisePropertyChanged("cSexo");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=10)]
-        public double vDeducible {
+        public string cFecNac {
+            get {
+                return this.cFecNacField;
+            }
+            set {
+                this.cFecNacField = value;
+                this.RaisePropertyChanged("cFecNac");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=11)]
+        public string cEdad {
+            get {
+                return this.cEdadField;
+            }
+            set {
+                this.cEdadField = value;
+                this.RaisePropertyChanged("cEdad");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=12)]
+        public string cFecAlta {
+            get {
+                return this.cFecAltaField;
+            }
+            set {
+                this.cFecAltaField = value;
+                this.RaisePropertyChanged("cFecAlta");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=13)]
+        public string cFechaIni {
+            get {
+                return this.cFechaIniField;
+            }
+            set {
+                this.cFechaIniField = value;
+                this.RaisePropertyChanged("cFechaIni");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=14)]
+        public string cFechaFinal {
+            get {
+                return this.cFechaFinalField;
+            }
+            set {
+                this.cFechaFinalField = value;
+                this.RaisePropertyChanged("cFechaFinal");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=15)]
+        public string vDeducible {
             get {
                 return this.vDeducibleField;
             }
@@ -671,7 +949,19 @@ namespace WSRestApiHelp.WSFICOHSAHELP {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=11)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=16)]
+        public string cSaldoDeducible {
+            get {
+                return this.cSaldoDeducibleField;
+            }
+            set {
+                this.cSaldoDeducibleField = value;
+                this.RaisePropertyChanged("cSaldoDeducible");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=17)]
         public string vHabitacion {
             get {
                 return this.vHabitacionField;
@@ -683,43 +973,7 @@ namespace WSRestApiHelp.WSFICOHSAHELP {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=12)]
-        public string vPorSalud {
-            get {
-                return this.vPorSaludField;
-            }
-            set {
-                this.vPorSaludField = value;
-                this.RaisePropertyChanged("vPorSalud");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=13)]
-        public string vCoasAmbulatorio {
-            get {
-                return this.vCoasAmbulatorioField;
-            }
-            set {
-                this.vCoasAmbulatorioField = value;
-                this.RaisePropertyChanged("vCoasAmbulatorio");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=14)]
-        public string vMaternidad {
-            get {
-                return this.vMaternidadField;
-            }
-            set {
-                this.vMaternidadField = value;
-                this.RaisePropertyChanged("vMaternidad");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=15)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=18)]
         public string vReqAdmin {
             get {
                 return this.vReqAdminField;
@@ -731,86 +985,266 @@ namespace WSRestApiHelp.WSFICOHSAHELP {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=16)]
-        public string vFarmacia {
-            get {
-                return this.vFarmaciaField;
-            }
-            set {
-                this.vFarmaciaField = value;
-                this.RaisePropertyChanged("vFarmacia");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=17)]
-        public string vRedMedico {
-            get {
-                return this.vRedMedicoField;
-            }
-            set {
-                this.vRedMedicoField = value;
-                this.RaisePropertyChanged("vRedMedico");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=18)]
-        public string vRedLaboratorio {
-            get {
-                return this.vRedLaboratorioField;
-            }
-            set {
-                this.vRedLaboratorioField = value;
-                this.RaisePropertyChanged("vRedLaboratorio");
-            }
-        }
-        
-        /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=19)]
-        public string vRadioImagen {
+        public string vMaternidad {
             get {
-                return this.vRadioImagenField;
+                return this.vMaternidadField;
             }
             set {
-                this.vRadioImagenField = value;
-                this.RaisePropertyChanged("vRadioImagen");
+                this.vMaternidadField = value;
+                this.RaisePropertyChanged("vMaternidad");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=20)]
-        public string SALDO_DEDUCIBLE {
+        public string vPorSalud {
             get {
-                return this.sALDO_DEDUCIBLEField;
+                return this.vPorSaludField;
             }
             set {
-                this.sALDO_DEDUCIBLEField = value;
-                this.RaisePropertyChanged("SALDO_DEDUCIBLE");
+                this.vPorSaludField = value;
+                this.RaisePropertyChanged("vPorSalud");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=21)]
-        public string vAccidentesPer {
+        public string vCodCoaFarmacia {
             get {
-                return this.vAccidentesPerField;
+                return this.vCodCoaFarmaciaField;
             }
             set {
-                this.vAccidentesPerField = value;
-                this.RaisePropertyChanged("vAccidentesPer");
+                this.vCodCoaFarmaciaField = value;
+                this.RaisePropertyChanged("vCodCoaFarmacia");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=22)]
-        public string COASEGURO_FARMACIA {
+        public string nCoaFarmacia {
             get {
-                return this.cOASEGURO_FARMACIAField;
+                return this.nCoaFarmaciaField;
             }
             set {
-                this.cOASEGURO_FARMACIAField = value;
-                this.RaisePropertyChanged("COASEGURO_FARMACIA");
+                this.nCoaFarmaciaField = value;
+                this.RaisePropertyChanged("nCoaFarmacia");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=23)]
+        public string vCodCoaLaboratorio {
+            get {
+                return this.vCodCoaLaboratorioField;
+            }
+            set {
+                this.vCodCoaLaboratorioField = value;
+                this.RaisePropertyChanged("vCodCoaLaboratorio");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=24)]
+        public string nCoaLaboratorio {
+            get {
+                return this.nCoaLaboratorioField;
+            }
+            set {
+                this.nCoaLaboratorioField = value;
+                this.RaisePropertyChanged("nCoaLaboratorio");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=25)]
+        public string vCodCoaRadioImagenes {
+            get {
+                return this.vCodCoaRadioImagenesField;
+            }
+            set {
+                this.vCodCoaRadioImagenesField = value;
+                this.RaisePropertyChanged("vCodCoaRadioImagenes");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=26)]
+        public string nCoaRadioImagenes {
+            get {
+                return this.nCoaRadioImagenesField;
+            }
+            set {
+                this.nCoaRadioImagenesField = value;
+                this.RaisePropertyChanged("nCoaRadioImagenes");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=27)]
+        public string vCodCoaRedMedico {
+            get {
+                return this.vCodCoaRedMedicoField;
+            }
+            set {
+                this.vCodCoaRedMedicoField = value;
+                this.RaisePropertyChanged("vCodCoaRedMedico");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=28)]
+        public string nCoaRedMedico {
+            get {
+                return this.nCoaRedMedicoField;
+            }
+            set {
+                this.nCoaRedMedicoField = value;
+                this.RaisePropertyChanged("nCoaRedMedico");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=29)]
+        public string vCodCoaRedOptica {
+            get {
+                return this.vCodCoaRedOpticaField;
+            }
+            set {
+                this.vCodCoaRedOpticaField = value;
+                this.RaisePropertyChanged("vCodCoaRedOptica");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=30)]
+        public string nCoaRedOptica {
+            get {
+                return this.nCoaRedOpticaField;
+            }
+            set {
+                this.nCoaRedOpticaField = value;
+                this.RaisePropertyChanged("nCoaRedOptica");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=31)]
+        public string vCodDentalFaseI {
+            get {
+                return this.vCodDentalFaseIField;
+            }
+            set {
+                this.vCodDentalFaseIField = value;
+                this.RaisePropertyChanged("vCodDentalFaseI");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=32)]
+        public string vDentalFaseI {
+            get {
+                return this.vDentalFaseIField;
+            }
+            set {
+                this.vDentalFaseIField = value;
+                this.RaisePropertyChanged("vDentalFaseI");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=33)]
+        public string vCodDentalFaseII {
+            get {
+                return this.vCodDentalFaseIIField;
+            }
+            set {
+                this.vCodDentalFaseIIField = value;
+                this.RaisePropertyChanged("vCodDentalFaseII");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=34)]
+        public string vDentalFaseII {
+            get {
+                return this.vDentalFaseIIField;
+            }
+            set {
+                this.vDentalFaseIIField = value;
+                this.RaisePropertyChanged("vDentalFaseII");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=35)]
+        public string vCodDentalFaseIII {
+            get {
+                return this.vCodDentalFaseIIIField;
+            }
+            set {
+                this.vCodDentalFaseIIIField = value;
+                this.RaisePropertyChanged("vCodDentalFaseIII");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=36)]
+        public string vDentalFaseIII {
+            get {
+                return this.vDentalFaseIIIField;
+            }
+            set {
+                this.vDentalFaseIIIField = value;
+                this.RaisePropertyChanged("vDentalFaseIII");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=37)]
+        public string vCodDentalFaseIV {
+            get {
+                return this.vCodDentalFaseIVField;
+            }
+            set {
+                this.vCodDentalFaseIVField = value;
+                this.RaisePropertyChanged("vCodDentalFaseIV");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=38)]
+        public string vDentalFaseIV {
+            get {
+                return this.vDentalFaseIVField;
+            }
+            set {
+                this.vDentalFaseIVField = value;
+                this.RaisePropertyChanged("vDentalFaseIV");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=39)]
+        public string vCodGastoDental {
+            get {
+                return this.vCodGastoDentalField;
+            }
+            set {
+                this.vCodGastoDentalField = value;
+                this.RaisePropertyChanged("vCodGastoDental");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=40)]
+        public string vGastoDental {
+            get {
+                return this.vGastoDentalField;
+            }
+            set {
+                this.vGastoDentalField = value;
+                this.RaisePropertyChanged("vGastoDental");
             }
         }
         
@@ -825,7 +1259,7 @@ namespace WSRestApiHelp.WSFICOHSAHELP {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9221.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9340.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -927,7 +1361,7 @@ namespace WSRestApiHelp.WSFICOHSAHELP {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9221.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9340.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1323,7 +1757,7 @@ namespace WSRestApiHelp.WSFICOHSAHELP {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9221.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9340.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1383,7 +1817,7 @@ namespace WSRestApiHelp.WSFICOHSAHELP {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9221.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9340.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1499,7 +1933,7 @@ namespace WSRestApiHelp.WSFICOHSAHELP {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9221.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9340.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1713,7 +2147,7 @@ namespace WSRestApiHelp.WSFICOHSAHELP {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9221.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9340.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1871,7 +2305,7 @@ namespace WSRestApiHelp.WSFICOHSAHELP {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9221.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9340.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1931,7 +2365,7 @@ namespace WSRestApiHelp.WSFICOHSAHELP {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9221.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9340.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2117,7 +2551,7 @@ namespace WSRestApiHelp.WSFICOHSAHELP {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9221.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9340.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2205,7 +2639,7 @@ namespace WSRestApiHelp.WSFICOHSAHELP {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9221.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9340.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2251,7 +2685,7 @@ namespace WSRestApiHelp.WSFICOHSAHELP {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9221.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9340.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3375,7 +3809,7 @@ namespace WSRestApiHelp.WSFICOHSAHELP {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9221.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9340.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3925,7 +4359,7 @@ namespace WSRestApiHelp.WSFICOHSAHELP {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9221.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9340.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4643,7 +5077,7 @@ namespace WSRestApiHelp.WSFICOHSAHELP {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9221.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9340.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4703,7 +5137,7 @@ namespace WSRestApiHelp.WSFICOHSAHELP {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9221.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9340.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4931,7 +5365,7 @@ namespace WSRestApiHelp.WSFICOHSAHELP {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9221.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9340.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4977,7 +5411,7 @@ namespace WSRestApiHelp.WSFICOHSAHELP {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9221.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9340.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4989,6 +5423,8 @@ namespace WSRestApiHelp.WSFICOHSAHELP {
         private string mensajeField;
         
         private string idepreadminField;
+        
+        private string codsolicitudField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
@@ -5026,6 +5462,18 @@ namespace WSRestApiHelp.WSFICOHSAHELP {
             }
         }
         
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string codsolicitud {
+            get {
+                return this.codsolicitudField;
+            }
+            set {
+                this.codsolicitudField = value;
+                this.RaisePropertyChanged("codsolicitud");
+            }
+        }
+        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -5037,7 +5485,7 @@ namespace WSRestApiHelp.WSFICOHSAHELP {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9221.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9340.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5167,7 +5615,7 @@ namespace WSRestApiHelp.WSFICOHSAHELP {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9221.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9340.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5283,7 +5731,7 @@ namespace WSRestApiHelp.WSFICOHSAHELP {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9221.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9340.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5651,7 +6099,7 @@ namespace WSRestApiHelp.WSFICOHSAHELP {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9221.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9340.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5979,10 +6427,36 @@ namespace WSRestApiHelp.WSFICOHSAHELP {
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=12)]
         public string fileName;
         
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=13)]
+        public string pCodEspec;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=14)]
+        public string pCodSubesp;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=15)]
+        public string pCodEspta;
+        
         public crear_liquidacionRequest() {
         }
         
-        public crear_liquidacionRequest(WSRestApiHelp.WSFICOHSAHELP.credenciales credenciales, string pNumPol, string pNumCert, string pIdeAseg, string pCodProv, string pNumFact, string pCodEnfer, string pFecOcurr, string pTraBenef, string pMonTotal, string pDescuen, string pObserva, byte[] f, string fileName) {
+        public crear_liquidacionRequest(
+                    WSRestApiHelp.WSFICOHSAHELP.credenciales credenciales, 
+                    string pNumPol, 
+                    string pNumCert, 
+                    string pIdeAseg, 
+                    string pCodProv, 
+                    string pNumFact, 
+                    string pCodEnfer, 
+                    string pFecOcurr, 
+                    string pTraBenef, 
+                    string pMonTotal, 
+                    string pDescuen, 
+                    string pObserva, 
+                    byte[] f, 
+                    string fileName, 
+                    string pCodEspec, 
+                    string pCodSubesp, 
+                    string pCodEspta) {
             this.credenciales = credenciales;
             this.pNumPol = pNumPol;
             this.pNumCert = pNumCert;
@@ -5997,6 +6471,9 @@ namespace WSRestApiHelp.WSFICOHSAHELP {
             this.pObserva = pObserva;
             this.f = f;
             this.fileName = fileName;
+            this.pCodEspec = pCodEspec;
+            this.pCodSubesp = pCodSubesp;
+            this.pCodEspta = pCodEspta;
         }
     }
     
@@ -7011,7 +7488,7 @@ namespace WSRestApiHelp.WSFICOHSAHELP {
         public string nIdeAseg;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=5)]
-        public int nNumpol;
+        public long nNumpol;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=6)]
         public string pCodProd;
@@ -7019,7 +7496,7 @@ namespace WSRestApiHelp.WSFICOHSAHELP {
         public valida_lista_coberturasRequest() {
         }
         
-        public valida_lista_coberturasRequest(WSRestApiHelp.WSFICOHSAHELP.credenciales credenciales, string nIdepol, string nNumOper, int nNumcer, string nIdeBien, string nIdeAseg, int nNumpol, string pCodProd) {
+        public valida_lista_coberturasRequest(WSRestApiHelp.WSFICOHSAHELP.credenciales credenciales, string nIdepol, string nNumOper, int nNumcer, string nIdeBien, string nIdeAseg, long nNumpol, string pCodProd) {
             this.credenciales = credenciales;
             this.nIdepol = nIdepol;
             this.nNumOper = nNumOper;
@@ -7045,6 +7522,173 @@ namespace WSRestApiHelp.WSFICOHSAHELP {
         
         public valida_lista_coberturasResponse(WSRestApiHelp.WSFICOHSAHELP.clValidaListaCoberturas[] valida_lista_coberturasResult) {
             this.valida_lista_coberturasResult = valida_lista_coberturasResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="Servicios_Adicionales_WS", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class Servicios_Adicionales_WSRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://tempuri.org/")]
+        public WSRestApiHelp.WSFICOHSAHELP.credenciales credenciales;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public string pNroExpediente;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=1)]
+        public string pNroServicio;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=2)]
+        public string pCliente;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=3)]
+        public string pNumPol;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=4)]
+        public string pNumCert;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=5)]
+        public string pServicio;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=6)]
+        public string pChasis;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=7)]
+        public string pMotor;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=8)]
+        public string pPlaca;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=9)]
+        public string pAnio;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=10)]
+        public string pTipoVeh;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=11)]
+        public string pFecServic;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=12)]
+        public string pLocalForaneo;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=13)]
+        public string pCiudad;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=14)]
+        public string pValorServic;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=15)]
+        public string pExcedente;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=16)]
+        public string pObserv;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=17)]
+        public string pAutorizador;
+        
+        public Servicios_Adicionales_WSRequest() {
+        }
+        
+        public Servicios_Adicionales_WSRequest(
+                    WSRestApiHelp.WSFICOHSAHELP.credenciales credenciales, 
+                    string pNroExpediente, 
+                    string pNroServicio, 
+                    string pCliente, 
+                    string pNumPol, 
+                    string pNumCert, 
+                    string pServicio, 
+                    string pChasis, 
+                    string pMotor, 
+                    string pPlaca, 
+                    string pAnio, 
+                    string pTipoVeh, 
+                    string pFecServic, 
+                    string pLocalForaneo, 
+                    string pCiudad, 
+                    string pValorServic, 
+                    string pExcedente, 
+                    string pObserv, 
+                    string pAutorizador) {
+            this.credenciales = credenciales;
+            this.pNroExpediente = pNroExpediente;
+            this.pNroServicio = pNroServicio;
+            this.pCliente = pCliente;
+            this.pNumPol = pNumPol;
+            this.pNumCert = pNumCert;
+            this.pServicio = pServicio;
+            this.pChasis = pChasis;
+            this.pMotor = pMotor;
+            this.pPlaca = pPlaca;
+            this.pAnio = pAnio;
+            this.pTipoVeh = pTipoVeh;
+            this.pFecServic = pFecServic;
+            this.pLocalForaneo = pLocalForaneo;
+            this.pCiudad = pCiudad;
+            this.pValorServic = pValorServic;
+            this.pExcedente = pExcedente;
+            this.pObserv = pObserv;
+            this.pAutorizador = pAutorizador;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="Servicios_Adicionales_WSResponse", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class Servicios_Adicionales_WSResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public WSRestApiHelp.WSFICOHSAHELP.clServiciosAd Servicios_Adicionales_WSResult;
+        
+        public Servicios_Adicionales_WSResponse() {
+        }
+        
+        public Servicios_Adicionales_WSResponse(WSRestApiHelp.WSFICOHSAHELP.clServiciosAd Servicios_Adicionales_WSResult) {
+            this.Servicios_Adicionales_WSResult = Servicios_Adicionales_WSResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="consultaCausas", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class consultaCausasRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://tempuri.org/")]
+        public WSRestApiHelp.WSFICOHSAHELP.credenciales credenciales;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public string pCodProd;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=1)]
+        public string cCodCobert;
+        
+        public consultaCausasRequest() {
+        }
+        
+        public consultaCausasRequest(WSRestApiHelp.WSFICOHSAHELP.credenciales credenciales, string pCodProd, string cCodCobert) {
+            this.credenciales = credenciales;
+            this.pCodProd = pCodProd;
+            this.cCodCobert = cCodCobert;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="consultaCausasResponse", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class consultaCausasResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public WSRestApiHelp.WSFICOHSAHELP.clConsultaCausas[] consultaCausasResult;
+        
+        public consultaCausasResponse() {
+        }
+        
+        public consultaCausasResponse(WSRestApiHelp.WSFICOHSAHELP.clConsultaCausas[] consultaCausasResult) {
+            this.consultaCausasResult = consultaCausasResult;
         }
     }
     
@@ -7119,7 +7763,24 @@ namespace WSRestApiHelp.WSFICOHSAHELP {
             return base.Channel.crear_liquidacion(request);
         }
         
-        public WSRestApiHelp.WSFICOHSAHELP.clliquidacion crear_liquidacion(WSRestApiHelp.WSFICOHSAHELP.credenciales credenciales, string pNumPol, string pNumCert, string pIdeAseg, string pCodProv, string pNumFact, string pCodEnfer, string pFecOcurr, string pTraBenef, string pMonTotal, string pDescuen, string pObserva, byte[] f, string fileName) {
+        public WSRestApiHelp.WSFICOHSAHELP.clliquidacion crear_liquidacion(
+                    WSRestApiHelp.WSFICOHSAHELP.credenciales credenciales, 
+                    string pNumPol, 
+                    string pNumCert, 
+                    string pIdeAseg, 
+                    string pCodProv, 
+                    string pNumFact, 
+                    string pCodEnfer, 
+                    string pFecOcurr, 
+                    string pTraBenef, 
+                    string pMonTotal, 
+                    string pDescuen, 
+                    string pObserva, 
+                    byte[] f, 
+                    string fileName, 
+                    string pCodEspec, 
+                    string pCodSubesp, 
+                    string pCodEspta) {
             WSRestApiHelp.WSFICOHSAHELP.crear_liquidacionRequest inValue = new WSRestApiHelp.WSFICOHSAHELP.crear_liquidacionRequest();
             inValue.credenciales = credenciales;
             inValue.pNumPol = pNumPol;
@@ -7135,6 +7796,9 @@ namespace WSRestApiHelp.WSFICOHSAHELP {
             inValue.pObserva = pObserva;
             inValue.f = f;
             inValue.fileName = fileName;
+            inValue.pCodEspec = pCodEspec;
+            inValue.pCodSubesp = pCodSubesp;
+            inValue.pCodEspta = pCodEspta;
             WSRestApiHelp.WSFICOHSAHELP.crear_liquidacionResponse retVal = ((WSRestApiHelp.WSFICOHSAHELP.WSPorSaludSoap)(this)).crear_liquidacion(inValue);
             return retVal.crear_liquidacionResult;
         }
@@ -7144,7 +7808,24 @@ namespace WSRestApiHelp.WSFICOHSAHELP {
             return base.Channel.crear_liquidacionAsync(request);
         }
         
-        public System.Threading.Tasks.Task<WSRestApiHelp.WSFICOHSAHELP.crear_liquidacionResponse> crear_liquidacionAsync(WSRestApiHelp.WSFICOHSAHELP.credenciales credenciales, string pNumPol, string pNumCert, string pIdeAseg, string pCodProv, string pNumFact, string pCodEnfer, string pFecOcurr, string pTraBenef, string pMonTotal, string pDescuen, string pObserva, byte[] f, string fileName) {
+        public System.Threading.Tasks.Task<WSRestApiHelp.WSFICOHSAHELP.crear_liquidacionResponse> crear_liquidacionAsync(
+                    WSRestApiHelp.WSFICOHSAHELP.credenciales credenciales, 
+                    string pNumPol, 
+                    string pNumCert, 
+                    string pIdeAseg, 
+                    string pCodProv, 
+                    string pNumFact, 
+                    string pCodEnfer, 
+                    string pFecOcurr, 
+                    string pTraBenef, 
+                    string pMonTotal, 
+                    string pDescuen, 
+                    string pObserva, 
+                    byte[] f, 
+                    string fileName, 
+                    string pCodEspec, 
+                    string pCodSubesp, 
+                    string pCodEspta) {
             WSRestApiHelp.WSFICOHSAHELP.crear_liquidacionRequest inValue = new WSRestApiHelp.WSFICOHSAHELP.crear_liquidacionRequest();
             inValue.credenciales = credenciales;
             inValue.pNumPol = pNumPol;
@@ -7160,6 +7841,9 @@ namespace WSRestApiHelp.WSFICOHSAHELP {
             inValue.pObserva = pObserva;
             inValue.f = f;
             inValue.fileName = fileName;
+            inValue.pCodEspec = pCodEspec;
+            inValue.pCodSubesp = pCodSubesp;
+            inValue.pCodEspta = pCodEspta;
             return ((WSRestApiHelp.WSFICOHSAHELP.WSPorSaludSoap)(this)).crear_liquidacionAsync(inValue);
         }
         
@@ -7773,7 +8457,7 @@ namespace WSRestApiHelp.WSFICOHSAHELP {
             return base.Channel.valida_lista_coberturas(request);
         }
         
-        public WSRestApiHelp.WSFICOHSAHELP.clValidaListaCoberturas[] valida_lista_coberturas(WSRestApiHelp.WSFICOHSAHELP.credenciales credenciales, string nIdepol, string nNumOper, int nNumcer, string nIdeBien, string nIdeAseg, int nNumpol, string pCodProd) {
+        public WSRestApiHelp.WSFICOHSAHELP.clValidaListaCoberturas[] valida_lista_coberturas(WSRestApiHelp.WSFICOHSAHELP.credenciales credenciales, string nIdepol, string nNumOper, int nNumcer, string nIdeBien, string nIdeAseg, long nNumpol, string pCodProd) {
             WSRestApiHelp.WSFICOHSAHELP.valida_lista_coberturasRequest inValue = new WSRestApiHelp.WSFICOHSAHELP.valida_lista_coberturasRequest();
             inValue.credenciales = credenciales;
             inValue.nIdepol = nIdepol;
@@ -7792,7 +8476,7 @@ namespace WSRestApiHelp.WSFICOHSAHELP {
             return base.Channel.valida_lista_coberturasAsync(request);
         }
         
-        public System.Threading.Tasks.Task<WSRestApiHelp.WSFICOHSAHELP.valida_lista_coberturasResponse> valida_lista_coberturasAsync(WSRestApiHelp.WSFICOHSAHELP.credenciales credenciales, string nIdepol, string nNumOper, int nNumcer, string nIdeBien, string nIdeAseg, int nNumpol, string pCodProd) {
+        public System.Threading.Tasks.Task<WSRestApiHelp.WSFICOHSAHELP.valida_lista_coberturasResponse> valida_lista_coberturasAsync(WSRestApiHelp.WSFICOHSAHELP.credenciales credenciales, string nIdepol, string nNumOper, int nNumcer, string nIdeBien, string nIdeAseg, long nNumpol, string pCodProd) {
             WSRestApiHelp.WSFICOHSAHELP.valida_lista_coberturasRequest inValue = new WSRestApiHelp.WSFICOHSAHELP.valida_lista_coberturasRequest();
             inValue.credenciales = credenciales;
             inValue.nIdepol = nIdepol;
@@ -7803,6 +8487,130 @@ namespace WSRestApiHelp.WSFICOHSAHELP {
             inValue.nNumpol = nNumpol;
             inValue.pCodProd = pCodProd;
             return ((WSRestApiHelp.WSFICOHSAHELP.WSPorSaludSoap)(this)).valida_lista_coberturasAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        WSRestApiHelp.WSFICOHSAHELP.Servicios_Adicionales_WSResponse WSRestApiHelp.WSFICOHSAHELP.WSPorSaludSoap.Servicios_Adicionales_WS(WSRestApiHelp.WSFICOHSAHELP.Servicios_Adicionales_WSRequest request) {
+            return base.Channel.Servicios_Adicionales_WS(request);
+        }
+        
+        public WSRestApiHelp.WSFICOHSAHELP.clServiciosAd Servicios_Adicionales_WS(
+                    WSRestApiHelp.WSFICOHSAHELP.credenciales credenciales, 
+                    string pNroExpediente, 
+                    string pNroServicio, 
+                    string pCliente, 
+                    string pNumPol, 
+                    string pNumCert, 
+                    string pServicio, 
+                    string pChasis, 
+                    string pMotor, 
+                    string pPlaca, 
+                    string pAnio, 
+                    string pTipoVeh, 
+                    string pFecServic, 
+                    string pLocalForaneo, 
+                    string pCiudad, 
+                    string pValorServic, 
+                    string pExcedente, 
+                    string pObserv, 
+                    string pAutorizador) {
+            WSRestApiHelp.WSFICOHSAHELP.Servicios_Adicionales_WSRequest inValue = new WSRestApiHelp.WSFICOHSAHELP.Servicios_Adicionales_WSRequest();
+            inValue.credenciales = credenciales;
+            inValue.pNroExpediente = pNroExpediente;
+            inValue.pNroServicio = pNroServicio;
+            inValue.pCliente = pCliente;
+            inValue.pNumPol = pNumPol;
+            inValue.pNumCert = pNumCert;
+            inValue.pServicio = pServicio;
+            inValue.pChasis = pChasis;
+            inValue.pMotor = pMotor;
+            inValue.pPlaca = pPlaca;
+            inValue.pAnio = pAnio;
+            inValue.pTipoVeh = pTipoVeh;
+            inValue.pFecServic = pFecServic;
+            inValue.pLocalForaneo = pLocalForaneo;
+            inValue.pCiudad = pCiudad;
+            inValue.pValorServic = pValorServic;
+            inValue.pExcedente = pExcedente;
+            inValue.pObserv = pObserv;
+            inValue.pAutorizador = pAutorizador;
+            WSRestApiHelp.WSFICOHSAHELP.Servicios_Adicionales_WSResponse retVal = ((WSRestApiHelp.WSFICOHSAHELP.WSPorSaludSoap)(this)).Servicios_Adicionales_WS(inValue);
+            return retVal.Servicios_Adicionales_WSResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<WSRestApiHelp.WSFICOHSAHELP.Servicios_Adicionales_WSResponse> WSRestApiHelp.WSFICOHSAHELP.WSPorSaludSoap.Servicios_Adicionales_WSAsync(WSRestApiHelp.WSFICOHSAHELP.Servicios_Adicionales_WSRequest request) {
+            return base.Channel.Servicios_Adicionales_WSAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<WSRestApiHelp.WSFICOHSAHELP.Servicios_Adicionales_WSResponse> Servicios_Adicionales_WSAsync(
+                    WSRestApiHelp.WSFICOHSAHELP.credenciales credenciales, 
+                    string pNroExpediente, 
+                    string pNroServicio, 
+                    string pCliente, 
+                    string pNumPol, 
+                    string pNumCert, 
+                    string pServicio, 
+                    string pChasis, 
+                    string pMotor, 
+                    string pPlaca, 
+                    string pAnio, 
+                    string pTipoVeh, 
+                    string pFecServic, 
+                    string pLocalForaneo, 
+                    string pCiudad, 
+                    string pValorServic, 
+                    string pExcedente, 
+                    string pObserv, 
+                    string pAutorizador) {
+            WSRestApiHelp.WSFICOHSAHELP.Servicios_Adicionales_WSRequest inValue = new WSRestApiHelp.WSFICOHSAHELP.Servicios_Adicionales_WSRequest();
+            inValue.credenciales = credenciales;
+            inValue.pNroExpediente = pNroExpediente;
+            inValue.pNroServicio = pNroServicio;
+            inValue.pCliente = pCliente;
+            inValue.pNumPol = pNumPol;
+            inValue.pNumCert = pNumCert;
+            inValue.pServicio = pServicio;
+            inValue.pChasis = pChasis;
+            inValue.pMotor = pMotor;
+            inValue.pPlaca = pPlaca;
+            inValue.pAnio = pAnio;
+            inValue.pTipoVeh = pTipoVeh;
+            inValue.pFecServic = pFecServic;
+            inValue.pLocalForaneo = pLocalForaneo;
+            inValue.pCiudad = pCiudad;
+            inValue.pValorServic = pValorServic;
+            inValue.pExcedente = pExcedente;
+            inValue.pObserv = pObserv;
+            inValue.pAutorizador = pAutorizador;
+            return ((WSRestApiHelp.WSFICOHSAHELP.WSPorSaludSoap)(this)).Servicios_Adicionales_WSAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        WSRestApiHelp.WSFICOHSAHELP.consultaCausasResponse WSRestApiHelp.WSFICOHSAHELP.WSPorSaludSoap.consultaCausas(WSRestApiHelp.WSFICOHSAHELP.consultaCausasRequest request) {
+            return base.Channel.consultaCausas(request);
+        }
+        
+        public WSRestApiHelp.WSFICOHSAHELP.clConsultaCausas[] consultaCausas(WSRestApiHelp.WSFICOHSAHELP.credenciales credenciales, string pCodProd, string cCodCobert) {
+            WSRestApiHelp.WSFICOHSAHELP.consultaCausasRequest inValue = new WSRestApiHelp.WSFICOHSAHELP.consultaCausasRequest();
+            inValue.credenciales = credenciales;
+            inValue.pCodProd = pCodProd;
+            inValue.cCodCobert = cCodCobert;
+            WSRestApiHelp.WSFICOHSAHELP.consultaCausasResponse retVal = ((WSRestApiHelp.WSFICOHSAHELP.WSPorSaludSoap)(this)).consultaCausas(inValue);
+            return retVal.consultaCausasResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<WSRestApiHelp.WSFICOHSAHELP.consultaCausasResponse> WSRestApiHelp.WSFICOHSAHELP.WSPorSaludSoap.consultaCausasAsync(WSRestApiHelp.WSFICOHSAHELP.consultaCausasRequest request) {
+            return base.Channel.consultaCausasAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<WSRestApiHelp.WSFICOHSAHELP.consultaCausasResponse> consultaCausasAsync(WSRestApiHelp.WSFICOHSAHELP.credenciales credenciales, string pCodProd, string cCodCobert) {
+            WSRestApiHelp.WSFICOHSAHELP.consultaCausasRequest inValue = new WSRestApiHelp.WSFICOHSAHELP.consultaCausasRequest();
+            inValue.credenciales = credenciales;
+            inValue.pCodProd = pCodProd;
+            inValue.cCodCobert = cCodCobert;
+            return ((WSRestApiHelp.WSFICOHSAHELP.WSPorSaludSoap)(this)).consultaCausasAsync(inValue);
         }
     }
 }

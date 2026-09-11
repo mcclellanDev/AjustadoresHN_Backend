@@ -667,6 +667,18 @@
     <Content Include="Connected Services\WSFICOHSAHELP\WSRestApiHelp.WSFICOHSAHELP.valida_tu_seguroResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Connected Services\WSFICOHSAHELP\WSRestApiHelp.WSFICOHSAHELP.clConsultaCausas.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\WSFICOHSAHELP\WSRestApiHelp.WSFICOHSAHELP.clServiciosAd.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\WSFICOHSAHELP\WSRestApiHelp.WSFICOHSAHELP.consultaCausasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\WSFICOHSAHELP\WSRestApiHelp.WSFICOHSAHELP.Servicios_Adicionales_WSResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Connected Services\WSFICOHSAHELP_HN\wsporsalud.wsdl" />
     <Content Include="Connected Services\WSFICOHSAHELP_HN\WSRestApiHelp.WSFICOHSAHELP_HN.Anular_reclamoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -915,6 +927,18 @@
     <Content Include="Connected Services\WSFICOHSAHELP_HN_PRO\WSRestApiHelp.WSFICOHSAHELP_HN_PRO.valida_tu_seguroResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Connected Services\WSFICOHSAHELP_HN_PRO\WSRestApiHelp.WSFICOHSAHELP_HN_PRO.clConsultaCausas.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\WSFICOHSAHELP_HN_PRO\WSRestApiHelp.WSFICOHSAHELP_HN_PRO.clServiciosAd.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\WSFICOHSAHELP_HN_PRO\WSRestApiHelp.WSFICOHSAHELP_HN_PRO.consultaCausasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\WSFICOHSAHELP_HN_PRO\WSRestApiHelp.WSFICOHSAHELP_HN_PRO.Servicios_Adicionales_WSResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Connected Services\WSFICOHSASERVICIO_HN\WSPorSalud.disco" />
     <None Include="Connected Services\WSFICOHSASERVICIO_HN\configuration91.svcinfo" />
     <None Include="Connected Services\WSFICOHSASERVICIO_HN\configuration.svcinfo" />
@@ -1040,6 +1064,69 @@
     <Content Include="Models\HELP.edmx.diagram">
       <DependentUpon>HELP.edmx</DependentUpon>
     </Content>
+    <Content Include="Connected Services\WSFICOHSASERVICIO_HN\WSRestApiHelp.WSFICOHSASERVICIO_HN.Anular_solicitudResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\WSFICOHSASERVICIO_HN\WSRestApiHelp.WSFICOHSASERVICIO_HN.clConsultaCausas.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\WSFICOHSASERVICIO_HN\WSRestApiHelp.WSFICOHSASERVICIO_HN.clConsultaSolicitud.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\WSFICOHSASERVICIO_HN\WSRestApiHelp.WSFICOHSASERVICIO_HN.clDetMecamentos.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\WSFICOHSASERVICIO_HN\WSRestApiHelp.WSFICOHSASERVICIO_HN.clPagosProvDet.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\WSFICOHSASERVICIO_HN\WSRestApiHelp.WSFICOHSASERVICIO_HN.clReclamos.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\WSFICOHSASERVICIO_HN\WSRestApiHelp.WSFICOHSASERVICIO_HN.clServiciosAd.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\WSFICOHSASERVICIO_HN\WSRestApiHelp.WSFICOHSASERVICIO_HN.clsolicitud.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\WSFICOHSASERVICIO_HN\WSRestApiHelp.WSFICOHSASERVICIO_HN.clSolicitudDet.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\WSFICOHSASERVICIO_HN\WSRestApiHelp.WSFICOHSASERVICIO_HN.clValidaListaCoberturas.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\WSFICOHSASERVICIO_HN\WSRestApiHelp.WSFICOHSASERVICIO_HN.clValidatuSeguro.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\WSFICOHSASERVICIO_HN\WSRestApiHelp.WSFICOHSASERVICIO_HN.consultaCausasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\WSFICOHSASERVICIO_HN\WSRestApiHelp.WSFICOHSASERVICIO_HN.consultar_detalle_medicamentos_pendienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\WSFICOHSASERVICIO_HN\WSRestApiHelp.WSFICOHSASERVICIO_HN.consultar_detalle_solicitudes_pendienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\WSFICOHSASERVICIO_HN\WSRestApiHelp.WSFICOHSASERVICIO_HN.consultar_solicitudesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\WSFICOHSASERVICIO_HN\WSRestApiHelp.WSFICOHSASERVICIO_HN.creaReclamoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\WSFICOHSASERVICIO_HN\WSRestApiHelp.WSFICOHSASERVICIO_HN.Detalle_Pago_ProvResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\WSFICOHSASERVICIO_HN\WSRestApiHelp.WSFICOHSASERVICIO_HN.Ingresar_SolicitudesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\WSFICOHSASERVICIO_HN\WSRestApiHelp.WSFICOHSASERVICIO_HN.Servicios_Adicionales_WSResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\WSFICOHSASERVICIO_HN\WSRestApiHelp.WSFICOHSASERVICIO_HN.valida_lista_coberturasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\WSFICOHSASERVICIO_HN\WSRestApiHelp.WSFICOHSASERVICIO_HN.valida_tu_seguroResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -1084,7 +1171,7 @@
   </ProjectExtensions>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
-      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauraciÃ³n de paquetes NuGet para descargarlos. Para obtener mÃ¡s informaciÃ³n, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
     <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.1.1\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.1.1\build\Microsoft.Net.Compilers.props'))" />

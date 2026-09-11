@@ -118,10 +118,98 @@ namespace WSRestApiHelp.WSFICOHSASERVICIO_HN {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/UploadFile", ReplyAction="*")]
         System.Threading.Tasks.Task<WSRestApiHelp.WSFICOHSASERVICIO_HN.UploadFileResponse> UploadFileAsync(WSRestApiHelp.WSFICOHSASERVICIO_HN.UploadFileRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Ingresar_Solicitudes", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        WSRestApiHelp.WSFICOHSASERVICIO_HN.Ingresar_SolicitudesResponse Ingresar_Solicitudes(WSRestApiHelp.WSFICOHSASERVICIO_HN.Ingresar_SolicitudesRequest request);
+        
+        // CODEGEN: Generando contrato de mensaje, ya que la operación tiene múltiples valores de devolución.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Ingresar_Solicitudes", ReplyAction="*")]
+        System.Threading.Tasks.Task<WSRestApiHelp.WSFICOHSASERVICIO_HN.Ingresar_SolicitudesResponse> Ingresar_SolicitudesAsync(WSRestApiHelp.WSFICOHSASERVICIO_HN.Ingresar_SolicitudesRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el mensaje creaReclamoRequest tiene encabezados.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/creaReclamo", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        WSRestApiHelp.WSFICOHSASERVICIO_HN.creaReclamoResponse creaReclamo(WSRestApiHelp.WSFICOHSASERVICIO_HN.creaReclamoRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/creaReclamo", ReplyAction="*")]
+        System.Threading.Tasks.Task<WSRestApiHelp.WSFICOHSASERVICIO_HN.creaReclamoResponse> creaReclamoAsync(WSRestApiHelp.WSFICOHSASERVICIO_HN.creaReclamoRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el mensaje consultar_detalle_medicamentos_pendienteRequest tiene encabezados.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/consultar_detalle_medicamentos_pendiente", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        WSRestApiHelp.WSFICOHSASERVICIO_HN.consultar_detalle_medicamentos_pendienteResponse consultar_detalle_medicamentos_pendiente(WSRestApiHelp.WSFICOHSASERVICIO_HN.consultar_detalle_medicamentos_pendienteRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/consultar_detalle_medicamentos_pendiente", ReplyAction="*")]
+        System.Threading.Tasks.Task<WSRestApiHelp.WSFICOHSASERVICIO_HN.consultar_detalle_medicamentos_pendienteResponse> consultar_detalle_medicamentos_pendienteAsync(WSRestApiHelp.WSFICOHSASERVICIO_HN.consultar_detalle_medicamentos_pendienteRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el mensaje consultar_detalle_solicitudes_pendienteRequest tiene encabezados.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/consultar_detalle_solicitudes_pendiente", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        WSRestApiHelp.WSFICOHSASERVICIO_HN.consultar_detalle_solicitudes_pendienteResponse consultar_detalle_solicitudes_pendiente(WSRestApiHelp.WSFICOHSASERVICIO_HN.consultar_detalle_solicitudes_pendienteRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/consultar_detalle_solicitudes_pendiente", ReplyAction="*")]
+        System.Threading.Tasks.Task<WSRestApiHelp.WSFICOHSASERVICIO_HN.consultar_detalle_solicitudes_pendienteResponse> consultar_detalle_solicitudes_pendienteAsync(WSRestApiHelp.WSFICOHSASERVICIO_HN.consultar_detalle_solicitudes_pendienteRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el mensaje Anular_solicitudRequest tiene encabezados.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Anular_solicitud", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        WSRestApiHelp.WSFICOHSASERVICIO_HN.Anular_solicitudResponse Anular_solicitud(WSRestApiHelp.WSFICOHSASERVICIO_HN.Anular_solicitudRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Anular_solicitud", ReplyAction="*")]
+        System.Threading.Tasks.Task<WSRestApiHelp.WSFICOHSASERVICIO_HN.Anular_solicitudResponse> Anular_solicitudAsync(WSRestApiHelp.WSFICOHSASERVICIO_HN.Anular_solicitudRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el mensaje consultar_solicitudesRequest tiene encabezados.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/consultar_solicitudes", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        WSRestApiHelp.WSFICOHSASERVICIO_HN.consultar_solicitudesResponse consultar_solicitudes(WSRestApiHelp.WSFICOHSASERVICIO_HN.consultar_solicitudesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/consultar_solicitudes", ReplyAction="*")]
+        System.Threading.Tasks.Task<WSRestApiHelp.WSFICOHSASERVICIO_HN.consultar_solicitudesResponse> consultar_solicitudesAsync(WSRestApiHelp.WSFICOHSASERVICIO_HN.consultar_solicitudesRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el mensaje Detalle_Pago_ProvRequest tiene encabezados.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Detalle_Pago_Prov", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        WSRestApiHelp.WSFICOHSASERVICIO_HN.Detalle_Pago_ProvResponse Detalle_Pago_Prov(WSRestApiHelp.WSFICOHSASERVICIO_HN.Detalle_Pago_ProvRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Detalle_Pago_Prov", ReplyAction="*")]
+        System.Threading.Tasks.Task<WSRestApiHelp.WSFICOHSASERVICIO_HN.Detalle_Pago_ProvResponse> Detalle_Pago_ProvAsync(WSRestApiHelp.WSFICOHSASERVICIO_HN.Detalle_Pago_ProvRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el mensaje valida_tu_seguroRequest tiene encabezados.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/valida_tu_seguro", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        WSRestApiHelp.WSFICOHSASERVICIO_HN.valida_tu_seguroResponse valida_tu_seguro(WSRestApiHelp.WSFICOHSASERVICIO_HN.valida_tu_seguroRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/valida_tu_seguro", ReplyAction="*")]
+        System.Threading.Tasks.Task<WSRestApiHelp.WSFICOHSASERVICIO_HN.valida_tu_seguroResponse> valida_tu_seguroAsync(WSRestApiHelp.WSFICOHSASERVICIO_HN.valida_tu_seguroRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el mensaje valida_lista_coberturasRequest tiene encabezados.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/valida_lista_coberturas", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        WSRestApiHelp.WSFICOHSASERVICIO_HN.valida_lista_coberturasResponse valida_lista_coberturas(WSRestApiHelp.WSFICOHSASERVICIO_HN.valida_lista_coberturasRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/valida_lista_coberturas", ReplyAction="*")]
+        System.Threading.Tasks.Task<WSRestApiHelp.WSFICOHSASERVICIO_HN.valida_lista_coberturasResponse> valida_lista_coberturasAsync(WSRestApiHelp.WSFICOHSASERVICIO_HN.valida_lista_coberturasRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el mensaje Servicios_Adicionales_WSRequest tiene encabezados.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Servicios_Adicionales_WS", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        WSRestApiHelp.WSFICOHSASERVICIO_HN.Servicios_Adicionales_WSResponse Servicios_Adicionales_WS(WSRestApiHelp.WSFICOHSASERVICIO_HN.Servicios_Adicionales_WSRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Servicios_Adicionales_WS", ReplyAction="*")]
+        System.Threading.Tasks.Task<WSRestApiHelp.WSFICOHSASERVICIO_HN.Servicios_Adicionales_WSResponse> Servicios_Adicionales_WSAsync(WSRestApiHelp.WSFICOHSASERVICIO_HN.Servicios_Adicionales_WSRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el mensaje consultaCausasRequest tiene encabezados.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/consultaCausas", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        WSRestApiHelp.WSFICOHSASERVICIO_HN.consultaCausasResponse consultaCausas(WSRestApiHelp.WSFICOHSASERVICIO_HN.consultaCausasRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/consultaCausas", ReplyAction="*")]
+        System.Threading.Tasks.Task<WSRestApiHelp.WSFICOHSASERVICIO_HN.consultaCausasResponse> consultaCausasAsync(WSRestApiHelp.WSFICOHSASERVICIO_HN.consultaCausasRequest request);
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9340.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -195,7 +283,2363 @@ namespace WSRestApiHelp.WSFICOHSASERVICIO_HN {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9340.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
+    public partial class clDetConsultaCausas : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string cODCAUSAField;
+        
+        private string dESCRCAUSAField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string CODCAUSA {
+            get {
+                return this.cODCAUSAField;
+            }
+            set {
+                this.cODCAUSAField = value;
+                this.RaisePropertyChanged("CODCAUSA");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string DESCRCAUSA {
+            get {
+                return this.dESCRCAUSAField;
+            }
+            set {
+                this.dESCRCAUSAField = value;
+                this.RaisePropertyChanged("DESCRCAUSA");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9340.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
+    public partial class clConsultaCausas : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string cod_errorField;
+        
+        private string mensajeField;
+        
+        private clDetConsultaCausas[] clDetConsultaCausasField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string cod_error {
+            get {
+                return this.cod_errorField;
+            }
+            set {
+                this.cod_errorField = value;
+                this.RaisePropertyChanged("cod_error");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string mensaje {
+            get {
+                return this.mensajeField;
+            }
+            set {
+                this.mensajeField = value;
+                this.RaisePropertyChanged("mensaje");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=2)]
+        public clDetConsultaCausas[] clDetConsultaCausas {
+            get {
+                return this.clDetConsultaCausasField;
+            }
+            set {
+                this.clDetConsultaCausasField = value;
+                this.RaisePropertyChanged("clDetConsultaCausas");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9340.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
+    public partial class clServiciosAd : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string cod_errorField;
+        
+        private string mensajeField;
+        
+        private string idepreadminField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string cod_error {
+            get {
+                return this.cod_errorField;
+            }
+            set {
+                this.cod_errorField = value;
+                this.RaisePropertyChanged("cod_error");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string mensaje {
+            get {
+                return this.mensajeField;
+            }
+            set {
+                this.mensajeField = value;
+                this.RaisePropertyChanged("mensaje");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string idepreadmin {
+            get {
+                return this.idepreadminField;
+            }
+            set {
+                this.idepreadminField = value;
+                this.RaisePropertyChanged("idepreadmin");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9340.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
+    public partial class clDetListaCobert : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string cODIGOField;
+        
+        private string dESCRIPCIONField;
+        
+        private string cOBERTURAField;
+        
+        private string sUMAField;
+        
+        private string dEDUCIBLEField;
+        
+        private string mONEDAField;
+        
+        private string cERTIFICADOField;
+        
+        private string eSTADOField;
+        
+        private System.DateTime fECHA_INICIOField;
+        
+        private System.DateTime fECHA_FINField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string CODIGO {
+            get {
+                return this.cODIGOField;
+            }
+            set {
+                this.cODIGOField = value;
+                this.RaisePropertyChanged("CODIGO");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string DESCRIPCION {
+            get {
+                return this.dESCRIPCIONField;
+            }
+            set {
+                this.dESCRIPCIONField = value;
+                this.RaisePropertyChanged("DESCRIPCION");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string COBERTURA {
+            get {
+                return this.cOBERTURAField;
+            }
+            set {
+                this.cOBERTURAField = value;
+                this.RaisePropertyChanged("COBERTURA");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string SUMA {
+            get {
+                return this.sUMAField;
+            }
+            set {
+                this.sUMAField = value;
+                this.RaisePropertyChanged("SUMA");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string DEDUCIBLE {
+            get {
+                return this.dEDUCIBLEField;
+            }
+            set {
+                this.dEDUCIBLEField = value;
+                this.RaisePropertyChanged("DEDUCIBLE");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public string MONEDA {
+            get {
+                return this.mONEDAField;
+            }
+            set {
+                this.mONEDAField = value;
+                this.RaisePropertyChanged("MONEDA");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public string CERTIFICADO {
+            get {
+                return this.cERTIFICADOField;
+            }
+            set {
+                this.cERTIFICADOField = value;
+                this.RaisePropertyChanged("CERTIFICADO");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        public string ESTADO {
+            get {
+                return this.eSTADOField;
+            }
+            set {
+                this.eSTADOField = value;
+                this.RaisePropertyChanged("ESTADO");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        public System.DateTime FECHA_INICIO {
+            get {
+                return this.fECHA_INICIOField;
+            }
+            set {
+                this.fECHA_INICIOField = value;
+                this.RaisePropertyChanged("FECHA_INICIO");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
+        public System.DateTime FECHA_FIN {
+            get {
+                return this.fECHA_FINField;
+            }
+            set {
+                this.fECHA_FINField = value;
+                this.RaisePropertyChanged("FECHA_FIN");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9340.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
+    public partial class clValidaListaCoberturas : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string cod_errorField;
+        
+        private string mensajeField;
+        
+        private clDetListaCobert[] clDetListaCobertField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string cod_error {
+            get {
+                return this.cod_errorField;
+            }
+            set {
+                this.cod_errorField = value;
+                this.RaisePropertyChanged("cod_error");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string mensaje {
+            get {
+                return this.mensajeField;
+            }
+            set {
+                this.mensajeField = value;
+                this.RaisePropertyChanged("mensaje");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=2)]
+        public clDetListaCobert[] clDetListaCobert {
+            get {
+                return this.clDetListaCobertField;
+            }
+            set {
+                this.clDetListaCobertField = value;
+                this.RaisePropertyChanged("clDetListaCobert");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9340.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
+    public partial class clDetValSeg : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string nIdValidacionField;
+        
+        private string nIdeAsegField;
+        
+        private string nIdepolField;
+        
+        private string cClaseField;
+        
+        private string nPolizaField;
+        
+        private string cSucursalField;
+        
+        private string nNumCertField;
+        
+        private string cNomAsegField;
+        
+        private string cParentescoField;
+        
+        private string cSexoField;
+        
+        private string cFecNacField;
+        
+        private string cEdadField;
+        
+        private string cFecAltaField;
+        
+        private string cFechaIniField;
+        
+        private string cFechaFinalField;
+        
+        private string vDeducibleField;
+        
+        private string cSaldoDeducibleField;
+        
+        private string vHabitacionField;
+        
+        private string vReqAdminField;
+        
+        private string vMaternidadField;
+        
+        private string vPorSaludField;
+        
+        private string vCodCoaFarmaciaField;
+        
+        private string nCoaFarmaciaField;
+        
+        private string vCodCoaLaboratorioField;
+        
+        private string nCoaLaboratorioField;
+        
+        private string vCodCoaRadioImagenesField;
+        
+        private string nCoaRadioImagenesField;
+        
+        private string vCodCoaRedMedicoField;
+        
+        private string nCoaRedMedicoField;
+        
+        private string vCodCoaRedOpticaField;
+        
+        private string nCoaRedOpticaField;
+        
+        private string vCodDentalFaseIField;
+        
+        private string vDentalFaseIField;
+        
+        private string vCodDentalFaseIIField;
+        
+        private string vDentalFaseIIField;
+        
+        private string vCodDentalFaseIIIField;
+        
+        private string vDentalFaseIIIField;
+        
+        private string vCodDentalFaseIVField;
+        
+        private string vDentalFaseIVField;
+        
+        private string vCodGastoDentalField;
+        
+        private string vGastoDentalField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string nIdValidacion {
+            get {
+                return this.nIdValidacionField;
+            }
+            set {
+                this.nIdValidacionField = value;
+                this.RaisePropertyChanged("nIdValidacion");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string nIdeAseg {
+            get {
+                return this.nIdeAsegField;
+            }
+            set {
+                this.nIdeAsegField = value;
+                this.RaisePropertyChanged("nIdeAseg");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string nIdepol {
+            get {
+                return this.nIdepolField;
+            }
+            set {
+                this.nIdepolField = value;
+                this.RaisePropertyChanged("nIdepol");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string cClase {
+            get {
+                return this.cClaseField;
+            }
+            set {
+                this.cClaseField = value;
+                this.RaisePropertyChanged("cClase");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string nPoliza {
+            get {
+                return this.nPolizaField;
+            }
+            set {
+                this.nPolizaField = value;
+                this.RaisePropertyChanged("nPoliza");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public string cSucursal {
+            get {
+                return this.cSucursalField;
+            }
+            set {
+                this.cSucursalField = value;
+                this.RaisePropertyChanged("cSucursal");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public string nNumCert {
+            get {
+                return this.nNumCertField;
+            }
+            set {
+                this.nNumCertField = value;
+                this.RaisePropertyChanged("nNumCert");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        public string cNomAseg {
+            get {
+                return this.cNomAsegField;
+            }
+            set {
+                this.cNomAsegField = value;
+                this.RaisePropertyChanged("cNomAseg");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        public string cParentesco {
+            get {
+                return this.cParentescoField;
+            }
+            set {
+                this.cParentescoField = value;
+                this.RaisePropertyChanged("cParentesco");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
+        public string cSexo {
+            get {
+                return this.cSexoField;
+            }
+            set {
+                this.cSexoField = value;
+                this.RaisePropertyChanged("cSexo");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
+        public string cFecNac {
+            get {
+                return this.cFecNacField;
+            }
+            set {
+                this.cFecNacField = value;
+                this.RaisePropertyChanged("cFecNac");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=11)]
+        public string cEdad {
+            get {
+                return this.cEdadField;
+            }
+            set {
+                this.cEdadField = value;
+                this.RaisePropertyChanged("cEdad");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=12)]
+        public string cFecAlta {
+            get {
+                return this.cFecAltaField;
+            }
+            set {
+                this.cFecAltaField = value;
+                this.RaisePropertyChanged("cFecAlta");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=13)]
+        public string cFechaIni {
+            get {
+                return this.cFechaIniField;
+            }
+            set {
+                this.cFechaIniField = value;
+                this.RaisePropertyChanged("cFechaIni");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=14)]
+        public string cFechaFinal {
+            get {
+                return this.cFechaFinalField;
+            }
+            set {
+                this.cFechaFinalField = value;
+                this.RaisePropertyChanged("cFechaFinal");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=15)]
+        public string vDeducible {
+            get {
+                return this.vDeducibleField;
+            }
+            set {
+                this.vDeducibleField = value;
+                this.RaisePropertyChanged("vDeducible");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=16)]
+        public string cSaldoDeducible {
+            get {
+                return this.cSaldoDeducibleField;
+            }
+            set {
+                this.cSaldoDeducibleField = value;
+                this.RaisePropertyChanged("cSaldoDeducible");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=17)]
+        public string vHabitacion {
+            get {
+                return this.vHabitacionField;
+            }
+            set {
+                this.vHabitacionField = value;
+                this.RaisePropertyChanged("vHabitacion");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=18)]
+        public string vReqAdmin {
+            get {
+                return this.vReqAdminField;
+            }
+            set {
+                this.vReqAdminField = value;
+                this.RaisePropertyChanged("vReqAdmin");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=19)]
+        public string vMaternidad {
+            get {
+                return this.vMaternidadField;
+            }
+            set {
+                this.vMaternidadField = value;
+                this.RaisePropertyChanged("vMaternidad");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=20)]
+        public string vPorSalud {
+            get {
+                return this.vPorSaludField;
+            }
+            set {
+                this.vPorSaludField = value;
+                this.RaisePropertyChanged("vPorSalud");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=21)]
+        public string vCodCoaFarmacia {
+            get {
+                return this.vCodCoaFarmaciaField;
+            }
+            set {
+                this.vCodCoaFarmaciaField = value;
+                this.RaisePropertyChanged("vCodCoaFarmacia");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=22)]
+        public string nCoaFarmacia {
+            get {
+                return this.nCoaFarmaciaField;
+            }
+            set {
+                this.nCoaFarmaciaField = value;
+                this.RaisePropertyChanged("nCoaFarmacia");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=23)]
+        public string vCodCoaLaboratorio {
+            get {
+                return this.vCodCoaLaboratorioField;
+            }
+            set {
+                this.vCodCoaLaboratorioField = value;
+                this.RaisePropertyChanged("vCodCoaLaboratorio");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=24)]
+        public string nCoaLaboratorio {
+            get {
+                return this.nCoaLaboratorioField;
+            }
+            set {
+                this.nCoaLaboratorioField = value;
+                this.RaisePropertyChanged("nCoaLaboratorio");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=25)]
+        public string vCodCoaRadioImagenes {
+            get {
+                return this.vCodCoaRadioImagenesField;
+            }
+            set {
+                this.vCodCoaRadioImagenesField = value;
+                this.RaisePropertyChanged("vCodCoaRadioImagenes");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=26)]
+        public string nCoaRadioImagenes {
+            get {
+                return this.nCoaRadioImagenesField;
+            }
+            set {
+                this.nCoaRadioImagenesField = value;
+                this.RaisePropertyChanged("nCoaRadioImagenes");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=27)]
+        public string vCodCoaRedMedico {
+            get {
+                return this.vCodCoaRedMedicoField;
+            }
+            set {
+                this.vCodCoaRedMedicoField = value;
+                this.RaisePropertyChanged("vCodCoaRedMedico");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=28)]
+        public string nCoaRedMedico {
+            get {
+                return this.nCoaRedMedicoField;
+            }
+            set {
+                this.nCoaRedMedicoField = value;
+                this.RaisePropertyChanged("nCoaRedMedico");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=29)]
+        public string vCodCoaRedOptica {
+            get {
+                return this.vCodCoaRedOpticaField;
+            }
+            set {
+                this.vCodCoaRedOpticaField = value;
+                this.RaisePropertyChanged("vCodCoaRedOptica");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=30)]
+        public string nCoaRedOptica {
+            get {
+                return this.nCoaRedOpticaField;
+            }
+            set {
+                this.nCoaRedOpticaField = value;
+                this.RaisePropertyChanged("nCoaRedOptica");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=31)]
+        public string vCodDentalFaseI {
+            get {
+                return this.vCodDentalFaseIField;
+            }
+            set {
+                this.vCodDentalFaseIField = value;
+                this.RaisePropertyChanged("vCodDentalFaseI");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=32)]
+        public string vDentalFaseI {
+            get {
+                return this.vDentalFaseIField;
+            }
+            set {
+                this.vDentalFaseIField = value;
+                this.RaisePropertyChanged("vDentalFaseI");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=33)]
+        public string vCodDentalFaseII {
+            get {
+                return this.vCodDentalFaseIIField;
+            }
+            set {
+                this.vCodDentalFaseIIField = value;
+                this.RaisePropertyChanged("vCodDentalFaseII");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=34)]
+        public string vDentalFaseII {
+            get {
+                return this.vDentalFaseIIField;
+            }
+            set {
+                this.vDentalFaseIIField = value;
+                this.RaisePropertyChanged("vDentalFaseII");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=35)]
+        public string vCodDentalFaseIII {
+            get {
+                return this.vCodDentalFaseIIIField;
+            }
+            set {
+                this.vCodDentalFaseIIIField = value;
+                this.RaisePropertyChanged("vCodDentalFaseIII");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=36)]
+        public string vDentalFaseIII {
+            get {
+                return this.vDentalFaseIIIField;
+            }
+            set {
+                this.vDentalFaseIIIField = value;
+                this.RaisePropertyChanged("vDentalFaseIII");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=37)]
+        public string vCodDentalFaseIV {
+            get {
+                return this.vCodDentalFaseIVField;
+            }
+            set {
+                this.vCodDentalFaseIVField = value;
+                this.RaisePropertyChanged("vCodDentalFaseIV");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=38)]
+        public string vDentalFaseIV {
+            get {
+                return this.vDentalFaseIVField;
+            }
+            set {
+                this.vDentalFaseIVField = value;
+                this.RaisePropertyChanged("vDentalFaseIV");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=39)]
+        public string vCodGastoDental {
+            get {
+                return this.vCodGastoDentalField;
+            }
+            set {
+                this.vCodGastoDentalField = value;
+                this.RaisePropertyChanged("vCodGastoDental");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=40)]
+        public string vGastoDental {
+            get {
+                return this.vGastoDentalField;
+            }
+            set {
+                this.vGastoDentalField = value;
+                this.RaisePropertyChanged("vGastoDental");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9340.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
+    public partial class clValidatuSeguro : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string cod_errorField;
+        
+        private string mensajeField;
+        
+        private string pNumpolField;
+        
+        private string pNumCertField;
+        
+        private string pTelefonoField;
+        
+        private clDetValSeg[] detValSegField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string cod_error {
+            get {
+                return this.cod_errorField;
+            }
+            set {
+                this.cod_errorField = value;
+                this.RaisePropertyChanged("cod_error");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string mensaje {
+            get {
+                return this.mensajeField;
+            }
+            set {
+                this.mensajeField = value;
+                this.RaisePropertyChanged("mensaje");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string pNumpol {
+            get {
+                return this.pNumpolField;
+            }
+            set {
+                this.pNumpolField = value;
+                this.RaisePropertyChanged("pNumpol");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string pNumCert {
+            get {
+                return this.pNumCertField;
+            }
+            set {
+                this.pNumCertField = value;
+                this.RaisePropertyChanged("pNumCert");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string pTelefono {
+            get {
+                return this.pTelefonoField;
+            }
+            set {
+                this.pTelefonoField = value;
+                this.RaisePropertyChanged("pTelefono");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=5)]
+        public clDetValSeg[] DetValSeg {
+            get {
+                return this.detValSegField;
+            }
+            set {
+                this.detValSegField = value;
+                this.RaisePropertyChanged("DetValSeg");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9340.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
+    public partial class clPagosProv : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string loteField;
+        
+        private string fecPagoField;
+        
+        private string numRelEgreField;
+        
+        private string sucursalField;
+        
+        private string transField;
+        
+        private string referenciaField;
+        
+        private string codProvField;
+        
+        private string proveedorField;
+        
+        private string docFiscalField;
+        
+        private string polizaField;
+        
+        private string certificadoField;
+        
+        private string reclamanteField;
+        
+        private string reclamoField;
+        
+        private string complementoField;
+        
+        private string fecProcesoField;
+        
+        private string monedaField;
+        
+        private string valorFacturaField;
+        
+        private string deducibleField;
+        
+        private string coaseguroField;
+        
+        private string descuentoField;
+        
+        private string gastosNoCubiertosField;
+        
+        private string retencion1Field;
+        
+        private string retencion12_5Field;
+        
+        private string valorPagadoField;
+        
+        private string chequeField;
+        
+        private string cuentaField;
+        
+        private string observacionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string lote {
+            get {
+                return this.loteField;
+            }
+            set {
+                this.loteField = value;
+                this.RaisePropertyChanged("lote");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string fecPago {
+            get {
+                return this.fecPagoField;
+            }
+            set {
+                this.fecPagoField = value;
+                this.RaisePropertyChanged("fecPago");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string numRelEgre {
+            get {
+                return this.numRelEgreField;
+            }
+            set {
+                this.numRelEgreField = value;
+                this.RaisePropertyChanged("numRelEgre");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string sucursal {
+            get {
+                return this.sucursalField;
+            }
+            set {
+                this.sucursalField = value;
+                this.RaisePropertyChanged("sucursal");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string trans {
+            get {
+                return this.transField;
+            }
+            set {
+                this.transField = value;
+                this.RaisePropertyChanged("trans");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public string referencia {
+            get {
+                return this.referenciaField;
+            }
+            set {
+                this.referenciaField = value;
+                this.RaisePropertyChanged("referencia");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public string codProv {
+            get {
+                return this.codProvField;
+            }
+            set {
+                this.codProvField = value;
+                this.RaisePropertyChanged("codProv");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        public string proveedor {
+            get {
+                return this.proveedorField;
+            }
+            set {
+                this.proveedorField = value;
+                this.RaisePropertyChanged("proveedor");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        public string docFiscal {
+            get {
+                return this.docFiscalField;
+            }
+            set {
+                this.docFiscalField = value;
+                this.RaisePropertyChanged("docFiscal");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
+        public string poliza {
+            get {
+                return this.polizaField;
+            }
+            set {
+                this.polizaField = value;
+                this.RaisePropertyChanged("poliza");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
+        public string certificado {
+            get {
+                return this.certificadoField;
+            }
+            set {
+                this.certificadoField = value;
+                this.RaisePropertyChanged("certificado");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=11)]
+        public string reclamante {
+            get {
+                return this.reclamanteField;
+            }
+            set {
+                this.reclamanteField = value;
+                this.RaisePropertyChanged("reclamante");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=12)]
+        public string reclamo {
+            get {
+                return this.reclamoField;
+            }
+            set {
+                this.reclamoField = value;
+                this.RaisePropertyChanged("reclamo");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=13)]
+        public string complemento {
+            get {
+                return this.complementoField;
+            }
+            set {
+                this.complementoField = value;
+                this.RaisePropertyChanged("complemento");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=14)]
+        public string fecProceso {
+            get {
+                return this.fecProcesoField;
+            }
+            set {
+                this.fecProcesoField = value;
+                this.RaisePropertyChanged("fecProceso");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=15)]
+        public string moneda {
+            get {
+                return this.monedaField;
+            }
+            set {
+                this.monedaField = value;
+                this.RaisePropertyChanged("moneda");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=16)]
+        public string valorFactura {
+            get {
+                return this.valorFacturaField;
+            }
+            set {
+                this.valorFacturaField = value;
+                this.RaisePropertyChanged("valorFactura");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=17)]
+        public string deducible {
+            get {
+                return this.deducibleField;
+            }
+            set {
+                this.deducibleField = value;
+                this.RaisePropertyChanged("deducible");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=18)]
+        public string coaseguro {
+            get {
+                return this.coaseguroField;
+            }
+            set {
+                this.coaseguroField = value;
+                this.RaisePropertyChanged("coaseguro");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=19)]
+        public string descuento {
+            get {
+                return this.descuentoField;
+            }
+            set {
+                this.descuentoField = value;
+                this.RaisePropertyChanged("descuento");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=20)]
+        public string gastosNoCubiertos {
+            get {
+                return this.gastosNoCubiertosField;
+            }
+            set {
+                this.gastosNoCubiertosField = value;
+                this.RaisePropertyChanged("gastosNoCubiertos");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=21)]
+        public string retencion1 {
+            get {
+                return this.retencion1Field;
+            }
+            set {
+                this.retencion1Field = value;
+                this.RaisePropertyChanged("retencion1");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=22)]
+        public string retencion12_5 {
+            get {
+                return this.retencion12_5Field;
+            }
+            set {
+                this.retencion12_5Field = value;
+                this.RaisePropertyChanged("retencion12_5");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=23)]
+        public string valorPagado {
+            get {
+                return this.valorPagadoField;
+            }
+            set {
+                this.valorPagadoField = value;
+                this.RaisePropertyChanged("valorPagado");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=24)]
+        public string cheque {
+            get {
+                return this.chequeField;
+            }
+            set {
+                this.chequeField = value;
+                this.RaisePropertyChanged("cheque");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=25)]
+        public string cuenta {
+            get {
+                return this.cuentaField;
+            }
+            set {
+                this.cuentaField = value;
+                this.RaisePropertyChanged("cuenta");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=26)]
+        public string observacion {
+            get {
+                return this.observacionField;
+            }
+            set {
+                this.observacionField = value;
+                this.RaisePropertyChanged("observacion");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9340.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
+    public partial class clPagosProvDet : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string cod_errorField;
+        
+        private string mensajeField;
+        
+        private clPagosProv[] detpagosField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string cod_error {
+            get {
+                return this.cod_errorField;
+            }
+            set {
+                this.cod_errorField = value;
+                this.RaisePropertyChanged("cod_error");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string mensaje {
+            get {
+                return this.mensajeField;
+            }
+            set {
+                this.mensajeField = value;
+                this.RaisePropertyChanged("mensaje");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=2)]
+        public clPagosProv[] detpagos {
+            get {
+                return this.detpagosField;
+            }
+            set {
+                this.detpagosField = value;
+                this.RaisePropertyChanged("detpagos");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9340.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
+    public partial class clConsultaSolicitud : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string cod_errorField;
+        
+        private string mensajeField;
+        
+        private string cod_estadoField;
+        
+        private string txt_descField;
+        
+        private string fec_autorizacionField;
+        
+        private string cod_usuarioField;
+        
+        private clDetMecamentos[] detmedicamentoField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string cod_error {
+            get {
+                return this.cod_errorField;
+            }
+            set {
+                this.cod_errorField = value;
+                this.RaisePropertyChanged("cod_error");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string mensaje {
+            get {
+                return this.mensajeField;
+            }
+            set {
+                this.mensajeField = value;
+                this.RaisePropertyChanged("mensaje");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string cod_estado {
+            get {
+                return this.cod_estadoField;
+            }
+            set {
+                this.cod_estadoField = value;
+                this.RaisePropertyChanged("cod_estado");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string txt_desc {
+            get {
+                return this.txt_descField;
+            }
+            set {
+                this.txt_descField = value;
+                this.RaisePropertyChanged("txt_desc");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string fec_autorizacion {
+            get {
+                return this.fec_autorizacionField;
+            }
+            set {
+                this.fec_autorizacionField = value;
+                this.RaisePropertyChanged("fec_autorizacion");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public string cod_usuario {
+            get {
+                return this.cod_usuarioField;
+            }
+            set {
+                this.cod_usuarioField = value;
+                this.RaisePropertyChanged("cod_usuario");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=6)]
+        public clDetMecamentos[] detmedicamento {
+            get {
+                return this.detmedicamentoField;
+            }
+            set {
+                this.detmedicamentoField = value;
+                this.RaisePropertyChanged("detmedicamento");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9340.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
+    public partial class clDetMecamentos : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string cod_solicitudField;
+        
+        private string cod_medicamentoField;
+        
+        private string txt_medicamentoField;
+        
+        private string nro_cuotaField;
+        
+        private string cod_estadoField;
+        
+        private string estadoField;
+        
+        private string observacionField;
+        
+        private string fec_inicioField;
+        
+        private string fec_topeField;
+        
+        private string cantidad_recetadaField;
+        
+        private string cantidad_mesField;
+        
+        private string cantidad_aprobadaField;
+        
+        private string cod_diagnosticoField;
+        
+        private string txt_diagnosticoField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string cod_solicitud {
+            get {
+                return this.cod_solicitudField;
+            }
+            set {
+                this.cod_solicitudField = value;
+                this.RaisePropertyChanged("cod_solicitud");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string cod_medicamento {
+            get {
+                return this.cod_medicamentoField;
+            }
+            set {
+                this.cod_medicamentoField = value;
+                this.RaisePropertyChanged("cod_medicamento");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string txt_medicamento {
+            get {
+                return this.txt_medicamentoField;
+            }
+            set {
+                this.txt_medicamentoField = value;
+                this.RaisePropertyChanged("txt_medicamento");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string nro_cuota {
+            get {
+                return this.nro_cuotaField;
+            }
+            set {
+                this.nro_cuotaField = value;
+                this.RaisePropertyChanged("nro_cuota");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string cod_estado {
+            get {
+                return this.cod_estadoField;
+            }
+            set {
+                this.cod_estadoField = value;
+                this.RaisePropertyChanged("cod_estado");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public string estado {
+            get {
+                return this.estadoField;
+            }
+            set {
+                this.estadoField = value;
+                this.RaisePropertyChanged("estado");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public string observacion {
+            get {
+                return this.observacionField;
+            }
+            set {
+                this.observacionField = value;
+                this.RaisePropertyChanged("observacion");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        public string fec_inicio {
+            get {
+                return this.fec_inicioField;
+            }
+            set {
+                this.fec_inicioField = value;
+                this.RaisePropertyChanged("fec_inicio");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        public string fec_tope {
+            get {
+                return this.fec_topeField;
+            }
+            set {
+                this.fec_topeField = value;
+                this.RaisePropertyChanged("fec_tope");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
+        public string cantidad_recetada {
+            get {
+                return this.cantidad_recetadaField;
+            }
+            set {
+                this.cantidad_recetadaField = value;
+                this.RaisePropertyChanged("cantidad_recetada");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
+        public string cantidad_mes {
+            get {
+                return this.cantidad_mesField;
+            }
+            set {
+                this.cantidad_mesField = value;
+                this.RaisePropertyChanged("cantidad_mes");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=11)]
+        public string cantidad_aprobada {
+            get {
+                return this.cantidad_aprobadaField;
+            }
+            set {
+                this.cantidad_aprobadaField = value;
+                this.RaisePropertyChanged("cantidad_aprobada");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=12)]
+        public string cod_diagnostico {
+            get {
+                return this.cod_diagnosticoField;
+            }
+            set {
+                this.cod_diagnosticoField = value;
+                this.RaisePropertyChanged("cod_diagnostico");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=13)]
+        public string txt_diagnostico {
+            get {
+                return this.txt_diagnosticoField;
+            }
+            set {
+                this.txt_diagnosticoField = value;
+                this.RaisePropertyChanged("txt_diagnostico");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9340.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
+    public partial class cldetsolicitudes : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string nro_solicitudField;
+        
+        private string nro_polField;
+        
+        private string nro_asegField;
+        
+        private string nro_parienteField;
+        
+        private string diagnosticoField;
+        
+        private string fec_ingresoField;
+        
+        private string fec_autorizacionField;
+        
+        private string usuario_autorizoField;
+        
+        private string estadoField;
+        
+        private string observacionesField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string nro_solicitud {
+            get {
+                return this.nro_solicitudField;
+            }
+            set {
+                this.nro_solicitudField = value;
+                this.RaisePropertyChanged("nro_solicitud");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string nro_pol {
+            get {
+                return this.nro_polField;
+            }
+            set {
+                this.nro_polField = value;
+                this.RaisePropertyChanged("nro_pol");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string nro_aseg {
+            get {
+                return this.nro_asegField;
+            }
+            set {
+                this.nro_asegField = value;
+                this.RaisePropertyChanged("nro_aseg");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string nro_pariente {
+            get {
+                return this.nro_parienteField;
+            }
+            set {
+                this.nro_parienteField = value;
+                this.RaisePropertyChanged("nro_pariente");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string diagnostico {
+            get {
+                return this.diagnosticoField;
+            }
+            set {
+                this.diagnosticoField = value;
+                this.RaisePropertyChanged("diagnostico");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public string fec_ingreso {
+            get {
+                return this.fec_ingresoField;
+            }
+            set {
+                this.fec_ingresoField = value;
+                this.RaisePropertyChanged("fec_ingreso");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public string fec_autorizacion {
+            get {
+                return this.fec_autorizacionField;
+            }
+            set {
+                this.fec_autorizacionField = value;
+                this.RaisePropertyChanged("fec_autorizacion");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        public string usuario_autorizo {
+            get {
+                return this.usuario_autorizoField;
+            }
+            set {
+                this.usuario_autorizoField = value;
+                this.RaisePropertyChanged("usuario_autorizo");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        public string estado {
+            get {
+                return this.estadoField;
+            }
+            set {
+                this.estadoField = value;
+                this.RaisePropertyChanged("estado");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
+        public string observaciones {
+            get {
+                return this.observacionesField;
+            }
+            set {
+                this.observacionesField = value;
+                this.RaisePropertyChanged("observaciones");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9340.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
+    public partial class clSolicitudDet : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string cod_errorField;
+        
+        private string mensajeField;
+        
+        private cldetsolicitudes[] detsolicitudField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string cod_error {
+            get {
+                return this.cod_errorField;
+            }
+            set {
+                this.cod_errorField = value;
+                this.RaisePropertyChanged("cod_error");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string mensaje {
+            get {
+                return this.mensajeField;
+            }
+            set {
+                this.mensajeField = value;
+                this.RaisePropertyChanged("mensaje");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=2)]
+        public cldetsolicitudes[] detsolicitud {
+            get {
+                return this.detsolicitudField;
+            }
+            set {
+                this.detsolicitudField = value;
+                this.RaisePropertyChanged("detsolicitud");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9340.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
+    public partial class clReclamos : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string cod_errorField;
+        
+        private string mensajeField;
+        
+        private string pLimDeducibleField;
+        
+        private string pDedCubiertoField;
+        
+        private double pDedCobradoField;
+        
+        private string pNoElegiblesField;
+        
+        private string pReembolsoField;
+        
+        private string pDescuentoField;
+        
+        private string pPagoPresField;
+        
+        private string pNroStroField;
+        
+        private string pParticipacion_asegField;
+        
+        private string pCoasReembolsoField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string cod_error {
+            get {
+                return this.cod_errorField;
+            }
+            set {
+                this.cod_errorField = value;
+                this.RaisePropertyChanged("cod_error");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string mensaje {
+            get {
+                return this.mensajeField;
+            }
+            set {
+                this.mensajeField = value;
+                this.RaisePropertyChanged("mensaje");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string pLimDeducible {
+            get {
+                return this.pLimDeducibleField;
+            }
+            set {
+                this.pLimDeducibleField = value;
+                this.RaisePropertyChanged("pLimDeducible");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string pDedCubierto {
+            get {
+                return this.pDedCubiertoField;
+            }
+            set {
+                this.pDedCubiertoField = value;
+                this.RaisePropertyChanged("pDedCubierto");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public double pDedCobrado {
+            get {
+                return this.pDedCobradoField;
+            }
+            set {
+                this.pDedCobradoField = value;
+                this.RaisePropertyChanged("pDedCobrado");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public string pNoElegibles {
+            get {
+                return this.pNoElegiblesField;
+            }
+            set {
+                this.pNoElegiblesField = value;
+                this.RaisePropertyChanged("pNoElegibles");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public string pReembolso {
+            get {
+                return this.pReembolsoField;
+            }
+            set {
+                this.pReembolsoField = value;
+                this.RaisePropertyChanged("pReembolso");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        public string pDescuento {
+            get {
+                return this.pDescuentoField;
+            }
+            set {
+                this.pDescuentoField = value;
+                this.RaisePropertyChanged("pDescuento");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        public string pPagoPres {
+            get {
+                return this.pPagoPresField;
+            }
+            set {
+                this.pPagoPresField = value;
+                this.RaisePropertyChanged("pPagoPres");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
+        public string pNroStro {
+            get {
+                return this.pNroStroField;
+            }
+            set {
+                this.pNroStroField = value;
+                this.RaisePropertyChanged("pNroStro");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
+        public string pParticipacion_aseg {
+            get {
+                return this.pParticipacion_asegField;
+            }
+            set {
+                this.pParticipacion_asegField = value;
+                this.RaisePropertyChanged("pParticipacion_aseg");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=11)]
+        public string pCoasReembolso {
+            get {
+                return this.pCoasReembolsoField;
+            }
+            set {
+                this.pCoasReembolsoField = value;
+                this.RaisePropertyChanged("pCoasReembolso");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9340.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
+    public partial class clsolicitud : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string cod_errorField;
+        
+        private string mensajeField;
+        
+        private string cod_estadoField;
+        
+        private string cod_solicitudField;
+        
+        private string cod_usuarioField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string cod_error {
+            get {
+                return this.cod_errorField;
+            }
+            set {
+                this.cod_errorField = value;
+                this.RaisePropertyChanged("cod_error");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string mensaje {
+            get {
+                return this.mensajeField;
+            }
+            set {
+                this.mensajeField = value;
+                this.RaisePropertyChanged("mensaje");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string cod_estado {
+            get {
+                return this.cod_estadoField;
+            }
+            set {
+                this.cod_estadoField = value;
+                this.RaisePropertyChanged("cod_estado");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string cod_solicitud {
+            get {
+                return this.cod_solicitudField;
+            }
+            set {
+                this.cod_solicitudField = value;
+                this.RaisePropertyChanged("cod_solicitud");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string cod_usuario {
+            get {
+                return this.cod_usuarioField;
+            }
+            set {
+                this.cod_usuarioField = value;
+                this.RaisePropertyChanged("cod_usuario");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9340.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -241,7 +2685,7 @@ namespace WSRestApiHelp.WSFICOHSASERVICIO_HN {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9340.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1365,7 +3809,7 @@ namespace WSRestApiHelp.WSFICOHSASERVICIO_HN {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9340.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1915,7 +4359,7 @@ namespace WSRestApiHelp.WSFICOHSASERVICIO_HN {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9340.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2633,7 +5077,7 @@ namespace WSRestApiHelp.WSFICOHSASERVICIO_HN {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9340.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2693,7 +5137,7 @@ namespace WSRestApiHelp.WSFICOHSASERVICIO_HN {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9340.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2921,7 +5365,7 @@ namespace WSRestApiHelp.WSFICOHSASERVICIO_HN {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9340.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2967,7 +5411,7 @@ namespace WSRestApiHelp.WSFICOHSASERVICIO_HN {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9340.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2979,6 +5423,8 @@ namespace WSRestApiHelp.WSFICOHSASERVICIO_HN {
         private string mensajeField;
         
         private string idepreadminField;
+        
+        private string codsolicitudField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
@@ -3016,6 +5462,18 @@ namespace WSRestApiHelp.WSFICOHSASERVICIO_HN {
             }
         }
         
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string codsolicitud {
+            get {
+                return this.codsolicitudField;
+            }
+            set {
+                this.codsolicitudField = value;
+                this.RaisePropertyChanged("codsolicitud");
+            }
+        }
+        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -3027,7 +5485,7 @@ namespace WSRestApiHelp.WSFICOHSASERVICIO_HN {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9340.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3157,7 +5615,7 @@ namespace WSRestApiHelp.WSFICOHSASERVICIO_HN {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9340.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3273,7 +5731,7 @@ namespace WSRestApiHelp.WSFICOHSASERVICIO_HN {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9340.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3641,7 +6099,7 @@ namespace WSRestApiHelp.WSFICOHSASERVICIO_HN {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9340.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3962,10 +6420,43 @@ namespace WSRestApiHelp.WSFICOHSASERVICIO_HN {
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=10)]
         public string pObserva;
         
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=11)]
+        [System.Xml.Serialization.XmlElementAttribute(DataType="base64Binary")]
+        public byte[] f;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=12)]
+        public string fileName;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=13)]
+        public string pCodEspec;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=14)]
+        public string pCodSubesp;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=15)]
+        public string pCodEspta;
+        
         public crear_liquidacionRequest() {
         }
         
-        public crear_liquidacionRequest(WSRestApiHelp.WSFICOHSASERVICIO_HN.credenciales credenciales, string pNumPol, string pNumCert, string pIdeAseg, string pCodProv, string pNumFact, string pCodEnfer, string pFecOcurr, string pTraBenef, string pMonTotal, string pDescuen, string pObserva) {
+        public crear_liquidacionRequest(
+                    WSRestApiHelp.WSFICOHSASERVICIO_HN.credenciales credenciales, 
+                    string pNumPol, 
+                    string pNumCert, 
+                    string pIdeAseg, 
+                    string pCodProv, 
+                    string pNumFact, 
+                    string pCodEnfer, 
+                    string pFecOcurr, 
+                    string pTraBenef, 
+                    string pMonTotal, 
+                    string pDescuen, 
+                    string pObserva, 
+                    byte[] f, 
+                    string fileName, 
+                    string pCodEspec, 
+                    string pCodSubesp, 
+                    string pCodEspta) {
             this.credenciales = credenciales;
             this.pNumPol = pNumPol;
             this.pNumCert = pNumCert;
@@ -3978,6 +6469,11 @@ namespace WSRestApiHelp.WSFICOHSASERVICIO_HN {
             this.pMonTotal = pMonTotal;
             this.pDescuen = pDescuen;
             this.pObserva = pObserva;
+            this.f = f;
+            this.fileName = fileName;
+            this.pCodEspec = pCodEspec;
+            this.pCodSubesp = pCodSubesp;
+            this.pCodEspta = pCodEspta;
         }
     }
     
@@ -4561,6 +7057,641 @@ namespace WSRestApiHelp.WSFICOHSASERVICIO_HN {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="Ingresar_Solicitudes", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class Ingresar_SolicitudesRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://tempuri.org/")]
+        public WSRestApiHelp.WSFICOHSASERVICIO_HN.credenciales credenciales;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public string CodSuc;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=1)]
+        public string NroPol;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=2)]
+        public string NroAseg;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=3)]
+        public string Nro_pariente;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=4)]
+        public string Cod_diagnostico;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=5)]
+        public string Cod_medico;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=6)]
+        public string Emisor;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=7)]
+        public string Txt_celular;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=8)]
+        public string Txt_email;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=9)]
+        public string Listado_medicamento;
+        
+        public Ingresar_SolicitudesRequest() {
+        }
+        
+        public Ingresar_SolicitudesRequest(WSRestApiHelp.WSFICOHSASERVICIO_HN.credenciales credenciales, string CodSuc, string NroPol, string NroAseg, string Nro_pariente, string Cod_diagnostico, string Cod_medico, string Emisor, string Txt_celular, string Txt_email, string Listado_medicamento) {
+            this.credenciales = credenciales;
+            this.CodSuc = CodSuc;
+            this.NroPol = NroPol;
+            this.NroAseg = NroAseg;
+            this.Nro_pariente = Nro_pariente;
+            this.Cod_diagnostico = Cod_diagnostico;
+            this.Cod_medico = Cod_medico;
+            this.Emisor = Emisor;
+            this.Txt_celular = Txt_celular;
+            this.Txt_email = Txt_email;
+            this.Listado_medicamento = Listado_medicamento;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="Ingresar_SolicitudesResponse", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class Ingresar_SolicitudesResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public WSRestApiHelp.WSFICOHSASERVICIO_HN.clsolicitud[] Ingresar_SolicitudesResult;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=1)]
+        public string Nro_pariente;
+        
+        public Ingresar_SolicitudesResponse() {
+        }
+        
+        public Ingresar_SolicitudesResponse(WSRestApiHelp.WSFICOHSASERVICIO_HN.clsolicitud[] Ingresar_SolicitudesResult, string Nro_pariente) {
+            this.Ingresar_SolicitudesResult = Ingresar_SolicitudesResult;
+            this.Nro_pariente = Nro_pariente;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="creaReclamo", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class creaReclamoRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://tempuri.org/")]
+        public WSRestApiHelp.WSFICOHSASERVICIO_HN.credenciales credenciales;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public string pCodSuc;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=1)]
+        public string pNroPol;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=2)]
+        public string pNroASeg;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=3)]
+        public string pNroPariente;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=4)]
+        public string pCodDiagnostico;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=5)]
+        public string pMonto;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=6)]
+        public string pNroComprobante;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=7)]
+        public string Listado_medicamento;
+        
+        public creaReclamoRequest() {
+        }
+        
+        public creaReclamoRequest(WSRestApiHelp.WSFICOHSASERVICIO_HN.credenciales credenciales, string pCodSuc, string pNroPol, string pNroASeg, string pNroPariente, string pCodDiagnostico, string pMonto, string pNroComprobante, string Listado_medicamento) {
+            this.credenciales = credenciales;
+            this.pCodSuc = pCodSuc;
+            this.pNroPol = pNroPol;
+            this.pNroASeg = pNroASeg;
+            this.pNroPariente = pNroPariente;
+            this.pCodDiagnostico = pCodDiagnostico;
+            this.pMonto = pMonto;
+            this.pNroComprobante = pNroComprobante;
+            this.Listado_medicamento = Listado_medicamento;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="creaReclamoResponse", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class creaReclamoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public WSRestApiHelp.WSFICOHSASERVICIO_HN.clReclamos[] creaReclamoResult;
+        
+        public creaReclamoResponse() {
+        }
+        
+        public creaReclamoResponse(WSRestApiHelp.WSFICOHSASERVICIO_HN.clReclamos[] creaReclamoResult) {
+            this.creaReclamoResult = creaReclamoResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="consultar_detalle_medicamentos_pendiente", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class consultar_detalle_medicamentos_pendienteRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://tempuri.org/")]
+        public WSRestApiHelp.WSFICOHSASERVICIO_HN.credenciales credenciales;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public string pnro_poliza;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=1)]
+        public string pcod_suc;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=2)]
+        public string pnro_certificado;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=3)]
+        public string pnro_pariente;
+        
+        public consultar_detalle_medicamentos_pendienteRequest() {
+        }
+        
+        public consultar_detalle_medicamentos_pendienteRequest(WSRestApiHelp.WSFICOHSASERVICIO_HN.credenciales credenciales, string pnro_poliza, string pcod_suc, string pnro_certificado, string pnro_pariente) {
+            this.credenciales = credenciales;
+            this.pnro_poliza = pnro_poliza;
+            this.pcod_suc = pcod_suc;
+            this.pnro_certificado = pnro_certificado;
+            this.pnro_pariente = pnro_pariente;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="consultar_detalle_medicamentos_pendienteResponse", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class consultar_detalle_medicamentos_pendienteResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public WSRestApiHelp.WSFICOHSASERVICIO_HN.clDetMecamentos[] consultar_detalle_medicamentos_pendienteResult;
+        
+        public consultar_detalle_medicamentos_pendienteResponse() {
+        }
+        
+        public consultar_detalle_medicamentos_pendienteResponse(WSRestApiHelp.WSFICOHSASERVICIO_HN.clDetMecamentos[] consultar_detalle_medicamentos_pendienteResult) {
+            this.consultar_detalle_medicamentos_pendienteResult = consultar_detalle_medicamentos_pendienteResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="consultar_detalle_solicitudes_pendiente", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class consultar_detalle_solicitudes_pendienteRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://tempuri.org/")]
+        public WSRestApiHelp.WSFICOHSASERVICIO_HN.credenciales credenciales;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public string pnro_poliza;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=1)]
+        public string pcod_suc;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=2)]
+        public string pnro_certificado;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=3)]
+        public string pnro_pariente;
+        
+        public consultar_detalle_solicitudes_pendienteRequest() {
+        }
+        
+        public consultar_detalle_solicitudes_pendienteRequest(WSRestApiHelp.WSFICOHSASERVICIO_HN.credenciales credenciales, string pnro_poliza, string pcod_suc, string pnro_certificado, string pnro_pariente) {
+            this.credenciales = credenciales;
+            this.pnro_poliza = pnro_poliza;
+            this.pcod_suc = pcod_suc;
+            this.pnro_certificado = pnro_certificado;
+            this.pnro_pariente = pnro_pariente;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="consultar_detalle_solicitudes_pendienteResponse", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class consultar_detalle_solicitudes_pendienteResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public WSRestApiHelp.WSFICOHSASERVICIO_HN.clSolicitudDet[] consultar_detalle_solicitudes_pendienteResult;
+        
+        public consultar_detalle_solicitudes_pendienteResponse() {
+        }
+        
+        public consultar_detalle_solicitudes_pendienteResponse(WSRestApiHelp.WSFICOHSASERVICIO_HN.clSolicitudDet[] consultar_detalle_solicitudes_pendienteResult) {
+            this.consultar_detalle_solicitudes_pendienteResult = consultar_detalle_solicitudes_pendienteResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="Anular_solicitud", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class Anular_solicitudRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://tempuri.org/")]
+        public WSRestApiHelp.WSFICOHSASERVICIO_HN.credenciales credenciales;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public string cod_solicitud;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=1)]
+        public string descripcion;
+        
+        public Anular_solicitudRequest() {
+        }
+        
+        public Anular_solicitudRequest(WSRestApiHelp.WSFICOHSASERVICIO_HN.credenciales credenciales, string cod_solicitud, string descripcion) {
+            this.credenciales = credenciales;
+            this.cod_solicitud = cod_solicitud;
+            this.descripcion = descripcion;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="Anular_solicitudResponse", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class Anular_solicitudResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public WSRestApiHelp.WSFICOHSASERVICIO_HN.clanulacion[] Anular_solicitudResult;
+        
+        public Anular_solicitudResponse() {
+        }
+        
+        public Anular_solicitudResponse(WSRestApiHelp.WSFICOHSASERVICIO_HN.clanulacion[] Anular_solicitudResult) {
+            this.Anular_solicitudResult = Anular_solicitudResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="consultar_solicitudes", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class consultar_solicitudesRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://tempuri.org/")]
+        public WSRestApiHelp.WSFICOHSASERVICIO_HN.credenciales credenciales;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public string pCod_solicitud;
+        
+        public consultar_solicitudesRequest() {
+        }
+        
+        public consultar_solicitudesRequest(WSRestApiHelp.WSFICOHSASERVICIO_HN.credenciales credenciales, string pCod_solicitud) {
+            this.credenciales = credenciales;
+            this.pCod_solicitud = pCod_solicitud;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="consultar_solicitudesResponse", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class consultar_solicitudesResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public WSRestApiHelp.WSFICOHSASERVICIO_HN.clConsultaSolicitud[] consultar_solicitudesResult;
+        
+        public consultar_solicitudesResponse() {
+        }
+        
+        public consultar_solicitudesResponse(WSRestApiHelp.WSFICOHSASERVICIO_HN.clConsultaSolicitud[] consultar_solicitudesResult) {
+            this.consultar_solicitudesResult = consultar_solicitudesResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="Detalle_Pago_Prov", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class Detalle_Pago_ProvRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://tempuri.org/")]
+        public WSRestApiHelp.WSFICOHSASERVICIO_HN.credenciales credenciales;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public string fecha;
+        
+        public Detalle_Pago_ProvRequest() {
+        }
+        
+        public Detalle_Pago_ProvRequest(WSRestApiHelp.WSFICOHSASERVICIO_HN.credenciales credenciales, string fecha) {
+            this.credenciales = credenciales;
+            this.fecha = fecha;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="Detalle_Pago_ProvResponse", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class Detalle_Pago_ProvResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public WSRestApiHelp.WSFICOHSASERVICIO_HN.clPagosProvDet[] Detalle_Pago_ProvResult;
+        
+        public Detalle_Pago_ProvResponse() {
+        }
+        
+        public Detalle_Pago_ProvResponse(WSRestApiHelp.WSFICOHSASERVICIO_HN.clPagosProvDet[] Detalle_Pago_ProvResult) {
+            this.Detalle_Pago_ProvResult = Detalle_Pago_ProvResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="valida_tu_seguro", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class valida_tu_seguroRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://tempuri.org/")]
+        public WSRestApiHelp.WSFICOHSASERVICIO_HN.credenciales credenciales;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public string pNumpol;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=1)]
+        public string pNumCert;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=2)]
+        public string pTelefono;
+        
+        public valida_tu_seguroRequest() {
+        }
+        
+        public valida_tu_seguroRequest(WSRestApiHelp.WSFICOHSASERVICIO_HN.credenciales credenciales, string pNumpol, string pNumCert, string pTelefono) {
+            this.credenciales = credenciales;
+            this.pNumpol = pNumpol;
+            this.pNumCert = pNumCert;
+            this.pTelefono = pTelefono;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="valida_tu_seguroResponse", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class valida_tu_seguroResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public WSRestApiHelp.WSFICOHSASERVICIO_HN.clValidatuSeguro[] valida_tu_seguroResult;
+        
+        public valida_tu_seguroResponse() {
+        }
+        
+        public valida_tu_seguroResponse(WSRestApiHelp.WSFICOHSASERVICIO_HN.clValidatuSeguro[] valida_tu_seguroResult) {
+            this.valida_tu_seguroResult = valida_tu_seguroResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="valida_lista_coberturas", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class valida_lista_coberturasRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://tempuri.org/")]
+        public WSRestApiHelp.WSFICOHSASERVICIO_HN.credenciales credenciales;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public string nIdepol;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=1)]
+        public string nNumOper;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=2)]
+        public int nNumcer;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=3)]
+        public string nIdeBien;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=4)]
+        public string nIdeAseg;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=5)]
+        public long nNumpol;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=6)]
+        public string pCodProd;
+        
+        public valida_lista_coberturasRequest() {
+        }
+        
+        public valida_lista_coberturasRequest(WSRestApiHelp.WSFICOHSASERVICIO_HN.credenciales credenciales, string nIdepol, string nNumOper, int nNumcer, string nIdeBien, string nIdeAseg, long nNumpol, string pCodProd) {
+            this.credenciales = credenciales;
+            this.nIdepol = nIdepol;
+            this.nNumOper = nNumOper;
+            this.nNumcer = nNumcer;
+            this.nIdeBien = nIdeBien;
+            this.nIdeAseg = nIdeAseg;
+            this.nNumpol = nNumpol;
+            this.pCodProd = pCodProd;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="valida_lista_coberturasResponse", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class valida_lista_coberturasResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public WSRestApiHelp.WSFICOHSASERVICIO_HN.clValidaListaCoberturas[] valida_lista_coberturasResult;
+        
+        public valida_lista_coberturasResponse() {
+        }
+        
+        public valida_lista_coberturasResponse(WSRestApiHelp.WSFICOHSASERVICIO_HN.clValidaListaCoberturas[] valida_lista_coberturasResult) {
+            this.valida_lista_coberturasResult = valida_lista_coberturasResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="Servicios_Adicionales_WS", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class Servicios_Adicionales_WSRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://tempuri.org/")]
+        public WSRestApiHelp.WSFICOHSASERVICIO_HN.credenciales credenciales;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public string pNroExpediente;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=1)]
+        public string pNroServicio;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=2)]
+        public string pCliente;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=3)]
+        public string pNumPol;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=4)]
+        public string pNumCert;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=5)]
+        public string pServicio;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=6)]
+        public string pChasis;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=7)]
+        public string pMotor;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=8)]
+        public string pPlaca;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=9)]
+        public string pAnio;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=10)]
+        public string pTipoVeh;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=11)]
+        public string pFecServic;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=12)]
+        public string pLocalForaneo;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=13)]
+        public string pCiudad;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=14)]
+        public string pValorServic;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=15)]
+        public string pExcedente;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=16)]
+        public string pObserv;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=17)]
+        public string pAutorizador;
+        
+        public Servicios_Adicionales_WSRequest() {
+        }
+        
+        public Servicios_Adicionales_WSRequest(
+                    WSRestApiHelp.WSFICOHSASERVICIO_HN.credenciales credenciales, 
+                    string pNroExpediente, 
+                    string pNroServicio, 
+                    string pCliente, 
+                    string pNumPol, 
+                    string pNumCert, 
+                    string pServicio, 
+                    string pChasis, 
+                    string pMotor, 
+                    string pPlaca, 
+                    string pAnio, 
+                    string pTipoVeh, 
+                    string pFecServic, 
+                    string pLocalForaneo, 
+                    string pCiudad, 
+                    string pValorServic, 
+                    string pExcedente, 
+                    string pObserv, 
+                    string pAutorizador) {
+            this.credenciales = credenciales;
+            this.pNroExpediente = pNroExpediente;
+            this.pNroServicio = pNroServicio;
+            this.pCliente = pCliente;
+            this.pNumPol = pNumPol;
+            this.pNumCert = pNumCert;
+            this.pServicio = pServicio;
+            this.pChasis = pChasis;
+            this.pMotor = pMotor;
+            this.pPlaca = pPlaca;
+            this.pAnio = pAnio;
+            this.pTipoVeh = pTipoVeh;
+            this.pFecServic = pFecServic;
+            this.pLocalForaneo = pLocalForaneo;
+            this.pCiudad = pCiudad;
+            this.pValorServic = pValorServic;
+            this.pExcedente = pExcedente;
+            this.pObserv = pObserv;
+            this.pAutorizador = pAutorizador;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="Servicios_Adicionales_WSResponse", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class Servicios_Adicionales_WSResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public WSRestApiHelp.WSFICOHSASERVICIO_HN.clServiciosAd Servicios_Adicionales_WSResult;
+        
+        public Servicios_Adicionales_WSResponse() {
+        }
+        
+        public Servicios_Adicionales_WSResponse(WSRestApiHelp.WSFICOHSASERVICIO_HN.clServiciosAd Servicios_Adicionales_WSResult) {
+            this.Servicios_Adicionales_WSResult = Servicios_Adicionales_WSResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="consultaCausas", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class consultaCausasRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://tempuri.org/")]
+        public WSRestApiHelp.WSFICOHSASERVICIO_HN.credenciales credenciales;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public string pCodProd;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=1)]
+        public string cCodCobert;
+        
+        public consultaCausasRequest() {
+        }
+        
+        public consultaCausasRequest(WSRestApiHelp.WSFICOHSASERVICIO_HN.credenciales credenciales, string pCodProd, string cCodCobert) {
+            this.credenciales = credenciales;
+            this.pCodProd = pCodProd;
+            this.cCodCobert = cCodCobert;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="consultaCausasResponse", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class consultaCausasResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public WSRestApiHelp.WSFICOHSASERVICIO_HN.clConsultaCausas[] consultaCausasResult;
+        
+        public consultaCausasResponse() {
+        }
+        
+        public consultaCausasResponse(WSRestApiHelp.WSFICOHSASERVICIO_HN.clConsultaCausas[] consultaCausasResult) {
+            this.consultaCausasResult = consultaCausasResult;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface WSPorSaludSoapChannel : WSRestApiHelp.WSFICOHSASERVICIO_HN.WSPorSaludSoap, System.ServiceModel.IClientChannel {
     }
@@ -4632,7 +7763,24 @@ namespace WSRestApiHelp.WSFICOHSASERVICIO_HN {
             return base.Channel.crear_liquidacion(request);
         }
         
-        public WSRestApiHelp.WSFICOHSASERVICIO_HN.clliquidacion crear_liquidacion(WSRestApiHelp.WSFICOHSASERVICIO_HN.credenciales credenciales, string pNumPol, string pNumCert, string pIdeAseg, string pCodProv, string pNumFact, string pCodEnfer, string pFecOcurr, string pTraBenef, string pMonTotal, string pDescuen, string pObserva) {
+        public WSRestApiHelp.WSFICOHSASERVICIO_HN.clliquidacion crear_liquidacion(
+                    WSRestApiHelp.WSFICOHSASERVICIO_HN.credenciales credenciales, 
+                    string pNumPol, 
+                    string pNumCert, 
+                    string pIdeAseg, 
+                    string pCodProv, 
+                    string pNumFact, 
+                    string pCodEnfer, 
+                    string pFecOcurr, 
+                    string pTraBenef, 
+                    string pMonTotal, 
+                    string pDescuen, 
+                    string pObserva, 
+                    byte[] f, 
+                    string fileName, 
+                    string pCodEspec, 
+                    string pCodSubesp, 
+                    string pCodEspta) {
             WSRestApiHelp.WSFICOHSASERVICIO_HN.crear_liquidacionRequest inValue = new WSRestApiHelp.WSFICOHSASERVICIO_HN.crear_liquidacionRequest();
             inValue.credenciales = credenciales;
             inValue.pNumPol = pNumPol;
@@ -4646,6 +7794,11 @@ namespace WSRestApiHelp.WSFICOHSASERVICIO_HN {
             inValue.pMonTotal = pMonTotal;
             inValue.pDescuen = pDescuen;
             inValue.pObserva = pObserva;
+            inValue.f = f;
+            inValue.fileName = fileName;
+            inValue.pCodEspec = pCodEspec;
+            inValue.pCodSubesp = pCodSubesp;
+            inValue.pCodEspta = pCodEspta;
             WSRestApiHelp.WSFICOHSASERVICIO_HN.crear_liquidacionResponse retVal = ((WSRestApiHelp.WSFICOHSASERVICIO_HN.WSPorSaludSoap)(this)).crear_liquidacion(inValue);
             return retVal.crear_liquidacionResult;
         }
@@ -4655,7 +7808,24 @@ namespace WSRestApiHelp.WSFICOHSASERVICIO_HN {
             return base.Channel.crear_liquidacionAsync(request);
         }
         
-        public System.Threading.Tasks.Task<WSRestApiHelp.WSFICOHSASERVICIO_HN.crear_liquidacionResponse> crear_liquidacionAsync(WSRestApiHelp.WSFICOHSASERVICIO_HN.credenciales credenciales, string pNumPol, string pNumCert, string pIdeAseg, string pCodProv, string pNumFact, string pCodEnfer, string pFecOcurr, string pTraBenef, string pMonTotal, string pDescuen, string pObserva) {
+        public System.Threading.Tasks.Task<WSRestApiHelp.WSFICOHSASERVICIO_HN.crear_liquidacionResponse> crear_liquidacionAsync(
+                    WSRestApiHelp.WSFICOHSASERVICIO_HN.credenciales credenciales, 
+                    string pNumPol, 
+                    string pNumCert, 
+                    string pIdeAseg, 
+                    string pCodProv, 
+                    string pNumFact, 
+                    string pCodEnfer, 
+                    string pFecOcurr, 
+                    string pTraBenef, 
+                    string pMonTotal, 
+                    string pDescuen, 
+                    string pObserva, 
+                    byte[] f, 
+                    string fileName, 
+                    string pCodEspec, 
+                    string pCodSubesp, 
+                    string pCodEspta) {
             WSRestApiHelp.WSFICOHSASERVICIO_HN.crear_liquidacionRequest inValue = new WSRestApiHelp.WSFICOHSASERVICIO_HN.crear_liquidacionRequest();
             inValue.credenciales = credenciales;
             inValue.pNumPol = pNumPol;
@@ -4669,6 +7839,11 @@ namespace WSRestApiHelp.WSFICOHSASERVICIO_HN {
             inValue.pMonTotal = pMonTotal;
             inValue.pDescuen = pDescuen;
             inValue.pObserva = pObserva;
+            inValue.f = f;
+            inValue.fileName = fileName;
+            inValue.pCodEspec = pCodEspec;
+            inValue.pCodSubesp = pCodSubesp;
+            inValue.pCodEspta = pCodEspta;
             return ((WSRestApiHelp.WSFICOHSASERVICIO_HN.WSPorSaludSoap)(this)).crear_liquidacionAsync(inValue);
         }
         
@@ -5041,6 +8216,401 @@ namespace WSRestApiHelp.WSFICOHSASERVICIO_HN {
             inValue.f = f;
             inValue.fileName = fileName;
             return ((WSRestApiHelp.WSFICOHSASERVICIO_HN.WSPorSaludSoap)(this)).UploadFileAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        WSRestApiHelp.WSFICOHSASERVICIO_HN.Ingresar_SolicitudesResponse WSRestApiHelp.WSFICOHSASERVICIO_HN.WSPorSaludSoap.Ingresar_Solicitudes(WSRestApiHelp.WSFICOHSASERVICIO_HN.Ingresar_SolicitudesRequest request) {
+            return base.Channel.Ingresar_Solicitudes(request);
+        }
+        
+        public WSRestApiHelp.WSFICOHSASERVICIO_HN.clsolicitud[] Ingresar_Solicitudes(WSRestApiHelp.WSFICOHSASERVICIO_HN.credenciales credenciales, string CodSuc, string NroPol, string NroAseg, ref string Nro_pariente, string Cod_diagnostico, string Cod_medico, string Emisor, string Txt_celular, string Txt_email, string Listado_medicamento) {
+            WSRestApiHelp.WSFICOHSASERVICIO_HN.Ingresar_SolicitudesRequest inValue = new WSRestApiHelp.WSFICOHSASERVICIO_HN.Ingresar_SolicitudesRequest();
+            inValue.credenciales = credenciales;
+            inValue.CodSuc = CodSuc;
+            inValue.NroPol = NroPol;
+            inValue.NroAseg = NroAseg;
+            inValue.Nro_pariente = Nro_pariente;
+            inValue.Cod_diagnostico = Cod_diagnostico;
+            inValue.Cod_medico = Cod_medico;
+            inValue.Emisor = Emisor;
+            inValue.Txt_celular = Txt_celular;
+            inValue.Txt_email = Txt_email;
+            inValue.Listado_medicamento = Listado_medicamento;
+            WSRestApiHelp.WSFICOHSASERVICIO_HN.Ingresar_SolicitudesResponse retVal = ((WSRestApiHelp.WSFICOHSASERVICIO_HN.WSPorSaludSoap)(this)).Ingresar_Solicitudes(inValue);
+            Nro_pariente = retVal.Nro_pariente;
+            return retVal.Ingresar_SolicitudesResult;
+        }
+        
+        public System.Threading.Tasks.Task<WSRestApiHelp.WSFICOHSASERVICIO_HN.Ingresar_SolicitudesResponse> Ingresar_SolicitudesAsync(WSRestApiHelp.WSFICOHSASERVICIO_HN.Ingresar_SolicitudesRequest request) {
+            return base.Channel.Ingresar_SolicitudesAsync(request);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        WSRestApiHelp.WSFICOHSASERVICIO_HN.creaReclamoResponse WSRestApiHelp.WSFICOHSASERVICIO_HN.WSPorSaludSoap.creaReclamo(WSRestApiHelp.WSFICOHSASERVICIO_HN.creaReclamoRequest request) {
+            return base.Channel.creaReclamo(request);
+        }
+        
+        public WSRestApiHelp.WSFICOHSASERVICIO_HN.clReclamos[] creaReclamo(WSRestApiHelp.WSFICOHSASERVICIO_HN.credenciales credenciales, string pCodSuc, string pNroPol, string pNroASeg, string pNroPariente, string pCodDiagnostico, string pMonto, string pNroComprobante, string Listado_medicamento) {
+            WSRestApiHelp.WSFICOHSASERVICIO_HN.creaReclamoRequest inValue = new WSRestApiHelp.WSFICOHSASERVICIO_HN.creaReclamoRequest();
+            inValue.credenciales = credenciales;
+            inValue.pCodSuc = pCodSuc;
+            inValue.pNroPol = pNroPol;
+            inValue.pNroASeg = pNroASeg;
+            inValue.pNroPariente = pNroPariente;
+            inValue.pCodDiagnostico = pCodDiagnostico;
+            inValue.pMonto = pMonto;
+            inValue.pNroComprobante = pNroComprobante;
+            inValue.Listado_medicamento = Listado_medicamento;
+            WSRestApiHelp.WSFICOHSASERVICIO_HN.creaReclamoResponse retVal = ((WSRestApiHelp.WSFICOHSASERVICIO_HN.WSPorSaludSoap)(this)).creaReclamo(inValue);
+            return retVal.creaReclamoResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<WSRestApiHelp.WSFICOHSASERVICIO_HN.creaReclamoResponse> WSRestApiHelp.WSFICOHSASERVICIO_HN.WSPorSaludSoap.creaReclamoAsync(WSRestApiHelp.WSFICOHSASERVICIO_HN.creaReclamoRequest request) {
+            return base.Channel.creaReclamoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<WSRestApiHelp.WSFICOHSASERVICIO_HN.creaReclamoResponse> creaReclamoAsync(WSRestApiHelp.WSFICOHSASERVICIO_HN.credenciales credenciales, string pCodSuc, string pNroPol, string pNroASeg, string pNroPariente, string pCodDiagnostico, string pMonto, string pNroComprobante, string Listado_medicamento) {
+            WSRestApiHelp.WSFICOHSASERVICIO_HN.creaReclamoRequest inValue = new WSRestApiHelp.WSFICOHSASERVICIO_HN.creaReclamoRequest();
+            inValue.credenciales = credenciales;
+            inValue.pCodSuc = pCodSuc;
+            inValue.pNroPol = pNroPol;
+            inValue.pNroASeg = pNroASeg;
+            inValue.pNroPariente = pNroPariente;
+            inValue.pCodDiagnostico = pCodDiagnostico;
+            inValue.pMonto = pMonto;
+            inValue.pNroComprobante = pNroComprobante;
+            inValue.Listado_medicamento = Listado_medicamento;
+            return ((WSRestApiHelp.WSFICOHSASERVICIO_HN.WSPorSaludSoap)(this)).creaReclamoAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        WSRestApiHelp.WSFICOHSASERVICIO_HN.consultar_detalle_medicamentos_pendienteResponse WSRestApiHelp.WSFICOHSASERVICIO_HN.WSPorSaludSoap.consultar_detalle_medicamentos_pendiente(WSRestApiHelp.WSFICOHSASERVICIO_HN.consultar_detalle_medicamentos_pendienteRequest request) {
+            return base.Channel.consultar_detalle_medicamentos_pendiente(request);
+        }
+        
+        public WSRestApiHelp.WSFICOHSASERVICIO_HN.clDetMecamentos[] consultar_detalle_medicamentos_pendiente(WSRestApiHelp.WSFICOHSASERVICIO_HN.credenciales credenciales, string pnro_poliza, string pcod_suc, string pnro_certificado, string pnro_pariente) {
+            WSRestApiHelp.WSFICOHSASERVICIO_HN.consultar_detalle_medicamentos_pendienteRequest inValue = new WSRestApiHelp.WSFICOHSASERVICIO_HN.consultar_detalle_medicamentos_pendienteRequest();
+            inValue.credenciales = credenciales;
+            inValue.pnro_poliza = pnro_poliza;
+            inValue.pcod_suc = pcod_suc;
+            inValue.pnro_certificado = pnro_certificado;
+            inValue.pnro_pariente = pnro_pariente;
+            WSRestApiHelp.WSFICOHSASERVICIO_HN.consultar_detalle_medicamentos_pendienteResponse retVal = ((WSRestApiHelp.WSFICOHSASERVICIO_HN.WSPorSaludSoap)(this)).consultar_detalle_medicamentos_pendiente(inValue);
+            return retVal.consultar_detalle_medicamentos_pendienteResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<WSRestApiHelp.WSFICOHSASERVICIO_HN.consultar_detalle_medicamentos_pendienteResponse> WSRestApiHelp.WSFICOHSASERVICIO_HN.WSPorSaludSoap.consultar_detalle_medicamentos_pendienteAsync(WSRestApiHelp.WSFICOHSASERVICIO_HN.consultar_detalle_medicamentos_pendienteRequest request) {
+            return base.Channel.consultar_detalle_medicamentos_pendienteAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<WSRestApiHelp.WSFICOHSASERVICIO_HN.consultar_detalle_medicamentos_pendienteResponse> consultar_detalle_medicamentos_pendienteAsync(WSRestApiHelp.WSFICOHSASERVICIO_HN.credenciales credenciales, string pnro_poliza, string pcod_suc, string pnro_certificado, string pnro_pariente) {
+            WSRestApiHelp.WSFICOHSASERVICIO_HN.consultar_detalle_medicamentos_pendienteRequest inValue = new WSRestApiHelp.WSFICOHSASERVICIO_HN.consultar_detalle_medicamentos_pendienteRequest();
+            inValue.credenciales = credenciales;
+            inValue.pnro_poliza = pnro_poliza;
+            inValue.pcod_suc = pcod_suc;
+            inValue.pnro_certificado = pnro_certificado;
+            inValue.pnro_pariente = pnro_pariente;
+            return ((WSRestApiHelp.WSFICOHSASERVICIO_HN.WSPorSaludSoap)(this)).consultar_detalle_medicamentos_pendienteAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        WSRestApiHelp.WSFICOHSASERVICIO_HN.consultar_detalle_solicitudes_pendienteResponse WSRestApiHelp.WSFICOHSASERVICIO_HN.WSPorSaludSoap.consultar_detalle_solicitudes_pendiente(WSRestApiHelp.WSFICOHSASERVICIO_HN.consultar_detalle_solicitudes_pendienteRequest request) {
+            return base.Channel.consultar_detalle_solicitudes_pendiente(request);
+        }
+        
+        public WSRestApiHelp.WSFICOHSASERVICIO_HN.clSolicitudDet[] consultar_detalle_solicitudes_pendiente(WSRestApiHelp.WSFICOHSASERVICIO_HN.credenciales credenciales, string pnro_poliza, string pcod_suc, string pnro_certificado, string pnro_pariente) {
+            WSRestApiHelp.WSFICOHSASERVICIO_HN.consultar_detalle_solicitudes_pendienteRequest inValue = new WSRestApiHelp.WSFICOHSASERVICIO_HN.consultar_detalle_solicitudes_pendienteRequest();
+            inValue.credenciales = credenciales;
+            inValue.pnro_poliza = pnro_poliza;
+            inValue.pcod_suc = pcod_suc;
+            inValue.pnro_certificado = pnro_certificado;
+            inValue.pnro_pariente = pnro_pariente;
+            WSRestApiHelp.WSFICOHSASERVICIO_HN.consultar_detalle_solicitudes_pendienteResponse retVal = ((WSRestApiHelp.WSFICOHSASERVICIO_HN.WSPorSaludSoap)(this)).consultar_detalle_solicitudes_pendiente(inValue);
+            return retVal.consultar_detalle_solicitudes_pendienteResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<WSRestApiHelp.WSFICOHSASERVICIO_HN.consultar_detalle_solicitudes_pendienteResponse> WSRestApiHelp.WSFICOHSASERVICIO_HN.WSPorSaludSoap.consultar_detalle_solicitudes_pendienteAsync(WSRestApiHelp.WSFICOHSASERVICIO_HN.consultar_detalle_solicitudes_pendienteRequest request) {
+            return base.Channel.consultar_detalle_solicitudes_pendienteAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<WSRestApiHelp.WSFICOHSASERVICIO_HN.consultar_detalle_solicitudes_pendienteResponse> consultar_detalle_solicitudes_pendienteAsync(WSRestApiHelp.WSFICOHSASERVICIO_HN.credenciales credenciales, string pnro_poliza, string pcod_suc, string pnro_certificado, string pnro_pariente) {
+            WSRestApiHelp.WSFICOHSASERVICIO_HN.consultar_detalle_solicitudes_pendienteRequest inValue = new WSRestApiHelp.WSFICOHSASERVICIO_HN.consultar_detalle_solicitudes_pendienteRequest();
+            inValue.credenciales = credenciales;
+            inValue.pnro_poliza = pnro_poliza;
+            inValue.pcod_suc = pcod_suc;
+            inValue.pnro_certificado = pnro_certificado;
+            inValue.pnro_pariente = pnro_pariente;
+            return ((WSRestApiHelp.WSFICOHSASERVICIO_HN.WSPorSaludSoap)(this)).consultar_detalle_solicitudes_pendienteAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        WSRestApiHelp.WSFICOHSASERVICIO_HN.Anular_solicitudResponse WSRestApiHelp.WSFICOHSASERVICIO_HN.WSPorSaludSoap.Anular_solicitud(WSRestApiHelp.WSFICOHSASERVICIO_HN.Anular_solicitudRequest request) {
+            return base.Channel.Anular_solicitud(request);
+        }
+        
+        public WSRestApiHelp.WSFICOHSASERVICIO_HN.clanulacion[] Anular_solicitud(WSRestApiHelp.WSFICOHSASERVICIO_HN.credenciales credenciales, string cod_solicitud, string descripcion) {
+            WSRestApiHelp.WSFICOHSASERVICIO_HN.Anular_solicitudRequest inValue = new WSRestApiHelp.WSFICOHSASERVICIO_HN.Anular_solicitudRequest();
+            inValue.credenciales = credenciales;
+            inValue.cod_solicitud = cod_solicitud;
+            inValue.descripcion = descripcion;
+            WSRestApiHelp.WSFICOHSASERVICIO_HN.Anular_solicitudResponse retVal = ((WSRestApiHelp.WSFICOHSASERVICIO_HN.WSPorSaludSoap)(this)).Anular_solicitud(inValue);
+            return retVal.Anular_solicitudResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<WSRestApiHelp.WSFICOHSASERVICIO_HN.Anular_solicitudResponse> WSRestApiHelp.WSFICOHSASERVICIO_HN.WSPorSaludSoap.Anular_solicitudAsync(WSRestApiHelp.WSFICOHSASERVICIO_HN.Anular_solicitudRequest request) {
+            return base.Channel.Anular_solicitudAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<WSRestApiHelp.WSFICOHSASERVICIO_HN.Anular_solicitudResponse> Anular_solicitudAsync(WSRestApiHelp.WSFICOHSASERVICIO_HN.credenciales credenciales, string cod_solicitud, string descripcion) {
+            WSRestApiHelp.WSFICOHSASERVICIO_HN.Anular_solicitudRequest inValue = new WSRestApiHelp.WSFICOHSASERVICIO_HN.Anular_solicitudRequest();
+            inValue.credenciales = credenciales;
+            inValue.cod_solicitud = cod_solicitud;
+            inValue.descripcion = descripcion;
+            return ((WSRestApiHelp.WSFICOHSASERVICIO_HN.WSPorSaludSoap)(this)).Anular_solicitudAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        WSRestApiHelp.WSFICOHSASERVICIO_HN.consultar_solicitudesResponse WSRestApiHelp.WSFICOHSASERVICIO_HN.WSPorSaludSoap.consultar_solicitudes(WSRestApiHelp.WSFICOHSASERVICIO_HN.consultar_solicitudesRequest request) {
+            return base.Channel.consultar_solicitudes(request);
+        }
+        
+        public WSRestApiHelp.WSFICOHSASERVICIO_HN.clConsultaSolicitud[] consultar_solicitudes(WSRestApiHelp.WSFICOHSASERVICIO_HN.credenciales credenciales, string pCod_solicitud) {
+            WSRestApiHelp.WSFICOHSASERVICIO_HN.consultar_solicitudesRequest inValue = new WSRestApiHelp.WSFICOHSASERVICIO_HN.consultar_solicitudesRequest();
+            inValue.credenciales = credenciales;
+            inValue.pCod_solicitud = pCod_solicitud;
+            WSRestApiHelp.WSFICOHSASERVICIO_HN.consultar_solicitudesResponse retVal = ((WSRestApiHelp.WSFICOHSASERVICIO_HN.WSPorSaludSoap)(this)).consultar_solicitudes(inValue);
+            return retVal.consultar_solicitudesResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<WSRestApiHelp.WSFICOHSASERVICIO_HN.consultar_solicitudesResponse> WSRestApiHelp.WSFICOHSASERVICIO_HN.WSPorSaludSoap.consultar_solicitudesAsync(WSRestApiHelp.WSFICOHSASERVICIO_HN.consultar_solicitudesRequest request) {
+            return base.Channel.consultar_solicitudesAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<WSRestApiHelp.WSFICOHSASERVICIO_HN.consultar_solicitudesResponse> consultar_solicitudesAsync(WSRestApiHelp.WSFICOHSASERVICIO_HN.credenciales credenciales, string pCod_solicitud) {
+            WSRestApiHelp.WSFICOHSASERVICIO_HN.consultar_solicitudesRequest inValue = new WSRestApiHelp.WSFICOHSASERVICIO_HN.consultar_solicitudesRequest();
+            inValue.credenciales = credenciales;
+            inValue.pCod_solicitud = pCod_solicitud;
+            return ((WSRestApiHelp.WSFICOHSASERVICIO_HN.WSPorSaludSoap)(this)).consultar_solicitudesAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        WSRestApiHelp.WSFICOHSASERVICIO_HN.Detalle_Pago_ProvResponse WSRestApiHelp.WSFICOHSASERVICIO_HN.WSPorSaludSoap.Detalle_Pago_Prov(WSRestApiHelp.WSFICOHSASERVICIO_HN.Detalle_Pago_ProvRequest request) {
+            return base.Channel.Detalle_Pago_Prov(request);
+        }
+        
+        public WSRestApiHelp.WSFICOHSASERVICIO_HN.clPagosProvDet[] Detalle_Pago_Prov(WSRestApiHelp.WSFICOHSASERVICIO_HN.credenciales credenciales, string fecha) {
+            WSRestApiHelp.WSFICOHSASERVICIO_HN.Detalle_Pago_ProvRequest inValue = new WSRestApiHelp.WSFICOHSASERVICIO_HN.Detalle_Pago_ProvRequest();
+            inValue.credenciales = credenciales;
+            inValue.fecha = fecha;
+            WSRestApiHelp.WSFICOHSASERVICIO_HN.Detalle_Pago_ProvResponse retVal = ((WSRestApiHelp.WSFICOHSASERVICIO_HN.WSPorSaludSoap)(this)).Detalle_Pago_Prov(inValue);
+            return retVal.Detalle_Pago_ProvResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<WSRestApiHelp.WSFICOHSASERVICIO_HN.Detalle_Pago_ProvResponse> WSRestApiHelp.WSFICOHSASERVICIO_HN.WSPorSaludSoap.Detalle_Pago_ProvAsync(WSRestApiHelp.WSFICOHSASERVICIO_HN.Detalle_Pago_ProvRequest request) {
+            return base.Channel.Detalle_Pago_ProvAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<WSRestApiHelp.WSFICOHSASERVICIO_HN.Detalle_Pago_ProvResponse> Detalle_Pago_ProvAsync(WSRestApiHelp.WSFICOHSASERVICIO_HN.credenciales credenciales, string fecha) {
+            WSRestApiHelp.WSFICOHSASERVICIO_HN.Detalle_Pago_ProvRequest inValue = new WSRestApiHelp.WSFICOHSASERVICIO_HN.Detalle_Pago_ProvRequest();
+            inValue.credenciales = credenciales;
+            inValue.fecha = fecha;
+            return ((WSRestApiHelp.WSFICOHSASERVICIO_HN.WSPorSaludSoap)(this)).Detalle_Pago_ProvAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        WSRestApiHelp.WSFICOHSASERVICIO_HN.valida_tu_seguroResponse WSRestApiHelp.WSFICOHSASERVICIO_HN.WSPorSaludSoap.valida_tu_seguro(WSRestApiHelp.WSFICOHSASERVICIO_HN.valida_tu_seguroRequest request) {
+            return base.Channel.valida_tu_seguro(request);
+        }
+        
+        public WSRestApiHelp.WSFICOHSASERVICIO_HN.clValidatuSeguro[] valida_tu_seguro(WSRestApiHelp.WSFICOHSASERVICIO_HN.credenciales credenciales, string pNumpol, string pNumCert, string pTelefono) {
+            WSRestApiHelp.WSFICOHSASERVICIO_HN.valida_tu_seguroRequest inValue = new WSRestApiHelp.WSFICOHSASERVICIO_HN.valida_tu_seguroRequest();
+            inValue.credenciales = credenciales;
+            inValue.pNumpol = pNumpol;
+            inValue.pNumCert = pNumCert;
+            inValue.pTelefono = pTelefono;
+            WSRestApiHelp.WSFICOHSASERVICIO_HN.valida_tu_seguroResponse retVal = ((WSRestApiHelp.WSFICOHSASERVICIO_HN.WSPorSaludSoap)(this)).valida_tu_seguro(inValue);
+            return retVal.valida_tu_seguroResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<WSRestApiHelp.WSFICOHSASERVICIO_HN.valida_tu_seguroResponse> WSRestApiHelp.WSFICOHSASERVICIO_HN.WSPorSaludSoap.valida_tu_seguroAsync(WSRestApiHelp.WSFICOHSASERVICIO_HN.valida_tu_seguroRequest request) {
+            return base.Channel.valida_tu_seguroAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<WSRestApiHelp.WSFICOHSASERVICIO_HN.valida_tu_seguroResponse> valida_tu_seguroAsync(WSRestApiHelp.WSFICOHSASERVICIO_HN.credenciales credenciales, string pNumpol, string pNumCert, string pTelefono) {
+            WSRestApiHelp.WSFICOHSASERVICIO_HN.valida_tu_seguroRequest inValue = new WSRestApiHelp.WSFICOHSASERVICIO_HN.valida_tu_seguroRequest();
+            inValue.credenciales = credenciales;
+            inValue.pNumpol = pNumpol;
+            inValue.pNumCert = pNumCert;
+            inValue.pTelefono = pTelefono;
+            return ((WSRestApiHelp.WSFICOHSASERVICIO_HN.WSPorSaludSoap)(this)).valida_tu_seguroAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        WSRestApiHelp.WSFICOHSASERVICIO_HN.valida_lista_coberturasResponse WSRestApiHelp.WSFICOHSASERVICIO_HN.WSPorSaludSoap.valida_lista_coberturas(WSRestApiHelp.WSFICOHSASERVICIO_HN.valida_lista_coberturasRequest request) {
+            return base.Channel.valida_lista_coberturas(request);
+        }
+        
+        public WSRestApiHelp.WSFICOHSASERVICIO_HN.clValidaListaCoberturas[] valida_lista_coberturas(WSRestApiHelp.WSFICOHSASERVICIO_HN.credenciales credenciales, string nIdepol, string nNumOper, int nNumcer, string nIdeBien, string nIdeAseg, long nNumpol, string pCodProd) {
+            WSRestApiHelp.WSFICOHSASERVICIO_HN.valida_lista_coberturasRequest inValue = new WSRestApiHelp.WSFICOHSASERVICIO_HN.valida_lista_coberturasRequest();
+            inValue.credenciales = credenciales;
+            inValue.nIdepol = nIdepol;
+            inValue.nNumOper = nNumOper;
+            inValue.nNumcer = nNumcer;
+            inValue.nIdeBien = nIdeBien;
+            inValue.nIdeAseg = nIdeAseg;
+            inValue.nNumpol = nNumpol;
+            inValue.pCodProd = pCodProd;
+            WSRestApiHelp.WSFICOHSASERVICIO_HN.valida_lista_coberturasResponse retVal = ((WSRestApiHelp.WSFICOHSASERVICIO_HN.WSPorSaludSoap)(this)).valida_lista_coberturas(inValue);
+            return retVal.valida_lista_coberturasResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<WSRestApiHelp.WSFICOHSASERVICIO_HN.valida_lista_coberturasResponse> WSRestApiHelp.WSFICOHSASERVICIO_HN.WSPorSaludSoap.valida_lista_coberturasAsync(WSRestApiHelp.WSFICOHSASERVICIO_HN.valida_lista_coberturasRequest request) {
+            return base.Channel.valida_lista_coberturasAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<WSRestApiHelp.WSFICOHSASERVICIO_HN.valida_lista_coberturasResponse> valida_lista_coberturasAsync(WSRestApiHelp.WSFICOHSASERVICIO_HN.credenciales credenciales, string nIdepol, string nNumOper, int nNumcer, string nIdeBien, string nIdeAseg, long nNumpol, string pCodProd) {
+            WSRestApiHelp.WSFICOHSASERVICIO_HN.valida_lista_coberturasRequest inValue = new WSRestApiHelp.WSFICOHSASERVICIO_HN.valida_lista_coberturasRequest();
+            inValue.credenciales = credenciales;
+            inValue.nIdepol = nIdepol;
+            inValue.nNumOper = nNumOper;
+            inValue.nNumcer = nNumcer;
+            inValue.nIdeBien = nIdeBien;
+            inValue.nIdeAseg = nIdeAseg;
+            inValue.nNumpol = nNumpol;
+            inValue.pCodProd = pCodProd;
+            return ((WSRestApiHelp.WSFICOHSASERVICIO_HN.WSPorSaludSoap)(this)).valida_lista_coberturasAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        WSRestApiHelp.WSFICOHSASERVICIO_HN.Servicios_Adicionales_WSResponse WSRestApiHelp.WSFICOHSASERVICIO_HN.WSPorSaludSoap.Servicios_Adicionales_WS(WSRestApiHelp.WSFICOHSASERVICIO_HN.Servicios_Adicionales_WSRequest request) {
+            return base.Channel.Servicios_Adicionales_WS(request);
+        }
+        
+        public WSRestApiHelp.WSFICOHSASERVICIO_HN.clServiciosAd Servicios_Adicionales_WS(
+                    WSRestApiHelp.WSFICOHSASERVICIO_HN.credenciales credenciales, 
+                    string pNroExpediente, 
+                    string pNroServicio, 
+                    string pCliente, 
+                    string pNumPol, 
+                    string pNumCert, 
+                    string pServicio, 
+                    string pChasis, 
+                    string pMotor, 
+                    string pPlaca, 
+                    string pAnio, 
+                    string pTipoVeh, 
+                    string pFecServic, 
+                    string pLocalForaneo, 
+                    string pCiudad, 
+                    string pValorServic, 
+                    string pExcedente, 
+                    string pObserv, 
+                    string pAutorizador) {
+            WSRestApiHelp.WSFICOHSASERVICIO_HN.Servicios_Adicionales_WSRequest inValue = new WSRestApiHelp.WSFICOHSASERVICIO_HN.Servicios_Adicionales_WSRequest();
+            inValue.credenciales = credenciales;
+            inValue.pNroExpediente = pNroExpediente;
+            inValue.pNroServicio = pNroServicio;
+            inValue.pCliente = pCliente;
+            inValue.pNumPol = pNumPol;
+            inValue.pNumCert = pNumCert;
+            inValue.pServicio = pServicio;
+            inValue.pChasis = pChasis;
+            inValue.pMotor = pMotor;
+            inValue.pPlaca = pPlaca;
+            inValue.pAnio = pAnio;
+            inValue.pTipoVeh = pTipoVeh;
+            inValue.pFecServic = pFecServic;
+            inValue.pLocalForaneo = pLocalForaneo;
+            inValue.pCiudad = pCiudad;
+            inValue.pValorServic = pValorServic;
+            inValue.pExcedente = pExcedente;
+            inValue.pObserv = pObserv;
+            inValue.pAutorizador = pAutorizador;
+            WSRestApiHelp.WSFICOHSASERVICIO_HN.Servicios_Adicionales_WSResponse retVal = ((WSRestApiHelp.WSFICOHSASERVICIO_HN.WSPorSaludSoap)(this)).Servicios_Adicionales_WS(inValue);
+            return retVal.Servicios_Adicionales_WSResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<WSRestApiHelp.WSFICOHSASERVICIO_HN.Servicios_Adicionales_WSResponse> WSRestApiHelp.WSFICOHSASERVICIO_HN.WSPorSaludSoap.Servicios_Adicionales_WSAsync(WSRestApiHelp.WSFICOHSASERVICIO_HN.Servicios_Adicionales_WSRequest request) {
+            return base.Channel.Servicios_Adicionales_WSAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<WSRestApiHelp.WSFICOHSASERVICIO_HN.Servicios_Adicionales_WSResponse> Servicios_Adicionales_WSAsync(
+                    WSRestApiHelp.WSFICOHSASERVICIO_HN.credenciales credenciales, 
+                    string pNroExpediente, 
+                    string pNroServicio, 
+                    string pCliente, 
+                    string pNumPol, 
+                    string pNumCert, 
+                    string pServicio, 
+                    string pChasis, 
+                    string pMotor, 
+                    string pPlaca, 
+                    string pAnio, 
+                    string pTipoVeh, 
+                    string pFecServic, 
+                    string pLocalForaneo, 
+                    string pCiudad, 
+                    string pValorServic, 
+                    string pExcedente, 
+                    string pObserv, 
+                    string pAutorizador) {
+            WSRestApiHelp.WSFICOHSASERVICIO_HN.Servicios_Adicionales_WSRequest inValue = new WSRestApiHelp.WSFICOHSASERVICIO_HN.Servicios_Adicionales_WSRequest();
+            inValue.credenciales = credenciales;
+            inValue.pNroExpediente = pNroExpediente;
+            inValue.pNroServicio = pNroServicio;
+            inValue.pCliente = pCliente;
+            inValue.pNumPol = pNumPol;
+            inValue.pNumCert = pNumCert;
+            inValue.pServicio = pServicio;
+            inValue.pChasis = pChasis;
+            inValue.pMotor = pMotor;
+            inValue.pPlaca = pPlaca;
+            inValue.pAnio = pAnio;
+            inValue.pTipoVeh = pTipoVeh;
+            inValue.pFecServic = pFecServic;
+            inValue.pLocalForaneo = pLocalForaneo;
+            inValue.pCiudad = pCiudad;
+            inValue.pValorServic = pValorServic;
+            inValue.pExcedente = pExcedente;
+            inValue.pObserv = pObserv;
+            inValue.pAutorizador = pAutorizador;
+            return ((WSRestApiHelp.WSFICOHSASERVICIO_HN.WSPorSaludSoap)(this)).Servicios_Adicionales_WSAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        WSRestApiHelp.WSFICOHSASERVICIO_HN.consultaCausasResponse WSRestApiHelp.WSFICOHSASERVICIO_HN.WSPorSaludSoap.consultaCausas(WSRestApiHelp.WSFICOHSASERVICIO_HN.consultaCausasRequest request) {
+            return base.Channel.consultaCausas(request);
+        }
+        
+        public WSRestApiHelp.WSFICOHSASERVICIO_HN.clConsultaCausas[] consultaCausas(WSRestApiHelp.WSFICOHSASERVICIO_HN.credenciales credenciales, string pCodProd, string cCodCobert) {
+            WSRestApiHelp.WSFICOHSASERVICIO_HN.consultaCausasRequest inValue = new WSRestApiHelp.WSFICOHSASERVICIO_HN.consultaCausasRequest();
+            inValue.credenciales = credenciales;
+            inValue.pCodProd = pCodProd;
+            inValue.cCodCobert = cCodCobert;
+            WSRestApiHelp.WSFICOHSASERVICIO_HN.consultaCausasResponse retVal = ((WSRestApiHelp.WSFICOHSASERVICIO_HN.WSPorSaludSoap)(this)).consultaCausas(inValue);
+            return retVal.consultaCausasResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<WSRestApiHelp.WSFICOHSASERVICIO_HN.consultaCausasResponse> WSRestApiHelp.WSFICOHSASERVICIO_HN.WSPorSaludSoap.consultaCausasAsync(WSRestApiHelp.WSFICOHSASERVICIO_HN.consultaCausasRequest request) {
+            return base.Channel.consultaCausasAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<WSRestApiHelp.WSFICOHSASERVICIO_HN.consultaCausasResponse> consultaCausasAsync(WSRestApiHelp.WSFICOHSASERVICIO_HN.credenciales credenciales, string pCodProd, string cCodCobert) {
+            WSRestApiHelp.WSFICOHSASERVICIO_HN.consultaCausasRequest inValue = new WSRestApiHelp.WSFICOHSASERVICIO_HN.consultaCausasRequest();
+            inValue.credenciales = credenciales;
+            inValue.pCodProd = pCodProd;
+            inValue.cCodCobert = cCodCobert;
+            return ((WSRestApiHelp.WSFICOHSASERVICIO_HN.WSPorSaludSoap)(this)).consultaCausasAsync(inValue);
         }
     }
 }
