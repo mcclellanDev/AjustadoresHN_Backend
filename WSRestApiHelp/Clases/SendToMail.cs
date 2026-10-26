@@ -132,6 +132,32 @@ namespace WSRestApiHelp.Clases
             }
         }
 
+        public bool Email_PruebaBandejaFull(TipoBandejaPrueba tipoBandeja, int idProveedorAgente)
+        {
+            try
+            {
+                var agente = db.help_ProveedorAgentes.Find(idProveedorAgente);
+                if (agente == null)
+                {
+                    this.Error = new Exception("No se encontró el registro en help_ProveedorAgentes con Id " + idProveedorAgente);
+                    return false;
+                }
+
+                if (string.IsNullOrWhiteSpace(agente.Correo))
+                {
+                    this.Error = new Exception("El destinatario no tiene correo configurado. Id " + idProveedorAgente + " (" + tipoBandeja + ")");
+                    return false;
+                }
+
+                return EnviarCorreoPruebaBandejaFull(agente.Correo, agente.NombreAgente);
+            }
+            catch (Exception ex)
+            {
+                this.Error = ex;
+                return false;
+            }
+        }
+
         private bool EnviarCorreoPruebaBandeja(string correoDestino, string nombreDestinatario)
         {
             string nombre = string.IsNullOrWhiteSpace(nombreDestinatario) ? "colaborador" : nombreDestinatario.Trim();
@@ -144,7 +170,7 @@ namespace WSRestApiHelp.Clases
 
             // Evita respuestas: Reply-To a noreply + encabezados de correo automático.
             Correo.ReplyToList.Add(new MailAddress("noreply@porsalud.net", "No Responder - PORSALUD HELP"));
-            Correo.Headers.Add("X-Auto-Response-Suppress", "All");
+            Correo.Headers.Add("X-Auto-Response-Suppress", "None");
             Correo.Headers.Add("Precedence", "bulk");
             Correo.Headers.Add("Auto-Submitted", "auto-generated");
 
@@ -163,6 +189,83 @@ namespace WSRestApiHelp.Clases
             Correo.Body += ("</table></td></tr></table>");
             Correo.Body += ("<div class=footer><table width='100%'><tr><td class='aligncenter content-block'>PORSALUD / Medicard S.A. de C.V. " + DateTime.Now.Year + "</td></tr></table></div>");
             Correo.Body += ("</div></td><td></td></tr></table></body></html>");
+
+            return this.Send();
+        }
+
+        private bool EnviarCorreoPruebaBandejaFull(
+        string correoDestino,
+        string nombreDestinatario)
+        {
+            string nombre = string.IsNullOrWhiteSpace(nombreDestinatario)
+                ? "colaborador"
+                : nombreDestinatario.Trim();
+
+            Correo.To.Clear();
+            Correo.CC.Clear();
+            Correo.Bcc.Clear();
+            Correo.ReplyToList.Clear();
+            Correo.Headers.Clear();
+
+            // Dirige las respuestas manuales al remitente configurado.
+            if (Correo.From != null)
+            {
+                Correo.ReplyToList.Add(
+                     new MailAddress("edwyn.mcclellan@porsalud.net", "Diagnóstico de correo")
+                    );
+            }
+
+            // No solicita suprimir respuestas automáticas.
+            Correo.Headers.Add("X-Auto-Response-Suppress", "None");
+
+            // No agregar "Precedence: bulk" ni "Auto-Submitted: auto-generated"
+            // para esta prueba de respuestas.
+
+            // Solicita notificaciones de entrega, fallo o demora.
+            // Su recepción depende del servidor de correo.
+            Correo.DeliveryNotificationOptions =
+                DeliveryNotificationOptions.OnSuccess |
+                DeliveryNotificationOptions.OnFailure |
+                DeliveryNotificationOptions.Delay;
+
+            Correo.To.Add(new MailAddress(correoDestino));
+
+            Correo.IsBodyHtml = true;
+            Correo.SubjectEncoding = System.Text.Encoding.UTF8;
+            Correo.BodyEncoding = System.Text.Encoding.UTF8;
+
+            Correo.Subject = "Sistemas Porsalud-HELP Pruebas";
+
+            Correo.Body = "<html><head>"
+                + "<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />"
+                + this.StiloEmail
+                + "</head><body>"
+                + "<table class='body-wrap'><tr><td></td>"
+                + "<td class='container' width='600'><div class='content'>"
+                + "<table class='main' width='100%' cellpadding='0' cellspacing='0'><tr>"
+                + "<td class='content-wrap'>"
+                + "<table width='100%' cellpadding='0' cellspacing='0'>"
+                + "<tr><td class='content-block'>"
+                + "<h3>Sistemas Porsalud-HELP Pruebas</h3>"
+                + "</td></tr>"
+                + "<tr><td class='content-block'>Estimado(a) <b>"
+                + WebUtility.HtmlEncode(nombre)
+                + "</b>,</td></tr>"
+                + "<tr><td class='content-block'>"
+                + "Esta es una prueba de envío de correo desde los sistemas de "
+                + "Medicard S. A. de C.V. para verificar la recepción de mensajes."
+                + "</td></tr>"
+                + "<tr><td class='content-block'>"
+                + "Puede responder a este correo para confirmar su recepción. "
+                + "Gracias por su atención. Feliz día."
+                + "</td></tr>"
+                + "</table></td></tr></table>"
+                + "<div class='footer'><table width='100%'><tr>"
+                + "<td class='aligncenter content-block'>"
+                + "PORSALUD / Medicard S.A. de C.V. "
+                + DateTime.Now.Year
+                + "</td></tr></table></div>"
+                + "</div></td><td></td></tr></table></body></html>";
 
             return this.Send();
         }

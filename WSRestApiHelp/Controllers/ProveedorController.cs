@@ -738,6 +738,32 @@ namespace WSRestApiHelp.Controllers
         }
 
         [HttpPost]
+        [Route("ProbarEnvioCorreoBandejaFull")]
+        public IHttpActionResult ProbarEnvioCorreoBandejaFull(SendToMail.TipoBandejaPrueba tipoBandeja, int idProveedorAgente)
+        {
+            try
+            {
+                var enviar = new SendToMail();
+                bool ok = enviar.Email_PruebaBandejaFull(tipoBandeja, idProveedorAgente);
+                if (!ok)
+                {
+                    string mensaje = enviar.Error != null ? enviar.Error.Message : "No se pudo enviar el correo de prueba.";
+                    return BadRequest(mensaje);
+                }
+
+                return Ok(new
+                {
+                    Respuesta = 1,
+                    Mensaje = "Correo de prueba enviado a bandeja " + tipoBandeja + " (Id " + idProveedorAgente + ")."
+                });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.InnerException != null ? ex.InnerException.Message : ex.Message);
+            }
+        }
+
+        [HttpPost]
         [Route("ActualizarAudicion")]
         public IHttpActionResult ActualizarAudicion(int IdAjustadorAudiencia, int RefProveedorAgenteAbogadoId, int AgendarAudiencia, DateTime FechaHora, string Fecha, string Hora, string Lugar, int idAgente)
         {

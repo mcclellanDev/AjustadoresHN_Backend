@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using System.Text;
 using WSRestApiHelp.Models;
 
 namespace WSRestApiHelp.Clases
@@ -188,9 +190,61 @@ namespace WSRestApiHelp.Clases
             };
         }
 
+        /// <summary>
+        /// Comparación silenciosa: recorta extremos, trata NBSP/tabs/saltos/cero-ancho
+        /// como espacio y compacta espacios internos. No cambia los valores que se muestran al usuario.
+        /// </summary>
         private static string Normalizar(string value)
         {
-            return string.IsNullOrWhiteSpace(value) ? string.Empty : value.Trim();
+            if (string.IsNullOrWhiteSpace(value))
+            {
+                return string.Empty;
+            }
+
+            var sb = new StringBuilder(value.Length);
+            bool lastWasSpace = false;
+
+            foreach (char c in value)
+            {
+                if (EsSeparadorInsignificante(c))
+                {
+                    if (!lastWasSpace)
+                    {
+                        sb.Append(' ');
+                        lastWasSpace = true;
+                    }
+
+                    continue;
+                }
+
+                sb.Append(c);
+                lastWasSpace = false;
+            }
+
+            return sb.ToString().Trim();
+        }
+
+        private static bool EsSeparadorInsignificante(char c)
+        {
+            if (char.IsWhiteSpace(c))
+            {
+                return true;
+            }
+
+            switch (c)
+            {
+                case '\u00A0': // NBSP
+                case '\u2007': // figure space
+                case '\u202F': // narrow NBSP
+                case '\uFEFF': // BOM / ZWNBSP
+                case '\u200B': // zero-width space
+                case '\u200C': // ZWNJ
+                case '\u200D': // ZWJ
+                case '\u2060': // word joiner
+                    return true;
+                default:
+                    return CharUnicodeInfo.GetUnicodeCategory(c) == UnicodeCategory.SpaceSeparator;
+            }
         }
     }
 
